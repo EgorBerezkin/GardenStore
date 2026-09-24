@@ -1,28 +1,28 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Gardenly\\",
+  "WorkspaceRootPath": "C:\\Users\\Acer\\source\\repos\\GardenStore\\Gardenly\\Gardenly\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7FFED05C-45BD-49B9-9BEC-D7B67F400191}|Gardenly.csproj|E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Gardenly\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7FFED05C-45BD-49B9-9BEC-D7B67F400191}|Gardenly.csproj|c:\\users\\acer\\source\\repos\\gardenstore\\gardenly\\gardenly\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7FFED05C-45BD-49B9-9BEC-D7B67F400191}|Gardenly.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7FFED05C-45BD-49B9-9BEC-D7B67F400191}|Gardenly.csproj|e:\\4 \u043A\u0443\u0440\u0441\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\gardenly\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7FFED05C-45BD-49B9-9BEC-D7B67F400191}|Gardenly.csproj|C:\\Users\\Acer\\source\\repos\\GardenStore\\Gardenly\\Gardenly\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7FFED05C-45BD-49B9-9BEC-D7B67F400191}|Gardenly.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7FFED05C-45BD-49B9-9BEC-D7B67F400191}|Gardenly.csproj|E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Gardenly\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7FFED05C-45BD-49B9-9BEC-D7B67F400191}|Gardenly.csproj|C:\\Users\\Acer\\source\\repos\\GardenStore\\Gardenly\\Gardenly\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7FFED05C-45BD-49B9-9BEC-D7B67F400191}|Gardenly.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7FFED05C-45BD-49B9-9BEC-D7B67F400191}|Gardenly.csproj|E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Gardenly\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7FFED05C-45BD-49B9-9BEC-D7B67F400191}|Gardenly.csproj|C:\\Users\\Acer\\source\\repos\\GardenStore\\Gardenly\\Gardenly\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7FFED05C-45BD-49B9-9BEC-D7B67F400191}|Gardenly.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{08A48405-2F24-43B8-84B0-C7D3A5D43CCD}|..\\Librarygardenly\\Librarygardenly.csproj|e:\\4 \u043A\u0443\u0440\u0441\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\librarygardenly\\registration\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Librarygardenly\\Registration\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{08A48405-2F24-43B8-84B0-C7D3A5D43CCD}|..\\Librarygardenly\\Librarygardenly.csproj|e:\\4 \u043A\u0443\u0440\u0441\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\librarygardenly\\registration\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Librarygardenly\\Registration\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,9 +62,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "LoginForm.cs",
-              "DocumentMoniker": "E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Gardenly\\LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\source\\repos\\GardenStore\\Gardenly\\Gardenly\\LoginForm.cs",
               "RelativeDocumentMoniker": "LoginForm.cs",
-              "ToolTip": "E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Gardenly\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\Acer\\source\\repos\\GardenStore\\Gardenly\\Gardenly\\LoginForm.cs",
               "RelativeToolTip": "LoginForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -75,22 +75,19 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "LoginForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Gardenly\\LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\source\\repos\\GardenStore\\Gardenly\\Gardenly\\LoginForm.cs",
               "RelativeDocumentMoniker": "LoginForm.cs",
               "ToolTip": "E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Gardenly\\LoginForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "LoginForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-21T15:37:10.351Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2026-09-21T15:37:10.351Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Gardenly\\MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\source\\repos\\GardenStore\\Gardenly\\Gardenly\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
               "ToolTip": "E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Gardenly\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-22T16:44:07.321Z"
             },
@@ -98,9 +95,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "MainForm.cs",
-              "DocumentMoniker": "E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Gardenly\\MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\source\\repos\\GardenStore\\Gardenly\\Gardenly\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Gardenly\\MainForm.cs",
+              "ToolTip": "C:\\Users\\Acer\\source\\repos\\GardenStore\\Gardenly\\Gardenly\\MainForm.cs",
               "RelativeToolTip": "MainForm.cs",
               "ViewState": "AgIAACsAAAAAAAAAAAAwwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -111,9 +108,7 @@
               "DocumentIndex": 4,
               "Title": "UserService.cs",
               "DocumentMoniker": "E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Librarygardenly\\Registration\\UserService.cs",
-              "RelativeDocumentMoniker": "..\\Librarygardenly\\Registration\\UserService.cs",
               "ToolTip": "E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Librarygardenly\\Registration\\UserService.cs",
-              "RelativeToolTip": "..\\Librarygardenly\\Registration\\UserService.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAYwDQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-21T17:38:27.932Z"
@@ -123,9 +118,7 @@
               "DocumentIndex": 5,
               "Title": "User.cs",
               "DocumentMoniker": "E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Librarygardenly\\Registration\\User.cs",
-              "RelativeDocumentMoniker": "..\\Librarygardenly\\Registration\\User.cs",
               "ToolTip": "E:\\4 \u043A\u0443\u0440\u0441\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\\Librarygardenly\\Registration\\User.cs",
-              "RelativeToolTip": "..\\Librarygardenly\\Registration\\User.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAA4wB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-21T17:35:03.216Z"
