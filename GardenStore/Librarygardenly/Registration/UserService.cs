@@ -17,6 +17,11 @@ namespace Librarygardenly.Registration
             userList_ = new List<User>();
             LoadUsersFromDB();
         }
+        // создание для тестов иммитацию бд чтобы проверить работоспособность программы
+        public UserService(IUserRepository repository)
+        {
+            userList_ = repository.GetUsers();
+        }
         private void LoadUsersFromDB()
         {
             userList_.Clear();

@@ -158,3 +158,6 @@ C:\Users\Acer\Source\Repos\GardenStore\GardenStore\Librarygardenly\obj\Debug\Lib
 C:\Users\Acer\Source\Repos\GardenStore\GardenStore\Librarygardenly\obj\Debug\Libraryg.BA71AC12.Up2Date
 C:\Users\Acer\Source\Repos\GardenStore\GardenStore\Librarygardenly\obj\Debug\Librarygardenly.dll
 C:\Users\Acer\Source\Repos\GardenStore\GardenStore\Librarygardenly\obj\Debug\Librarygardenly.pdb
+C:\Users\Acer\Source\Repos\GardenStore\GardenStore\Librarygardenly\bin\Debug\Castle.Core.dll
+C:\Users\Acer\Source\Repos\GardenStore\GardenStore\Librarygardenly\bin\Debug\Moq.dll
+C:\Users\Acer\Source\Repos\GardenStore\GardenStore\Librarygardenly\bin\Debug\Castle.Core.xml
