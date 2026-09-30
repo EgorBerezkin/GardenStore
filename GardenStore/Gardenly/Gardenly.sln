@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gardenly", "Gardenly.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Librarygardenly", "..\Librarygardenly\Librarygardenly.csproj", "{08A48405-2F24-43B8-84B0-C7D3A5D43CCD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestGardenly", "..\UnitTestGardenly\UnitTestGardenly.csproj", "{02E8AC0D-0236-416E-BCB4-D38CB83BD20C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{08A48405-2F24-43B8-84B0-C7D3A5D43CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08A48405-2F24-43B8-84B0-C7D3A5D43CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08A48405-2F24-43B8-84B0-C7D3A5D43CCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E8AC0D-0236-416E-BCB4-D38CB83BD20C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E8AC0D-0236-416E-BCB4-D38CB83BD20C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E8AC0D-0236-416E-BCB4-D38CB83BD20C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E8AC0D-0236-416E-BCB4-D38CB83BD20C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
