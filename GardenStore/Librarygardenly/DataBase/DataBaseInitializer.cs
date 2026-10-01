@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Npgsql;
 
 namespace Librarygardenly.DataBase
 {
+    // подготовка бд перед запуском программы
     public class DataBaseInitializer
     {
+        // подключение к постгресу
         private string serverConnectionString = "Host=localhost;Username=postgres";
+        // подключение к бд
         private string databaseConnectionString = "Host=localhost;Database=GardenlyDB;Username=postgres;Encoding=UTF8";
 
         public void Initialize()
@@ -22,7 +21,7 @@ namespace Librarygardenly.DataBase
                 RestoreDatabase();
             }
         }
-
+        // метод создания бд
         private void CreateDatabaseIfNotExists()
         {
             using (var connection = new NpgsqlConnection(serverConnectionString))
@@ -43,7 +42,7 @@ namespace Librarygardenly.DataBase
                 }
             }
         }
-
+        // проверка существует ли таблица
         private bool DatabaseHasTables()
         {
             using (var connection = new NpgsqlConnection(databaseConnectionString))
@@ -63,16 +62,16 @@ namespace Librarygardenly.DataBase
                 }
             }
         }
-
+        // метод для восстановления стурктуры данных из файла
         private void RestoreDatabase()
         {
             string sqlFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Database", "GardenlyDB.sql");
-
+            // проверка существования бд .sql
             if (!File.Exists(sqlFilePath))
             {
                 throw new FileNotFoundException("Не найден файл базы данных:\n" + sqlFilePath);
             }
-
+            // процесс для описания запуска бд
             ProcessStartInfo startInfo = new ProcessStartInfo();
 
             startInfo.FileName = FindPsql();

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Librarygardenly.DataBase;
 
 namespace Gardenly
 {
@@ -15,27 +11,8 @@ namespace Gardenly
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            try
-            {
-                DataBaseInitializer initializer =
-                    new DataBaseInitializer();
-
-                initializer.Initialize();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    "Не удалось подготовить базу данных.\n\n" +
-                    ex.Message,
-                    "Ошибка базы данных",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-                return;
-            }
+            Application.EnableVisualStyles(); // включает визуальные стили Windows для элементов интерфейса
+            Application.SetCompatibleTextRenderingDefault(false); // способ отображения текста в элементах формы
 
             Application.Run(new LoginForm());
         }

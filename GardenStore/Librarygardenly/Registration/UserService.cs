@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Npgsql;
 
 namespace Librarygardenly.Registration
@@ -10,12 +7,12 @@ namespace Librarygardenly.Registration
     public class UserService
     {
         private string connectionString = "Host=localhost;Database=GardenlyDB;Username=postgres;Encoding=UTF8";
-        public List<User> userList_;
+        public List<User> userList_; // список пользователей
 
         public UserService()
         {
             userList_ = new List<User>();
-            LoadUsersFromDB();
+            LoadUsersFromDB(); // метод загрузки пользователей из бд
         }
         // создание для тестов иммитацию бд чтобы проверить работоспособность программы
         public UserService(IUserRepository repository)
@@ -24,7 +21,9 @@ namespace Librarygardenly.Registration
         }
         private void LoadUsersFromDB()
         {
+            // очищение списка пользователей
             userList_.Clear();
+            // создание подключения
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
@@ -35,6 +34,7 @@ namespace Librarygardenly.Registration
                     while (reader.Read())
                     {
                         string fio = reader.GetString(1);
+                        // создание объекта пользователя из бд
                         User user = new User(
                             reader.GetInt32(0),
                             fio,
@@ -48,6 +48,7 @@ namespace Librarygardenly.Registration
             }
             
         }
+        // метод авторизации
         public User AuthorizeUser(string login, string password)
         {
             return userList_.FirstOrDefault(u => u.Login == login && u.Password == password);
