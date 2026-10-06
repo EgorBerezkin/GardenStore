@@ -92,9 +92,9 @@
             this.tabControl.Controls.Add(this.tabPageReceipts);
             this.tabControl.Controls.Add(this.tabPageRemainingStock);
             this.tabControl.Controls.Add(this.tabPageStatements);
-            this.tabControl.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabControl.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabControl.Location = new System.Drawing.Point(-1, -2);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControl.SelectedIndex = 0;
@@ -103,21 +103,22 @@
             // 
             // tabPageProducts
             // 
-            this.tabPageProducts.Location = new System.Drawing.Point(4, 26);
-            this.tabPageProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageProducts.Location = new System.Drawing.Point(4, 29);
+            this.tabPageProducts.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageProducts.Name = "tabPageProducts";
-            this.tabPageProducts.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPageProducts.Size = new System.Drawing.Size(1252, 845);
+            this.tabPageProducts.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageProducts.Size = new System.Drawing.Size(1252, 842);
             this.tabPageProducts.TabIndex = 0;
             this.tabPageProducts.Text = "Товары";
             this.tabPageProducts.UseVisualStyleBackColor = true;
+            this.tabPageProducts.Click += new System.EventHandler(this.tabPageProducts_Click);
             // 
             // tabPageUsers
             // 
             this.tabPageUsers.Location = new System.Drawing.Point(4, 26);
-            this.tabPageUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageUsers.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageUsers.Name = "tabPageUsers";
-            this.tabPageUsers.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageUsers.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageUsers.Size = new System.Drawing.Size(1252, 845);
             this.tabPageUsers.TabIndex = 1;
             this.tabPageUsers.Text = "Пользователи";
@@ -126,9 +127,9 @@
             // tabPageSales
             // 
             this.tabPageSales.Location = new System.Drawing.Point(4, 26);
-            this.tabPageSales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageSales.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageSales.Name = "tabPageSales";
-            this.tabPageSales.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageSales.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageSales.Size = new System.Drawing.Size(1252, 845);
             this.tabPageSales.TabIndex = 2;
             this.tabPageSales.Text = "Продажи/Заказы";
@@ -137,9 +138,9 @@
             // tabPageReceipts
             // 
             this.tabPageReceipts.Location = new System.Drawing.Point(4, 26);
-            this.tabPageReceipts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageReceipts.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageReceipts.Name = "tabPageReceipts";
-            this.tabPageReceipts.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageReceipts.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageReceipts.Size = new System.Drawing.Size(1252, 845);
             this.tabPageReceipts.TabIndex = 3;
             this.tabPageReceipts.Text = "Поступления";
@@ -148,9 +149,9 @@
             // tabPageRemainingStock
             // 
             this.tabPageRemainingStock.Location = new System.Drawing.Point(4, 26);
-            this.tabPageRemainingStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageRemainingStock.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageRemainingStock.Name = "tabPageRemainingStock";
-            this.tabPageRemainingStock.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageRemainingStock.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageRemainingStock.Size = new System.Drawing.Size(1252, 845);
             this.tabPageRemainingStock.TabIndex = 4;
             this.tabPageRemainingStock.Text = "Остатки товаров";
@@ -159,9 +160,9 @@
             // tabPageStatements
             // 
             this.tabPageStatements.Location = new System.Drawing.Point(4, 26);
-            this.tabPageStatements.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageStatements.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageStatements.Name = "tabPageStatements";
-            this.tabPageStatements.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageStatements.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageStatements.Size = new System.Drawing.Size(1252, 845);
             this.tabPageStatements.TabIndex = 5;
             this.tabPageStatements.Text = "Заявление на поплнение";

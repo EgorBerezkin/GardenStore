@@ -97,7 +97,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBase\DataBaseInitializer.cs" />
+    <Compile Include="Categories\Category.cs" />
+    <Compile Include="Products\Product.cs" />
     <Compile Include="Registration\IUserRepository.cs" />
     <Compile Include="Registration\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,5 +108,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

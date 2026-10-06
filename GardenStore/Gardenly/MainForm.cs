@@ -33,5 +33,10 @@ namespace Gardenly
 
             this.Close();
         }
+
+        private void tabPageProducts_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
