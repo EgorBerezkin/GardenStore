@@ -99,6 +99,7 @@
   <ItemGroup>
     <Compile Include="Categories\Category.cs" />
     <Compile Include="Products\Product.cs" />
+    <Compile Include="Products\ProductService.cs" />
     <Compile Include="Registration\IUserRepository.cs" />
     <Compile Include="Registration\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
