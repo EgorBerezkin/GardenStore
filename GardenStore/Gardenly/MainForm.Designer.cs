@@ -34,17 +34,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageProducts = new System.Windows.Forms.TabPage();
+            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tabPageUsers = new System.Windows.Forms.TabPage();
             this.tabPageSales = new System.Windows.Forms.TabPage();
             this.tabPageReceipts = new System.Windows.Forms.TabPage();
             this.tabPageRemainingStock = new System.Windows.Forms.TabPage();
             this.tabPageStatements = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonSortiтпCategories = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageProducts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelUser
@@ -52,7 +56,7 @@
             this.labelUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelUser.AutoSize = true;
             this.labelUser.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelUser.Location = new System.Drawing.Point(950, 109);
+            this.labelUser.Location = new System.Drawing.Point(948, 21);
             this.labelUser.Name = "labelUser";
             this.labelUser.Size = new System.Drawing.Size(141, 20);
             this.labelUser.TabIndex = 0;
@@ -62,7 +66,7 @@
             // 
             this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonExit.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonExit.Location = new System.Drawing.Point(29, 99);
+            this.buttonExit.Location = new System.Drawing.Point(29, 11);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(143, 39);
@@ -82,7 +86,7 @@
             this.panel1.Location = new System.Drawing.Point(-17, 780);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1451, 150);
+            this.panel1.Size = new System.Drawing.Size(1451, 60);
             this.panel1.TabIndex = 9;
             // 
             // tabControl
@@ -102,40 +106,40 @@
             this.tabControl.Name = "tabControl";
             this.tabControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1420, 875);
+            this.tabControl.Size = new System.Drawing.Size(1420, 785);
             this.tabControl.TabIndex = 10;
             // 
             // tabPageProducts
             // 
+            this.tabPageProducts.Controls.Add(this.panel2);
             this.tabPageProducts.Controls.Add(this.dataGridViewProducts);
-            this.tabPageProducts.Controls.Add(this.toolStrip1);
             this.tabPageProducts.Location = new System.Drawing.Point(4, 29);
             this.tabPageProducts.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageProducts.Name = "tabPageProducts";
             this.tabPageProducts.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageProducts.Size = new System.Drawing.Size(1412, 842);
+            this.tabPageProducts.Size = new System.Drawing.Size(1412, 752);
             this.tabPageProducts.TabIndex = 0;
             this.tabPageProducts.Text = "Товары";
             this.tabPageProducts.UseVisualStyleBackColor = true;
             // 
+            // comboBoxCategory
+            // 
+            this.comboBoxCategory.FormattingEnabled = true;
+            this.comboBoxCategory.Location = new System.Drawing.Point(152, 16);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.Size = new System.Drawing.Size(214, 28);
+            this.comboBoxCategory.TabIndex = 3;
+            // 
             // dataGridViewProducts
             // 
+            this.dataGridViewProducts.BackgroundColor = System.Drawing.Color.BurlyWood;
             this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProducts.Location = new System.Drawing.Point(23, 51);
+            this.dataGridViewProducts.Location = new System.Drawing.Point(19, 21);
             this.dataGridViewProducts.Name = "dataGridViewProducts";
             this.dataGridViewProducts.RowHeadersWidth = 51;
             this.dataGridViewProducts.RowTemplate.Height = 24;
-            this.dataGridViewProducts.Size = new System.Drawing.Size(1338, 760);
-            this.dataGridViewProducts.TabIndex = 1;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Location = new System.Drawing.Point(4, 4);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1404, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.dataGridViewProducts.Size = new System.Drawing.Size(810, 605);
+            this.dataGridViewProducts.TabIndex = 2;
             // 
             // tabPageUsers
             // 
@@ -143,7 +147,7 @@
             this.tabPageUsers.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageUsers.Name = "tabPageUsers";
             this.tabPageUsers.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageUsers.Size = new System.Drawing.Size(1252, 842);
+            this.tabPageUsers.Size = new System.Drawing.Size(1412, 752);
             this.tabPageUsers.TabIndex = 1;
             this.tabPageUsers.Text = "Пользователи";
             this.tabPageUsers.UseVisualStyleBackColor = true;
@@ -154,7 +158,7 @@
             this.tabPageSales.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageSales.Name = "tabPageSales";
             this.tabPageSales.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageSales.Size = new System.Drawing.Size(1252, 842);
+            this.tabPageSales.Size = new System.Drawing.Size(1412, 752);
             this.tabPageSales.TabIndex = 2;
             this.tabPageSales.Text = "Продажи/Заказы";
             this.tabPageSales.UseVisualStyleBackColor = true;
@@ -165,7 +169,7 @@
             this.tabPageReceipts.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageReceipts.Name = "tabPageReceipts";
             this.tabPageReceipts.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageReceipts.Size = new System.Drawing.Size(1252, 842);
+            this.tabPageReceipts.Size = new System.Drawing.Size(1412, 752);
             this.tabPageReceipts.TabIndex = 3;
             this.tabPageReceipts.Text = "Поступления";
             this.tabPageReceipts.UseVisualStyleBackColor = true;
@@ -176,7 +180,7 @@
             this.tabPageRemainingStock.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageRemainingStock.Name = "tabPageRemainingStock";
             this.tabPageRemainingStock.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageRemainingStock.Size = new System.Drawing.Size(1252, 842);
+            this.tabPageRemainingStock.Size = new System.Drawing.Size(1412, 752);
             this.tabPageRemainingStock.TabIndex = 4;
             this.tabPageRemainingStock.Text = "Остатки товаров";
             this.tabPageRemainingStock.UseVisualStyleBackColor = true;
@@ -187,17 +191,47 @@
             this.tabPageStatements.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageStatements.Name = "tabPageStatements";
             this.tabPageStatements.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageStatements.Size = new System.Drawing.Size(1252, 842);
+            this.tabPageStatements.Size = new System.Drawing.Size(1412, 752);
             this.tabPageStatements.TabIndex = 5;
             this.tabPageStatements.Text = "Заявление на поплнение";
             this.tabPageStatements.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Orange;
+            this.panel2.Controls.Add(this.buttonSortiтпCategories);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.comboBoxCategory);
+            this.panel2.Location = new System.Drawing.Point(864, 21);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(415, 133);
+            this.panel2.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Категория";
+            // 
+            // buttonSortiтпCategories
+            // 
+            this.buttonSortiтпCategories.Location = new System.Drawing.Point(210, 70);
+            this.buttonSortiтпCategories.Name = "buttonSortiтпCategories";
+            this.buttonSortiтпCategories.Size = new System.Drawing.Size(156, 46);
+            this.buttonSortiтпCategories.TabIndex = 5;
+            this.buttonSortiтпCategories.Text = "Фильтруем";
+            this.buttonSortiтпCategories.UseVisualStyleBackColor = true;
+            this.buttonSortiтпCategories.Click += new System.EventHandler(this.buttonSortiтпCategories_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
-            this.ClientSize = new System.Drawing.Size(1408, 929);
+            this.ClientSize = new System.Drawing.Size(1408, 839);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -209,8 +243,9 @@
             this.panel1.PerformLayout();
             this.tabControl.ResumeLayout(false);
             this.tabPageProducts.ResumeLayout(false);
-            this.tabPageProducts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -221,13 +256,16 @@
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPageProducts;
         private System.Windows.Forms.TabPage tabPageUsers;
         private System.Windows.Forms.TabPage tabPageSales;
         private System.Windows.Forms.TabPage tabPageReceipts;
         private System.Windows.Forms.TabPage tabPageRemainingStock;
         private System.Windows.Forms.TabPage tabPageStatements;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.TabPage tabPageProducts;
         private System.Windows.Forms.DataGridView dataGridViewProducts;
+        private System.Windows.Forms.ComboBox comboBoxCategory;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button buttonSortiтпCategories;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -98,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categories\Category.cs" />
+    <Compile Include="Categories\CategoryService.cs" />
     <Compile Include="Products\Product.cs" />
     <Compile Include="Products\ProductService.cs" />
     <Compile Include="Registration\IUserRepository.cs" />

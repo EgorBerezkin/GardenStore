@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using Librarygardenly;
+using Librarygardenly.Categories;
 using Librarygardenly.Products;
 
 namespace Gardenly
@@ -10,6 +12,8 @@ namespace Gardenly
     {
         private User user_;
         private ProductService productService_;
+        private CategoryService categoryService_;
+        private List<Product> products_;
 
         public MainForm(User user)
         {
@@ -20,15 +24,18 @@ namespace Gardenly
 
             productService_ = new ProductService();
             LoadProducts();
+
+            categoryService_ = new CategoryService();
+            LoadCategories();
         }
 
         private void LoadProducts()
         {
             try
             {
-                List<Product> products = productService_.GetProducts();
+                products_ = productService_.GetProducts();
 
-                dataGridViewProducts.DataSource = products;
+                dataGridViewProducts.DataSource = products_;
 
                 dataGridViewProducts.Columns["Id"].HeaderText = "Код";
                 dataGridViewProducts.Columns["Name"].HeaderText = "Название";
@@ -45,12 +52,53 @@ namespace Gardenly
             }
         }
 
+        private void LoadCategories()
+        {
+            try
+            {
+                List<Category> categories = categoryService_.GetCategories();
+
+                categories.Insert(0, new Category(0, "Все категории"));
+
+                comboBoxCategory.DataSource = categories;
+                comboBoxCategory.DisplayMember = "Name";
+                comboBoxCategory.ValueMember = "Id";
+            }
+            catch
+            {
+                MessageBox.Show(
+                    "Не удалось загрузить категории.",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
         private void buttonExit_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
 
             this.Close();
+        }
+
+        private void buttonSortiтпCategories_Click(object sender, EventArgs e)
+        {
+            if (comboBoxCategory.SelectedItem is Category selectedCategory)
+            {
+                if (selectedCategory.Id == 0)
+                {
+                    dataGridViewProducts.DataSource = products_;
+                }
+                else
+                {
+                    List<Product> filteredProducts = products_
+                        .Where(p => p.CategoryId == selectedCategory.Id)
+                        .ToList();
+
+                    dataGridViewProducts.DataSource = filteredProducts;
+                }
+            }
         }
     }
 }
