@@ -71,7 +71,15 @@ namespace Gardenly
             {
                 string name = textBoxName.Text;
                 int categoryId = (int)comboBoxCategory.SelectedValue;
-                double price = Convert.ToDouble(textBoxPrice.Text);
+
+                double price;
+                if (!double.TryParse(textBoxPrice.Text, out price) || price < 0)
+                {
+                    MessageBox.Show("Введите корректную цену товара", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 int quantity = Convert.ToInt32(textBoxQuantity.Text);
                 string description = textBoxDescription.Text;
 

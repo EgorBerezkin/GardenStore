@@ -53,6 +53,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonEditProduct = new System.Windows.Forms.Button();
             this.buttonDeleteProduct = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.buttonAddCategory = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageProducts.SuspendLayout();
@@ -279,13 +281,15 @@
             // panelAdministrator
             // 
             this.panelAdministrator.BackColor = System.Drawing.Color.IndianRed;
+            this.panelAdministrator.Controls.Add(this.buttonAddCategory);
+            this.panelAdministrator.Controls.Add(this.label4);
             this.panelAdministrator.Controls.Add(this.buttonDeleteProduct);
             this.panelAdministrator.Controls.Add(this.buttonEditProduct);
             this.panelAdministrator.Controls.Add(this.label3);
             this.panelAdministrator.Controls.Add(this.buttonAddProduct);
             this.panelAdministrator.Location = new System.Drawing.Point(864, 294);
             this.panelAdministrator.Name = "panelAdministrator";
-            this.panelAdministrator.Size = new System.Drawing.Size(498, 401);
+            this.panelAdministrator.Size = new System.Drawing.Size(498, 201);
             this.panelAdministrator.TabIndex = 6;
             // 
             // buttonAddProduct
@@ -326,6 +330,25 @@
             this.buttonDeleteProduct.Text = "Удалить товар";
             this.buttonDeleteProduct.UseVisualStyleBackColor = true;
             this.buttonDeleteProduct.Click += new System.EventHandler(this.buttonDeleteProduct_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Категории";
+            // 
+            // buttonAddCategory
+            // 
+            this.buttonAddCategory.Location = new System.Drawing.Point(18, 138);
+            this.buttonAddCategory.Name = "buttonAddCategory";
+            this.buttonAddCategory.Size = new System.Drawing.Size(187, 44);
+            this.buttonAddCategory.TabIndex = 5;
+            this.buttonAddCategory.Text = "Добавить категорию";
+            this.buttonAddCategory.UseVisualStyleBackColor = true;
+            this.buttonAddCategory.Click += new System.EventHandler(this.buttonAddCategory_Click);
             // 
             // MainForm
             // 
@@ -381,5 +404,7 @@
         private System.Windows.Forms.Button buttonAddProduct;
         private System.Windows.Forms.Button buttonEditProduct;
         private System.Windows.Forms.Button buttonDeleteProduct;
+        private System.Windows.Forms.Button buttonAddCategory;
+        private System.Windows.Forms.Label label4;
     }
 }

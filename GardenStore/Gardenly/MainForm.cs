@@ -25,6 +25,7 @@ namespace Gardenly
             if (user_.Role == "sotrudnik")
             {
                 panelAdministrator.Visible = false;
+                tabPageUsers.Parent = null;
             }
 
             productService_ = new ProductService();
@@ -64,7 +65,6 @@ namespace Gardenly
             try
             {
                 List<Category> categories = categoryService_.GetCategories();
-
                 categories.Insert(0, new Category(0, "Все категории"));
 
                 comboBoxCategory.DataSource = categories;
@@ -82,7 +82,6 @@ namespace Gardenly
         {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
-
             this.Close();
         }
 
@@ -153,7 +152,6 @@ namespace Gardenly
             }
 
             Product selectedProduct = dataGridViewProducts.CurrentRow.DataBoundItem as Product;
-            
             if (selectedProduct == null)
             {
                 return;
@@ -191,6 +189,13 @@ namespace Gardenly
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadProducts();
             }
+        }
+
+        private void buttonAddCategory_Click(object sender, EventArgs e)
+        {
+            CategoryForm categoryForm = new CategoryForm();
+            categoryForm.ShowDialog();
+            LoadCategories();
         }
     }
 }

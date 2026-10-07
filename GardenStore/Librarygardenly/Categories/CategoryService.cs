@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Npgsql;
 
 namespace Librarygardenly.Categories
@@ -14,7 +15,6 @@ namespace Librarygardenly.Categories
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
-
                 string sql = "SELECT id, name FROM categories ORDER BY name";
 
                 using (var command = new NpgsqlCommand(sql, connection))
@@ -27,6 +27,37 @@ namespace Librarygardenly.Categories
                 }
             }
             return categories;
+        }
+        // метод для добавления новой категории
+        public void AddCategory(string name)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+                string sql = @"INSERT INTO categories (name) VALUES (@name)";
+
+                using (var command = new NpgsqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@name", name);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public bool CategoryExists(string name)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+                string sql = @"SELECT COUNT(*) FROM categories WHERE LOWER(name) = LOWER(@name)";
+
+                using (var command = new NpgsqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@name", name);
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count > 0;
+                }
+            }
         }
     }
 }
