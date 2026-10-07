@@ -14,6 +14,7 @@ namespace Gardenly
         private ProductService productService_;
         private CategoryService categoryService_;
         private List<Product> products_;
+        private List<Product> filteredProducts_;    // для поиска товара в фильтре по категориям
 
         public MainForm(User user)
         {
@@ -34,6 +35,7 @@ namespace Gardenly
             try
             {
                 products_ = productService_.GetProducts();
+                filteredProducts_ = products_.ToList();
 
                 dataGridViewProducts.DataSource = products_;
 
@@ -66,11 +68,8 @@ namespace Gardenly
             }
             catch
             {
-                MessageBox.Show(
-                    "Не удалось загрузить категории.",
-                    "Ошибка",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show("Не удалось загрузить категории.", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -82,22 +81,53 @@ namespace Gardenly
             this.Close();
         }
 
-        private void buttonSortiтпCategories_Click(object sender, EventArgs e)
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string searchText = textBoxSearch.Text;
+            if (searchText == "")
+            {
+                dataGridViewProducts.DataSource = filteredProducts_;
+                return;
+            }
+            List<Product> searchResults = filteredProducts_.Where(p => p.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+
+            if (searchResults.Count == 0)
+            {
+                List<Product> allSearchResults = products_.Where(p => p.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+
+                if (allSearchResults.Count == 0)
+                {
+                    MessageBox.Show("Такого товара нет в базе.", "Поиск",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                MessageBox.Show("Товар не найден в выбранной категории.\n" + "Выберите другую категорию или выберите «Все категории».", "Поиск",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            dataGridViewProducts.DataSource = searchResults;
+        }
+
+        private void buttonFilterCategories_Click(object sender, EventArgs e)
         {
             if (comboBoxCategory.SelectedItem is Category selectedCategory)
             {
                 if (selectedCategory.Id == 0)
                 {
-                    dataGridViewProducts.DataSource = products_;
+                    filteredProducts_ = products_.ToList();
                 }
                 else
                 {
-                    List<Product> filteredProducts = products_
-                        .Where(p => p.CategoryId == selectedCategory.Id)
-                        .ToList();
-
-                    dataGridViewProducts.DataSource = filteredProducts;
+                    filteredProducts_ = products_.Where(p => p.CategoryId == selectedCategory.Id).ToList();
                 }
+                if (filteredProducts_.Count == 0)
+                {
+                    MessageBox.Show("Товаров в выбранной категории нет.\n" + "Выберите другую категорию или выберите «Все категории».", "Фильтр",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                dataGridViewProducts.DataSource = filteredProducts_;
             }
         }
     }

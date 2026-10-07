@@ -34,6 +34,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageProducts = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonFilterCategories = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
             this.tabPageUsers = new System.Windows.Forms.TabPage();
@@ -41,14 +48,12 @@
             this.tabPageReceipts = new System.Windows.Forms.TabPage();
             this.tabPageRemainingStock = new System.Windows.Forms.TabPage();
             this.tabPageStatements = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonSortiтпCategories = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageProducts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // labelUser
@@ -111,6 +116,7 @@
             // 
             // tabPageProducts
             // 
+            this.tabPageProducts.Controls.Add(this.panel3);
             this.tabPageProducts.Controls.Add(this.panel2);
             this.tabPageProducts.Controls.Add(this.dataGridViewProducts);
             this.tabPageProducts.Location = new System.Drawing.Point(4, 29);
@@ -121,6 +127,73 @@
             this.tabPageProducts.TabIndex = 0;
             this.tabPageProducts.Text = "Товары";
             this.tabPageProducts.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.RosyBrown;
+            this.panel3.Controls.Add(this.buttonSearch);
+            this.panel3.Controls.Add(this.textBoxSearch);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(864, 174);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(415, 92);
+            this.panel3.TabIndex = 5;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(226, 43);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(169, 34);
+            this.buttonSearch.TabIndex = 8;
+            this.buttonSearch.Text = "Поиск";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(226, 9);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(169, 27);
+            this.textBoxSearch.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(206, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Поиск по наименованию";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Orange;
+            this.panel2.Controls.Add(this.buttonFilterCategories);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.comboBoxCategory);
+            this.panel2.Location = new System.Drawing.Point(864, 21);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(415, 133);
+            this.panel2.TabIndex = 4;
+            // 
+            // buttonFilterCategories
+            // 
+            this.buttonFilterCategories.Location = new System.Drawing.Point(210, 70);
+            this.buttonFilterCategories.Name = "buttonFilterCategories";
+            this.buttonFilterCategories.Size = new System.Drawing.Size(156, 46);
+            this.buttonFilterCategories.TabIndex = 5;
+            this.buttonFilterCategories.Text = "Фильтруем";
+            this.buttonFilterCategories.UseVisualStyleBackColor = true;
+            this.buttonFilterCategories.Click += new System.EventHandler(this.buttonFilterCategories_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Категория";
             // 
             // comboBoxCategory
             // 
@@ -196,36 +269,6 @@
             this.tabPageStatements.Text = "Заявление на поплнение";
             this.tabPageStatements.UseVisualStyleBackColor = true;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Orange;
-            this.panel2.Controls.Add(this.buttonSortiтпCategories);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.comboBoxCategory);
-            this.panel2.Location = new System.Drawing.Point(864, 21);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(415, 133);
-            this.panel2.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Категория";
-            // 
-            // buttonSortiтпCategories
-            // 
-            this.buttonSortiтпCategories.Location = new System.Drawing.Point(210, 70);
-            this.buttonSortiтпCategories.Name = "buttonSortiтпCategories";
-            this.buttonSortiтпCategories.Size = new System.Drawing.Size(156, 46);
-            this.buttonSortiтпCategories.TabIndex = 5;
-            this.buttonSortiтпCategories.Text = "Фильтруем";
-            this.buttonSortiтпCategories.UseVisualStyleBackColor = true;
-            this.buttonSortiтпCategories.Click += new System.EventHandler(this.buttonSortiтпCategories_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -243,9 +286,11 @@
             this.panel1.PerformLayout();
             this.tabControl.ResumeLayout(false);
             this.tabPageProducts.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,7 +310,11 @@
         private System.Windows.Forms.DataGridView dataGridViewProducts;
         private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button buttonSortiтпCategories;
+        private System.Windows.Forms.Button buttonFilterCategories;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.Label label2;
     }
 }
