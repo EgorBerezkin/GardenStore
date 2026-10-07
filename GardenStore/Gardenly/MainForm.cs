@@ -19,9 +19,13 @@ namespace Gardenly
         public MainForm(User user)
         {
             InitializeComponent();
-            user_ = user;
 
+            user_ = user;
             labelUser.Text = "Вы вошли как: " + user_.FullName;
+            if (user_.Role == "sotrudnik")
+            {
+                panelAdministrator.Visible = false;
+            }
 
             productService_ = new ProductService();
             LoadProducts();
@@ -56,6 +60,7 @@ namespace Gardenly
 
         private void LoadCategories()
         {
+            categoryService_ = new CategoryService();
             try
             {
                 List<Category> categories = categoryService_.GetCategories();
@@ -128,6 +133,63 @@ namespace Gardenly
                     return;
                 }
                 dataGridViewProducts.DataSource = filteredProducts_;
+            }
+        }
+
+        private void buttonAddProduct_Click(object sender, EventArgs e)
+        {
+            ProductForm productForm = new ProductForm();
+            productForm.ShowDialog();
+            LoadProducts();
+        }
+
+        private void buttonEditProduct_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewProducts.CurrentRow == null)
+            {
+                MessageBox.Show("Выберите товар для редактирования.", "Редактирование",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            Product selectedProduct = dataGridViewProducts.CurrentRow.DataBoundItem as Product;
+            
+            if (selectedProduct == null)
+            {
+                return;
+            }
+
+            ProductForm productForm = new ProductForm(selectedProduct);
+            productForm.ShowDialog();
+            LoadProducts();
+        }
+
+        private void buttonDeleteProduct_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewProducts.CurrentRow == null)
+            {
+                MessageBox.Show("Выберите товар для удаления.", "Удаление",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            Product selectedProduct = dataGridViewProducts.CurrentRow.DataBoundItem as Product;
+
+            if (selectedProduct == null)
+            {
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Вы действительно хотите удалить товар \"" + selectedProduct.Name + "\"?", "Удаление товара",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                productService_.DeleteProduct(selectedProduct.Id);
+
+                MessageBox.Show("Товар успешно удалён.", "Готово",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadProducts();
             }
         }
     }
