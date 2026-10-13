@@ -31,7 +31,7 @@ namespace UnitTestGardenly
             bool found = false;
             int productId = 0;
 
-            // Поиск товара по названию
+            // Поиск товара по названию, для убеждения что товар точно есть
             foreach (Product item in products)
             {
                 if (item.Name == productName)
