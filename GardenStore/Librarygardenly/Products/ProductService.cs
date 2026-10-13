@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Npgsql;
 
 namespace Librarygardenly.Products
@@ -41,6 +42,10 @@ namespace Librarygardenly.Products
         // метод на добавление товара в бд
         public void AddProduct(Product product)
         {
+            if (product.Price < 0)
+            {
+                throw new ArgumentException("Цена не может быть отрицательной.");
+            }
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
