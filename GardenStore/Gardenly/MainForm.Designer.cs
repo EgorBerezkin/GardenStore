@@ -32,7 +32,20 @@
             this.labelUser = new System.Windows.Forms.Label();
             this.buttonExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabPageReceipt = new System.Windows.Forms.TabPage();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.dataGridViewReceipt = new System.Windows.Forms.DataGridView();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.bettonViewingReceipt = new System.Windows.Forms.Button();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.buttonAddReceipt = new System.Windows.Forms.Button();
             this.tabPageProducts = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
@@ -57,13 +70,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonFilterCategories = new System.Windows.Forms.Button();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
-            this.tabPageUsers = new System.Windows.Forms.TabPage();
-            this.tabPageSales = new System.Windows.Forms.TabPage();
-            this.tabPageReceipts = new System.Windows.Forms.TabPage();
-            this.tabPageRemainingStock = new System.Windows.Forms.TabPage();
-            this.tabPageStatements = new System.Windows.Forms.TabPage();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.panel1.SuspendLayout();
-            this.tabControl.SuspendLayout();
+            this.tabPageReceipt.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceipt)).BeginInit();
+            this.panel13.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.tabPageProducts.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
@@ -74,23 +89,24 @@
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.tabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelUser
             // 
             this.labelUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelUser.AutoSize = true;
-            this.labelUser.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelUser.Font = new System.Drawing.Font("Georgia", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelUser.Location = new System.Drawing.Point(1365, 27);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(141, 20);
+            this.labelUser.Size = new System.Drawing.Size(145, 20);
             this.labelUser.TabIndex = 0;
             this.labelUser.Text = "Пользователь";
             // 
             // buttonExit
             // 
             this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonExit.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonExit.Font = new System.Drawing.Font("Georgia", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonExit.Location = new System.Drawing.Point(29, 17);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExit.Name = "buttonExit";
@@ -114,25 +130,165 @@
             this.panel1.Size = new System.Drawing.Size(1868, 66);
             this.panel1.TabIndex = 9;
             // 
-            // tabControl
+            // tabPageReceipt
             // 
-            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabPageReceipt.Controls.Add(this.panel9);
+            this.tabPageReceipt.Controls.Add(this.panel13);
+            this.tabPageReceipt.Controls.Add(this.panel15);
+            this.tabPageReceipt.Location = new System.Drawing.Point(4, 29);
+            this.tabPageReceipt.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageReceipt.Name = "tabPageReceipt";
+            this.tabPageReceipt.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageReceipt.Size = new System.Drawing.Size(1826, 667);
+            this.tabPageReceipt.TabIndex = 6;
+            this.tabPageReceipt.Text = "Поступления";
+            this.tabPageReceipt.UseVisualStyleBackColor = true;
+            // 
+            // panel9
+            // 
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel9.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel9.Controls.Add(this.dataGridViewReceipt);
+            this.panel9.Location = new System.Drawing.Point(11, 10);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1180, 648);
+            this.panel9.TabIndex = 7;
+            // 
+            // dataGridViewReceipt
+            // 
+            this.dataGridViewReceipt.AccessibleRole = System.Windows.Forms.AccessibleRole.Column;
+            this.dataGridViewReceipt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl.Controls.Add(this.tabPageProducts);
-            this.tabControl.Controls.Add(this.tabPageUsers);
-            this.tabControl.Controls.Add(this.tabPageSales);
-            this.tabControl.Controls.Add(this.tabPageReceipts);
-            this.tabControl.Controls.Add(this.tabPageRemainingStock);
-            this.tabControl.Controls.Add(this.tabPageStatements);
-            this.tabControl.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabControl.Location = new System.Drawing.Point(-1, -2);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1834, 700);
-            this.tabControl.TabIndex = 10;
+            this.dataGridViewReceipt.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewReceipt.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewReceipt.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewReceipt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReceipt.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewReceipt.Location = new System.Drawing.Point(9, 10);
+            this.dataGridViewReceipt.Name = "dataGridViewReceipt";
+            this.dataGridViewReceipt.RowHeadersWidth = 51;
+            this.dataGridViewReceipt.RowTemplate.Height = 24;
+            this.dataGridViewReceipt.Size = new System.Drawing.Size(1159, 628);
+            this.dataGridViewReceipt.TabIndex = 2;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel13.Controls.Add(this.label9);
+            this.panel13.Controls.Add(this.panel14);
+            this.panel13.Controls.Add(this.button5);
+            this.panel13.Controls.Add(this.textBox1);
+            this.panel13.Location = new System.Drawing.Point(1212, 180);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(524, 139);
+            this.panel13.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(10, 55);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(149, 21);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Введите товар:";
+            // 
+            // panel14
+            // 
+            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel14.BackColor = System.Drawing.Color.Salmon;
+            this.panel14.Controls.Add(this.label10);
+            this.panel14.Location = new System.Drawing.Point(-15, -5);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(577, 43);
+            this.panel14.TabIndex = 7;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Georgia", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(116, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(327, 24);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Поиск поступления по дате";
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Location = new System.Drawing.Point(379, 92);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(135, 34);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Поиск";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(190, 52);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(323, 28);
+            this.textBox1.TabIndex = 7;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel15.Controls.Add(this.bettonViewingReceipt);
+            this.panel15.Controls.Add(this.panel16);
+            this.panel15.Controls.Add(this.buttonAddReceipt);
+            this.panel15.Location = new System.Drawing.Point(1212, 10);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(524, 144);
+            this.panel15.TabIndex = 4;
+            // 
+            // bettonViewingReceipt
+            // 
+            this.bettonViewingReceipt.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bettonViewingReceipt.Location = new System.Drawing.Point(14, 55);
+            this.bettonViewingReceipt.Name = "bettonViewingReceipt";
+            this.bettonViewingReceipt.Size = new System.Drawing.Size(498, 35);
+            this.bettonViewingReceipt.TabIndex = 7;
+            this.bettonViewingReceipt.Text = "Просмотр поступления";
+            this.bettonViewingReceipt.UseVisualStyleBackColor = true;
+            // 
+            // panel16
+            // 
+            this.panel16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel16.BackColor = System.Drawing.Color.Salmon;
+            this.panel16.Controls.Add(this.label12);
+            this.panel16.Location = new System.Drawing.Point(-15, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(562, 42);
+            this.panel16.TabIndex = 6;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Georgia", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(120, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(324, 24);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Действия с поступлениями";
+            // 
+            // buttonAddReceipt
+            // 
+            this.buttonAddReceipt.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAddReceipt.Location = new System.Drawing.Point(14, 96);
+            this.buttonAddReceipt.Name = "buttonAddReceipt";
+            this.buttonAddReceipt.Size = new System.Drawing.Size(499, 35);
+            this.buttonAddReceipt.TabIndex = 5;
+            this.buttonAddReceipt.Text = "Добавить поступление";
+            this.buttonAddReceipt.UseVisualStyleBackColor = true;
             // 
             // tabPageProducts
             // 
@@ -416,60 +572,21 @@
             this.comboBoxCategory.Size = new System.Drawing.Size(375, 29);
             this.comboBoxCategory.TabIndex = 3;
             // 
-            // tabPageUsers
+            // tabControl
             // 
-            this.tabPageUsers.Location = new System.Drawing.Point(4, 29);
-            this.tabPageUsers.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPageUsers.Name = "tabPageUsers";
-            this.tabPageUsers.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageUsers.Size = new System.Drawing.Size(1826, 667);
-            this.tabPageUsers.TabIndex = 1;
-            this.tabPageUsers.Text = "Пользователи";
-            this.tabPageUsers.UseVisualStyleBackColor = true;
-            // 
-            // tabPageSales
-            // 
-            this.tabPageSales.Location = new System.Drawing.Point(4, 29);
-            this.tabPageSales.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPageSales.Name = "tabPageSales";
-            this.tabPageSales.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageSales.Size = new System.Drawing.Size(1826, 667);
-            this.tabPageSales.TabIndex = 2;
-            this.tabPageSales.Text = "Продажи/Заказы";
-            this.tabPageSales.UseVisualStyleBackColor = true;
-            // 
-            // tabPageReceipts
-            // 
-            this.tabPageReceipts.Location = new System.Drawing.Point(4, 29);
-            this.tabPageReceipts.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPageReceipts.Name = "tabPageReceipts";
-            this.tabPageReceipts.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageReceipts.Size = new System.Drawing.Size(1826, 667);
-            this.tabPageReceipts.TabIndex = 3;
-            this.tabPageReceipts.Text = "Поступления";
-            this.tabPageReceipts.UseVisualStyleBackColor = true;
-            // 
-            // tabPageRemainingStock
-            // 
-            this.tabPageRemainingStock.Location = new System.Drawing.Point(4, 29);
-            this.tabPageRemainingStock.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPageRemainingStock.Name = "tabPageRemainingStock";
-            this.tabPageRemainingStock.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageRemainingStock.Size = new System.Drawing.Size(1826, 667);
-            this.tabPageRemainingStock.TabIndex = 4;
-            this.tabPageRemainingStock.Text = "Остатки товаров";
-            this.tabPageRemainingStock.UseVisualStyleBackColor = true;
-            // 
-            // tabPageStatements
-            // 
-            this.tabPageStatements.Location = new System.Drawing.Point(4, 29);
-            this.tabPageStatements.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPageStatements.Name = "tabPageStatements";
-            this.tabPageStatements.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageStatements.Size = new System.Drawing.Size(1826, 667);
-            this.tabPageStatements.TabIndex = 5;
-            this.tabPageStatements.Text = "Заявление на поплнение";
-            this.tabPageStatements.UseVisualStyleBackColor = true;
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl.Controls.Add(this.tabPageProducts);
+            this.tabControl.Controls.Add(this.tabPageReceipt);
+            this.tabControl.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabControl.Location = new System.Drawing.Point(-1, -2);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(1834, 700);
+            this.tabControl.TabIndex = 10;
             // 
             // MainForm
             // 
@@ -486,7 +603,16 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tabControl.ResumeLayout(false);
+            this.tabPageReceipt.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceipt)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            this.panel15.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
             this.tabPageProducts.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
@@ -503,6 +629,7 @@
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.tabControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -512,35 +639,44 @@
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPageUsers;
-        private System.Windows.Forms.TabPage tabPageSales;
-        private System.Windows.Forms.TabPage tabPageReceipts;
-        private System.Windows.Forms.TabPage tabPageRemainingStock;
-        private System.Windows.Forms.TabPage tabPageStatements;
+        private System.Windows.Forms.TabPage tabPageReceipt;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.DataGridView dataGridViewReceipt;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button buttonAddReceipt;
         private System.Windows.Forms.TabPage tabPageProducts;
-        private System.Windows.Forms.DataGridView dataGridViewProducts;
-        private System.Windows.Forms.ComboBox comboBoxCategory;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button buttonFilterCategories;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.TextBox textBoxSearch;
-        private System.Windows.Forms.Panel panelAdministrator;
-        private System.Windows.Forms.Button buttonAddProduct;
-        private System.Windows.Forms.Button buttonEditProduct;
-        private System.Windows.Forms.Button buttonDeleteProduct;
-        private System.Windows.Forms.Button buttonAddCategory;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridViewProducts;
+        private System.Windows.Forms.Panel panelAdministrator;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonAddCategory;
+        private System.Windows.Forms.Button buttonDeleteProduct;
+        private System.Windows.Forms.Button buttonAddProduct;
+        private System.Windows.Forms.Button buttonEditProduct;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonFilterCategories;
+        private System.Windows.Forms.ComboBox comboBoxCategory;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.Button bettonViewingReceipt;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

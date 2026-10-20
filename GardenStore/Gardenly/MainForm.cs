@@ -25,7 +25,7 @@ namespace Gardenly
             if (user_.Role == "sotrudnik")
             {
                 panelAdministrator.Visible = false;
-                tabPageUsers.Parent = null;
+                // tabPageUsers.Parent = null;
             }
 
             productService_ = new ProductService();

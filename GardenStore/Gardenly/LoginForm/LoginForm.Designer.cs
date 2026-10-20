@@ -45,18 +45,18 @@
             // labelLogin
             // 
             this.labelLogin.AutoSize = true;
-            this.labelLogin.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelLogin.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelLogin.Location = new System.Drawing.Point(33, 90);
             this.labelLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(75, 24);
+            this.labelLogin.Size = new System.Drawing.Size(77, 24);
             this.labelLogin.TabIndex = 0;
             this.labelLogin.Text = "Логин:";
             // 
             // textBoxLogin
             // 
             this.textBoxLogin.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxLogin.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLogin.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxLogin.Location = new System.Drawing.Point(103, 87);
             this.textBoxLogin.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxLogin.Name = "textBoxLogin";
@@ -66,18 +66,18 @@
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPassword.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelPassword.Location = new System.Drawing.Point(23, 129);
             this.labelPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(86, 24);
+            this.labelPassword.Size = new System.Drawing.Size(88, 24);
             this.labelPassword.TabIndex = 2;
             this.labelPassword.Text = "Пароль:";
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPassword.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPassword.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxPassword.Location = new System.Drawing.Point(103, 129);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPassword.Name = "textBoxPassword";
@@ -87,7 +87,7 @@
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonLogin.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonLogin.Location = new System.Drawing.Point(212, 173);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogin.Name = "buttonLogin";
@@ -100,11 +100,11 @@
             // labelAttemps
             // 
             this.labelAttemps.AutoSize = true;
-            this.labelAttemps.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelAttemps.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelAttemps.Location = new System.Drawing.Point(262, 221);
             this.labelAttemps.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAttemps.Name = "labelAttemps";
-            this.labelAttemps.Size = new System.Drawing.Size(175, 20);
+            this.labelAttemps.Size = new System.Drawing.Size(189, 20);
             this.labelAttemps.TabIndex = 5;
             this.labelAttemps.Text = "Осталось попыток: 3";
             // 
@@ -131,17 +131,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Georgia", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(69, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(423, 35);
+            this.label1.Size = new System.Drawing.Size(450, 35);
             this.label1.TabIndex = 7;
             this.label1.Text = "Авторизация пользоватя";
             // 
             // buttonExit
             // 
-            this.buttonExit.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonExit.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonExit.Location = new System.Drawing.Point(324, 173);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExit.Name = "buttonExit";
