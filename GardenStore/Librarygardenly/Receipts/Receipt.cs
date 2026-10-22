@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Librarygardenly.Receipts
 {
@@ -11,7 +7,9 @@ namespace Librarygardenly.Receipts
         public int Id { get; set; }
         public int UserId { get; set; }
         public DateTime ReceiptDate { get; set; }
+        public string UserFullName { get; set; }
 
-       // добавить список товаров
+        public int ItemsCount { get; set; }
+        public double TotalAmount { get; set; }
     }
 }

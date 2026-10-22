@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Gardenly.ReceiptForm;
 using Librarygardenly;
 using Librarygardenly.Categories;
 using Librarygardenly.Products;
+using Librarygardenly.Receipts;
 
 namespace Gardenly
 {
@@ -15,6 +17,7 @@ namespace Gardenly
         private CategoryService categoryService_;
         private List<Product> products_;
         private List<Product> filteredProducts_;    // для поиска товара в фильтре по категориям
+        private ReceiptService receiptService_;
 
         public MainForm(User user)
         {
@@ -33,6 +36,35 @@ namespace Gardenly
 
             categoryService_ = new CategoryService();
             LoadCategories();
+
+            receiptService_ = new ReceiptService();
+            LoadReceipts();
+        }
+
+        private void LoadReceipts()
+        {
+            try
+            {
+                List<Receipt> receipts = receiptService_.GetReceipts();
+
+                dataGridViewReceipts.DataSource = null;
+                dataGridViewReceipts.DataSource = receipts;
+
+                dataGridViewReceipts.Columns["Id"].HeaderText = "Номер";
+                dataGridViewReceipts.Columns["UserId"].Visible = false;
+
+                dataGridViewReceipts.Columns["ReceiptDate"].HeaderText = "Дата";
+                dataGridViewReceipts.Columns["ReceiptDate"].DefaultCellStyle.Format = "dd.MM.yyyy";
+
+                dataGridViewReceipts.Columns["UserFullName"].HeaderText = "Сотрудник";
+                dataGridViewReceipts.Columns["ItemsCount"].HeaderText = "Позиций";
+                dataGridViewReceipts.Columns["TotalAmount"].HeaderText = "Сумма";
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось загрузить поступления. " + "Проверьте подключение к базе данных.", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LoadProducts()
@@ -41,7 +73,6 @@ namespace Gardenly
             {
                 products_ = productService_.GetProducts();
                 filteredProducts_ = products_.ToList();
-
                 dataGridViewProducts.DataSource = products_;
 
                 dataGridViewProducts.Columns["Id"].HeaderText = "Код";
@@ -196,6 +227,36 @@ namespace Gardenly
             CategoryForm categoryForm = new CategoryForm();
             categoryForm.ShowDialog();
             LoadCategories();
+        }
+
+        private void buttonAddReceipt_Click(object sender, EventArgs e)
+        {
+            using (ReceiptForm.ReceiptForm form = new ReceiptForm.ReceiptForm(user_.Id))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadReceipts();
+                    LoadProducts();
+                }
+            }
+        }
+
+        private void buttonViewReceipt_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewReceipts.CurrentRow == null)
+            {
+                MessageBox.Show("Выберите поступление.");
+                return;
+            }
+
+            Receipt receipt = dataGridViewReceipts.CurrentRow.DataBoundItem as Receipt;
+            if (receipt == null)
+                return;
+
+            using (ReceiptViewForm form = new ReceiptViewForm(receipt.Id, receipt.ReceiptDate.ToString("dd.MM.yyyy"), receipt.UserFullName))
+            {
+                form.ShowDialog();
+            }
         }
     }
 }

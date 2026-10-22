@@ -134,6 +134,12 @@
     <Compile Include="ReceiptForm\ReceiptForm.Designer.cs">
       <DependentUpon>ReceiptForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReceiptForm\ReceiptViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptForm\ReceiptViewForm.Designer.cs">
+      <DependentUpon>ReceiptViewForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ProductsForm\CategoryForm.resx">
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +163,9 @@
     </Compile>
     <EmbeddedResource Include="ReceiptForm\ReceiptForm.resx">
       <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiptForm\ReceiptViewForm.resx">
+      <DependentUpon>ReceiptViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

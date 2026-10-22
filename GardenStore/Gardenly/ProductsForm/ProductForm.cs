@@ -11,13 +11,16 @@ namespace Gardenly
         private CategoryService categoryService_;
         private ProductService productService_;
         private Product product_;
+
+        public Product CreatedProduct { get; private set; }
+        private bool receiptMode_ = false;
+
         public ProductForm()
         {
             InitializeComponent();
 
             categoryService_ = new CategoryService();
             productService_ = new ProductService();
-
             LoadCategories();
         }
 
@@ -40,6 +43,11 @@ namespace Gardenly
             textBoxPrice.Text = product_.Price.ToString();
             textBoxQuantity.Text = product_.Quantity.ToString();
             textBoxDescription.Text = product_.Description;
+        }
+
+        public ProductForm(bool receiptMode) :this()
+        {
+            receiptMode_ = receiptMode;
         }
 
         private void LoadCategories()
@@ -69,23 +77,56 @@ namespace Gardenly
         {
             try
             {
-                string name = textBoxName.Text;
-                int categoryId = (int)comboBoxCategory.SelectedValue;
+                string name = textBoxName.Text.Trim();
 
-                double price;
-                if (!double.TryParse(textBoxPrice.Text, out price) || price < 0)
+                if (string.IsNullOrWhiteSpace(name))
                 {
-                    MessageBox.Show("Введите корректную цену товара", "Ошибка",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Введите название товара.");
                     return;
                 }
 
-                int quantity = Convert.ToInt32(textBoxQuantity.Text);
+                if (comboBoxCategory.SelectedValue == null)
+                {
+                    MessageBox.Show("Выберите категорию товара.");
+                    return;
+                }
+
+                int categoryId;
+
+                if (!int.TryParse(comboBoxCategory.SelectedValue.ToString(), out categoryId) || categoryId <= 0)
+                {
+                    MessageBox.Show("Выберите корректную категорию.");
+                    return;
+                }
+
+                double price;
+
+                if (!double.TryParse(textBoxPrice.Text, out price) || double.IsNaN(price) || double.IsInfinity(price) || price < 0)
+                {
+                    MessageBox.Show("Введите корректную цену товара.");
+                    return;
+                }
+
+                int quantity;
+
+                if (!int.TryParse(textBoxQuantity.Text, out quantity) || quantity <= 0)
+                {
+                    MessageBox.Show("Количество должно быть положительным целым числом.");
+                    return;
+                }
+
                 string description = textBoxDescription.Text;
 
                 if (product_ == null)
                 {
                     Product product = new Product(0, name, categoryId, "", price, quantity, description);
+                    if (receiptMode_)
+                    {
+                        CreatedProduct = product;
+                        DialogResult = DialogResult.OK;
+                        Close();
+                        return;
+                    }
                     productService_.AddProduct(product);
                 }
                 else
@@ -95,7 +136,6 @@ namespace Gardenly
                     product_.Price = price;
                     product_.Quantity = quantity;
                     product_.Description = description;
-
                     productService_.UpdateProduct(product_);
                 }
                 this.Close();

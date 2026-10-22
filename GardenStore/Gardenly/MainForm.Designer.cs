@@ -34,7 +34,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabPageReceipt = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.dataGridViewReceipt = new System.Windows.Forms.DataGridView();
+            this.dataGridViewReceipts = new System.Windows.Forms.DataGridView();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -42,7 +42,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.bettonViewingReceipt = new System.Windows.Forms.Button();
+            this.buttonViewReceipt = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.buttonAddReceipt = new System.Windows.Forms.Button();
@@ -74,7 +74,7 @@
             this.panel1.SuspendLayout();
             this.tabPageReceipt.SuspendLayout();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceipt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceipts)).BeginInit();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -149,29 +149,31 @@
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel9.BackColor = System.Drawing.Color.YellowGreen;
-            this.panel9.Controls.Add(this.dataGridViewReceipt);
+            this.panel9.Controls.Add(this.dataGridViewReceipts);
             this.panel9.Location = new System.Drawing.Point(11, 10);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1180, 648);
             this.panel9.TabIndex = 7;
             // 
-            // dataGridViewReceipt
+            // dataGridViewReceipts
             // 
-            this.dataGridViewReceipt.AccessibleRole = System.Windows.Forms.AccessibleRole.Column;
-            this.dataGridViewReceipt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewReceipts.AccessibleRole = System.Windows.Forms.AccessibleRole.Column;
+            this.dataGridViewReceipts.AllowUserToAddRows = false;
+            this.dataGridViewReceipts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewReceipt.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewReceipt.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewReceipt.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewReceipt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewReceipt.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewReceipt.Location = new System.Drawing.Point(9, 10);
-            this.dataGridViewReceipt.Name = "dataGridViewReceipt";
-            this.dataGridViewReceipt.RowHeadersWidth = 51;
-            this.dataGridViewReceipt.RowTemplate.Height = 24;
-            this.dataGridViewReceipt.Size = new System.Drawing.Size(1159, 628);
-            this.dataGridViewReceipt.TabIndex = 2;
+            this.dataGridViewReceipts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewReceipts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewReceipts.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewReceipts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReceipts.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewReceipts.Location = new System.Drawing.Point(9, 10);
+            this.dataGridViewReceipts.Name = "dataGridViewReceipts";
+            this.dataGridViewReceipts.ReadOnly = true;
+            this.dataGridViewReceipts.RowHeadersWidth = 51;
+            this.dataGridViewReceipts.RowTemplate.Height = 24;
+            this.dataGridViewReceipts.Size = new System.Drawing.Size(1159, 628);
+            this.dataGridViewReceipts.TabIndex = 2;
             // 
             // panel13
             // 
@@ -240,7 +242,7 @@
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.YellowGreen;
-            this.panel15.Controls.Add(this.bettonViewingReceipt);
+            this.panel15.Controls.Add(this.buttonViewReceipt);
             this.panel15.Controls.Add(this.panel16);
             this.panel15.Controls.Add(this.buttonAddReceipt);
             this.panel15.Location = new System.Drawing.Point(1212, 10);
@@ -248,15 +250,16 @@
             this.panel15.Size = new System.Drawing.Size(524, 144);
             this.panel15.TabIndex = 4;
             // 
-            // bettonViewingReceipt
+            // buttonViewReceipt
             // 
-            this.bettonViewingReceipt.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bettonViewingReceipt.Location = new System.Drawing.Point(14, 55);
-            this.bettonViewingReceipt.Name = "bettonViewingReceipt";
-            this.bettonViewingReceipt.Size = new System.Drawing.Size(498, 35);
-            this.bettonViewingReceipt.TabIndex = 7;
-            this.bettonViewingReceipt.Text = "Просмотр поступления";
-            this.bettonViewingReceipt.UseVisualStyleBackColor = true;
+            this.buttonViewReceipt.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonViewReceipt.Location = new System.Drawing.Point(14, 55);
+            this.buttonViewReceipt.Name = "buttonViewReceipt";
+            this.buttonViewReceipt.Size = new System.Drawing.Size(498, 35);
+            this.buttonViewReceipt.TabIndex = 7;
+            this.buttonViewReceipt.Text = "Просмотр поступления";
+            this.buttonViewReceipt.UseVisualStyleBackColor = true;
+            this.buttonViewReceipt.Click += new System.EventHandler(this.buttonViewReceipt_Click);
             // 
             // panel16
             // 
@@ -289,6 +292,7 @@
             this.buttonAddReceipt.TabIndex = 5;
             this.buttonAddReceipt.Text = "Добавить поступление";
             this.buttonAddReceipt.UseVisualStyleBackColor = true;
+            this.buttonAddReceipt.Click += new System.EventHandler(this.buttonAddReceipt_Click);
             // 
             // tabPageProducts
             // 
@@ -605,7 +609,7 @@
             this.panel1.PerformLayout();
             this.tabPageReceipt.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceipt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceipts)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel14.ResumeLayout(false);
@@ -641,7 +645,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabPage tabPageReceipt;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.DataGridView dataGridViewReceipt;
+        private System.Windows.Forms.DataGridView dataGridViewReceipts;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label12;
@@ -671,7 +675,7 @@
         private System.Windows.Forms.Button buttonFilterCategories;
         private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.Button bettonViewingReceipt;
+        private System.Windows.Forms.Button buttonViewReceipt;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel14;
