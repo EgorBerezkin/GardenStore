@@ -36,10 +36,14 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.dataGridViewReceipts = new System.Windows.Forms.DataGridView();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxSotrudnik = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerReceipt = new System.Windows.Forms.DateTimePicker();
+            this.buttonSearh = new System.Windows.Forms.Button();
+            this.buttonResetReceipts = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.buttonSearh = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.buttonViewReceipt = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
@@ -70,10 +74,6 @@
             this.buttonFilterCategories = new System.Windows.Forms.Button();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.buttonResetReceipts = new System.Windows.Forms.Button();
-            this.dateTimePickerReceipt = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxSotrudnik = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabPageReceipt.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -190,8 +190,63 @@
             this.panel13.Controls.Add(this.panel14);
             this.panel13.Location = new System.Drawing.Point(1212, 180);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(503, 197);
+            this.panel13.Size = new System.Drawing.Size(524, 197);
             this.panel13.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(10, 99);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(197, 21);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Фильтрация по ФИО:";
+            // 
+            // comboBoxSotrudnik
+            // 
+            this.comboBoxSotrudnik.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxSotrudnik.FormattingEnabled = true;
+            this.comboBoxSotrudnik.Location = new System.Drawing.Point(245, 96);
+            this.comboBoxSotrudnik.Name = "comboBoxSotrudnik";
+            this.comboBoxSotrudnik.Size = new System.Drawing.Size(268, 29);
+            this.comboBoxSotrudnik.TabIndex = 11;
+            this.comboBoxSotrudnik.SelectedIndexChanged += new System.EventHandler(this.comboBoxSotrudnik_SelectedIndexChanged);
+            // 
+            // dateTimePickerReceipt
+            // 
+            this.dateTimePickerReceipt.CalendarFont = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePickerReceipt.CalendarTitleBackColor = System.Drawing.Color.Salmon;
+            this.dateTimePickerReceipt.CalendarTitleForeColor = System.Drawing.Color.Salmon;
+            this.dateTimePickerReceipt.CalendarTrailingForeColor = System.Drawing.Color.Salmon;
+            this.dateTimePickerReceipt.Location = new System.Drawing.Point(245, 55);
+            this.dateTimePickerReceipt.Name = "dateTimePickerReceipt";
+            this.dateTimePickerReceipt.ShowCheckBox = true;
+            this.dateTimePickerReceipt.Size = new System.Drawing.Size(268, 27);
+            this.dateTimePickerReceipt.TabIndex = 10;
+            // 
+            // buttonSearh
+            // 
+            this.buttonSearh.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearh.Location = new System.Drawing.Point(273, 141);
+            this.buttonSearh.Name = "buttonSearh";
+            this.buttonSearh.Size = new System.Drawing.Size(117, 34);
+            this.buttonSearh.TabIndex = 8;
+            this.buttonSearh.Text = "Поиск";
+            this.buttonSearh.UseVisualStyleBackColor = true;
+            this.buttonSearh.Click += new System.EventHandler(this.buttonSearh_Click);
+            // 
+            // buttonResetReceipts
+            // 
+            this.buttonResetReceipts.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonResetReceipts.Location = new System.Drawing.Point(396, 141);
+            this.buttonResetReceipts.Name = "buttonResetReceipts";
+            this.buttonResetReceipts.Size = new System.Drawing.Size(117, 34);
+            this.buttonResetReceipts.TabIndex = 9;
+            this.buttonResetReceipts.Text = "Сброс";
+            this.buttonResetReceipts.UseVisualStyleBackColor = true;
+            this.buttonResetReceipts.Click += new System.EventHandler(this.buttonResetReceipts_Click);
             // 
             // label9
             // 
@@ -212,7 +267,7 @@
             this.panel14.Controls.Add(this.label10);
             this.panel14.Location = new System.Drawing.Point(-15, -5);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(556, 43);
+            this.panel14.Size = new System.Drawing.Size(577, 43);
             this.panel14.TabIndex = 7;
             // 
             // label10
@@ -226,17 +281,6 @@
             this.label10.TabIndex = 4;
             this.label10.Text = "Фильтрация  по дате и сотруднику";
             // 
-            // buttonSearh
-            // 
-            this.buttonSearh.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearh.Location = new System.Drawing.Point(241, 141);
-            this.buttonSearh.Name = "buttonSearh";
-            this.buttonSearh.Size = new System.Drawing.Size(117, 34);
-            this.buttonSearh.TabIndex = 8;
-            this.buttonSearh.Text = "Поиск";
-            this.buttonSearh.UseVisualStyleBackColor = true;
-            this.buttonSearh.Click += new System.EventHandler(this.buttonSearh_Click);
-            // 
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.YellowGreen;
@@ -245,7 +289,7 @@
             this.panel15.Controls.Add(this.buttonAddReceipt);
             this.panel15.Location = new System.Drawing.Point(1212, 10);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(503, 144);
+            this.panel15.Size = new System.Drawing.Size(524, 144);
             this.panel15.TabIndex = 4;
             // 
             // buttonViewReceipt
@@ -253,7 +297,7 @@
             this.buttonViewReceipt.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonViewReceipt.Location = new System.Drawing.Point(14, 55);
             this.buttonViewReceipt.Name = "buttonViewReceipt";
-            this.buttonViewReceipt.Size = new System.Drawing.Size(475, 35);
+            this.buttonViewReceipt.Size = new System.Drawing.Size(499, 35);
             this.buttonViewReceipt.TabIndex = 7;
             this.buttonViewReceipt.Text = "Просмотр поступления";
             this.buttonViewReceipt.UseVisualStyleBackColor = true;
@@ -267,7 +311,7 @@
             this.panel16.Controls.Add(this.label12);
             this.panel16.Location = new System.Drawing.Point(-15, 0);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(541, 42);
+            this.panel16.Size = new System.Drawing.Size(562, 42);
             this.panel16.TabIndex = 6;
             // 
             // label12
@@ -286,7 +330,7 @@
             this.buttonAddReceipt.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAddReceipt.Location = new System.Drawing.Point(14, 96);
             this.buttonAddReceipt.Name = "buttonAddReceipt";
-            this.buttonAddReceipt.Size = new System.Drawing.Size(475, 35);
+            this.buttonAddReceipt.Size = new System.Drawing.Size(499, 35);
             this.buttonAddReceipt.TabIndex = 5;
             this.buttonAddReceipt.Text = "Добавить поступление";
             this.buttonAddReceipt.UseVisualStyleBackColor = true;
@@ -589,50 +633,6 @@
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1834, 700);
             this.tabControl.TabIndex = 10;
-            // 
-            // buttonResetReceipts
-            // 
-            this.buttonResetReceipts.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonResetReceipts.Location = new System.Drawing.Point(364, 141);
-            this.buttonResetReceipts.Name = "buttonResetReceipts";
-            this.buttonResetReceipts.Size = new System.Drawing.Size(117, 34);
-            this.buttonResetReceipts.TabIndex = 9;
-            this.buttonResetReceipts.Text = "Сброс";
-            this.buttonResetReceipts.UseVisualStyleBackColor = true;
-            this.buttonResetReceipts.Click += new System.EventHandler(this.buttonResetReceipts_Click);
-            // 
-            // dateTimePickerReceipt
-            // 
-            this.dateTimePickerReceipt.CalendarFont = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePickerReceipt.CalendarTitleBackColor = System.Drawing.Color.Salmon;
-            this.dateTimePickerReceipt.CalendarTitleForeColor = System.Drawing.Color.Salmon;
-            this.dateTimePickerReceipt.CalendarTrailingForeColor = System.Drawing.Color.Salmon;
-            this.dateTimePickerReceipt.Location = new System.Drawing.Point(213, 53);
-            this.dateTimePickerReceipt.Name = "dateTimePickerReceipt";
-            this.dateTimePickerReceipt.ShowCheckBox = true;
-            this.dateTimePickerReceipt.Size = new System.Drawing.Size(268, 27);
-            this.dateTimePickerReceipt.TabIndex = 10;
-            // 
-            // comboBoxSotrudnik
-            // 
-            this.comboBoxSotrudnik.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxSotrudnik.FormattingEnabled = true;
-            this.comboBoxSotrudnik.Location = new System.Drawing.Point(213, 96);
-            this.comboBoxSotrudnik.Name = "comboBoxSotrudnik";
-            this.comboBoxSotrudnik.Size = new System.Drawing.Size(268, 29);
-            this.comboBoxSotrudnik.TabIndex = 11;
-            this.comboBoxSotrudnik.SelectedIndexChanged += new System.EventHandler(this.comboBoxSotrudnik_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(10, 99);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(197, 21);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Фильтрация по ФИО:";
             // 
             // MainForm
             // 

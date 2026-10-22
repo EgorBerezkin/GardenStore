@@ -9,10 +9,18 @@ namespace Librarygardenly.Receipts
         private string connectionString = "Host=localhost;Database=GardenlyDB;Username=postgres;Encoding=UTF8";
         private readonly IReceiptRepository repository_;
 
+
+
         // Для тестов — передаём Mock вместо реальной БД
         public ReceiptService(IReceiptRepository repository)
         {
             repository_ = repository ?? throw new ArgumentNullException(nameof(repository));
+        }
+
+        // Для основной программы
+        public ReceiptService()
+        {
+            repository_ = null;
         }
 
         // метод GetReceipts
