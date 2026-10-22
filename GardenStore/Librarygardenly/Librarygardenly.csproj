@@ -101,6 +101,7 @@
     <Compile Include="Categories\CategoryService.cs" />
     <Compile Include="Products\Product.cs" />
     <Compile Include="Products\ProductService.cs" />
+    <Compile Include="Receipts\IReceiptRepository.cs" />
     <Compile Include="Receipts\Receipt.cs" />
     <Compile Include="Receipts\ReceiptItem.cs" />
     <Compile Include="Receipts\ReceiptService.cs" />

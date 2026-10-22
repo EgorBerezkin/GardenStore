@@ -7,10 +7,20 @@ namespace Librarygardenly.Receipts
     public class ReceiptService
     {
         private string connectionString = "Host=localhost;Database=GardenlyDB;Username=postgres;Encoding=UTF8";
+        private readonly IReceiptRepository repository_;
+
+        // Для тестов — передаём Mock вместо реальной БД
+        public ReceiptService(IReceiptRepository repository)
+        {
+            repository_ = repository ?? throw new ArgumentNullException(nameof(repository));
+        }
 
         // метод GetReceipts
         public List<Receipt> GetReceipts()
         {
+            if (repository_ != null)
+                return repository_.GetReceipts();
+
             List<Receipt> receipts = new List<Receipt>();
 
             using (var connection = new NpgsqlConnection(connectionString))
@@ -47,6 +57,13 @@ namespace Librarygardenly.Receipts
         public void AddReceipt(Receipt receipt, List<ReceiptItem> items)
         {
             ValidateReceipt(receipt, items);
+
+            // В тестах вызываем имитатор
+            if (repository_ != null)
+            {
+                repository_.AddReceipt(receipt, items);
+                return;
+            }
 
             using (var connection = new NpgsqlConnection(connectionString))
             {
@@ -203,6 +220,9 @@ namespace Librarygardenly.Receipts
         // метод GetReceiptItems(int receiptId) - получение списка товаров входящих в выбранное поступление
         public List<ReceiptItem> GetReceiptItems(int receiptId)
         {
+            if (repository_ != null)
+                return repository_.GetReceiptItems(receiptId);
+
             List<ReceiptItem> items = new List<ReceiptItem>();
 
             using (var connection = new NpgsqlConnection(connectionString))
@@ -236,29 +256,29 @@ namespace Librarygardenly.Receipts
                 }
             }
             return items;
+            throw new NotImplementedException();
         }
         // для поиска фильтрации
         public List<Receipt> GetReceiptsByFilters(DateTime? date, int? userId)
         {
+            if (repository_ != null)
+                return repository_.GetReceiptsByFilters(date, userId);
+
             List<Receipt> receipts = new List<Receipt>();
 
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
 
-                string sql = @"
-            SELECT r.id, r.user_id, r.receipt_date, u.full_name,
-                   r.items_count, r.total_amount
-            FROM receipts r
-            INNER JOIN users u ON r.user_id = u.id
-            WHERE 1 = 1";
+                string sql = @"SELECT r.id, r.user_id, r.receipt_date, u.full_name, r.items_count, r.total_amount
+                                FROM receipts r
+                                INNER JOIN users u ON r.user_id = u.id
+                                WHERE 1 = 1";
 
                 if (date.HasValue)
                 {
-                    sql += @" AND r.receipt_date >= @date
-                      AND r.receipt_date < @nextDate";
+                    sql += @" AND r.receipt_date >= @date AND r.receipt_date < @nextDate";
                 }
-
                 if (userId.HasValue)
                 {
                     sql += " AND r.user_id = @userId";
@@ -271,8 +291,7 @@ namespace Librarygardenly.Receipts
                     if (date.HasValue)
                     {
                         command.Parameters.AddWithValue("@date", date.Value.Date);
-                        command.Parameters.AddWithValue(
-                            "@nextDate", date.Value.Date.AddDays(1));
+                        command.Parameters.AddWithValue("@nextDate", date.Value.Date.AddDays(1));
                     }
 
                     if (userId.HasValue)
@@ -293,14 +312,13 @@ namespace Librarygardenly.Receipts
                                 ItemsCount = Convert.ToInt32(reader["items_count"]),
                                 TotalAmount = Convert.ToDouble(reader["total_amount"])
                             };
-
                             receipts.Add(receipt);
                         }
                     }
                 }
             }
-
             return receipts;
+            throw new NotImplementedException();
         }
     }
 }

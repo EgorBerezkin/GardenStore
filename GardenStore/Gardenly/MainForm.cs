@@ -389,5 +389,10 @@ namespace Gardenly
         {
             LoadReceipts();
         }
+
+        private void comboBoxSotrudnik_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
