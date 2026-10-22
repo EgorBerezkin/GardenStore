@@ -39,8 +39,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonSearh = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.buttonViewReceipt = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
@@ -71,6 +70,9 @@
             this.buttonFilterCategories = new System.Windows.Forms.Button();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.buttonResetReceipts = new System.Windows.Forms.Button();
+            this.dateTimePickerReceipt = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxSotrudnik = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tabPageReceipt.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -178,13 +180,15 @@
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel13.Controls.Add(this.comboBoxSotrudnik);
+            this.panel13.Controls.Add(this.dateTimePickerReceipt);
+            this.panel13.Controls.Add(this.buttonResetReceipts);
             this.panel13.Controls.Add(this.label9);
             this.panel13.Controls.Add(this.panel14);
-            this.panel13.Controls.Add(this.button5);
-            this.panel13.Controls.Add(this.textBox1);
+            this.panel13.Controls.Add(this.buttonSearh);
             this.panel13.Location = new System.Drawing.Point(1212, 180);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(524, 139);
+            this.panel13.Size = new System.Drawing.Size(524, 229);
             this.panel13.TabIndex = 5;
             // 
             // label9
@@ -220,24 +224,16 @@
             this.label10.TabIndex = 4;
             this.label10.Text = "Поиск поступления по дате";
             // 
-            // button5
+            // buttonSearh
             // 
-            this.button5.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(379, 92);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(135, 34);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Поиск";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(190, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(323, 28);
-            this.textBox1.TabIndex = 7;
+            this.buttonSearh.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearh.Location = new System.Drawing.Point(227, 161);
+            this.buttonSearh.Name = "buttonSearh";
+            this.buttonSearh.Size = new System.Drawing.Size(135, 34);
+            this.buttonSearh.TabIndex = 8;
+            this.buttonSearh.Text = "Поиск";
+            this.buttonSearh.UseVisualStyleBackColor = true;
+            this.buttonSearh.Click += new System.EventHandler(this.buttonSearh_Click);
             // 
             // panel15
             // 
@@ -592,6 +588,36 @@
             this.tabControl.Size = new System.Drawing.Size(1834, 700);
             this.tabControl.TabIndex = 10;
             // 
+            // buttonResetReceipts
+            // 
+            this.buttonResetReceipts.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonResetReceipts.Location = new System.Drawing.Point(377, 161);
+            this.buttonResetReceipts.Name = "buttonResetReceipts";
+            this.buttonResetReceipts.Size = new System.Drawing.Size(135, 34);
+            this.buttonResetReceipts.TabIndex = 9;
+            this.buttonResetReceipts.Text = "Сброс";
+            this.buttonResetReceipts.UseVisualStyleBackColor = true;
+            this.buttonResetReceipts.Click += new System.EventHandler(this.buttonResetReceipts_Click);
+            // 
+            // dateTimePickerReceipt
+            // 
+            this.dateTimePickerReceipt.CalendarTitleBackColor = System.Drawing.Color.Salmon;
+            this.dateTimePickerReceipt.CalendarTitleForeColor = System.Drawing.Color.Salmon;
+            this.dateTimePickerReceipt.CalendarTrailingForeColor = System.Drawing.Color.Salmon;
+            this.dateTimePickerReceipt.Location = new System.Drawing.Point(184, 55);
+            this.dateTimePickerReceipt.Name = "dateTimePickerReceipt";
+            this.dateTimePickerReceipt.ShowCheckBox = true;
+            this.dateTimePickerReceipt.Size = new System.Drawing.Size(328, 27);
+            this.dateTimePickerReceipt.TabIndex = 10;
+            // 
+            // comboBoxSotrudnik
+            // 
+            this.comboBoxSotrudnik.FormattingEnabled = true;
+            this.comboBoxSotrudnik.Location = new System.Drawing.Point(184, 88);
+            this.comboBoxSotrudnik.Name = "comboBoxSotrudnik";
+            this.comboBoxSotrudnik.Size = new System.Drawing.Size(328, 28);
+            this.comboBoxSotrudnik.TabIndex = 11;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -680,7 +706,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonSearh;
+        private System.Windows.Forms.Button buttonResetReceipts;
+        private System.Windows.Forms.DateTimePicker dateTimePickerReceipt;
+        private System.Windows.Forms.ComboBox comboBoxSotrudnik;
     }
 }

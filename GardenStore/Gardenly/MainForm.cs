@@ -19,6 +19,7 @@ namespace Gardenly
         private List<Product> filteredProducts_;    // для поиска товара в фильтре по категориям
         private ReceiptService receiptService_;
 
+
         public MainForm(User user)
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace Gardenly
 
             receiptService_ = new ReceiptService();
             LoadReceipts();
+            LoadReceiptEmployees();
         }
 
         private void LoadReceipts()
@@ -50,20 +52,56 @@ namespace Gardenly
                 dataGridViewReceipts.DataSource = null;
                 dataGridViewReceipts.DataSource = receipts;
 
-                dataGridViewReceipts.Columns["Id"].HeaderText = "Номер";
-                dataGridViewReceipts.Columns["UserId"].Visible = false;
-
-                dataGridViewReceipts.Columns["ReceiptDate"].HeaderText = "Дата";
-                dataGridViewReceipts.Columns["ReceiptDate"].DefaultCellStyle.Format = "dd.MM.yyyy";
-
-                dataGridViewReceipts.Columns["UserFullName"].HeaderText = "Сотрудник";
-                dataGridViewReceipts.Columns["ItemsCount"].HeaderText = "Позиций";
-                dataGridViewReceipts.Columns["TotalAmount"].HeaderText = "Сумма";
+                ConfigureReceiptsGrid();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Не удалось загрузить поступления. " + "Проверьте подключение к базе данных.", "Ошибка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "Не удалось загрузить поступления. Проверьте подключение к базе данных.\n"
+                    + ex.Message,
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadReceiptEmployees()
+        {
+            try
+            {
+                List<Receipt> receipts = receiptService_.GetReceipts();
+
+                var employees = receipts
+                    .Select(r => new
+                    {
+                        Id = r.UserId,
+                        FullName = r.UserFullName
+                    })
+                    .Distinct()
+                    .OrderBy(e => e.FullName)
+                    .ToList();
+
+                comboBoxSotrudnik.DataSource = null;
+
+                var allEmployees = new[]
+                {
+            new { Id = 0, FullName = "Все сотрудники" }
+        };
+
+                comboBoxSotrudnik.DataSource =
+                    allEmployees.Concat(employees).ToList();
+
+                comboBoxSotrudnik.DisplayMember = "FullName";
+                comboBoxSotrudnik.ValueMember = "Id";
+                comboBoxSotrudnik.SelectedValue = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Не удалось загрузить список сотрудников. " + ex.Message,
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -229,6 +267,24 @@ namespace Gardenly
             LoadCategories();
         }
 
+        private void ConfigureReceiptsGrid()
+        {
+            if (dataGridViewReceipts.Columns.Count == 0)
+                return;
+
+            dataGridViewReceipts.Columns["Id"].HeaderText = "Номер";
+            dataGridViewReceipts.Columns["UserId"].Visible = false;
+
+            dataGridViewReceipts.Columns["ReceiptDate"].HeaderText = "Дата";
+            dataGridViewReceipts.Columns["ReceiptDate"]
+                .DefaultCellStyle.Format = "dd.MM.yyyy";
+
+            dataGridViewReceipts.Columns["UserFullName"].HeaderText = "Сотрудник";
+            dataGridViewReceipts.Columns["ItemsCount"].HeaderText = "Количество";
+            dataGridViewReceipts.Columns["TotalAmount"].HeaderText = "Сумма";
+
+        }
+
         private void buttonAddReceipt_Click(object sender, EventArgs e)
         {
             using (ReceiptForm.ReceiptForm form = new ReceiptForm.ReceiptForm(user_.Id))
@@ -257,6 +313,81 @@ namespace Gardenly
             {
                 form.ShowDialog();
             }
+        }
+
+        private void buttonSearh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Получаем дату, если фильтр даты включён
+                DateTime? selectedDate = null;
+
+                if (dateTimePickerReceipt.Checked)
+                {
+                    selectedDate = dateTimePickerReceipt.Value.Date;
+                }
+
+                // Получаем выбранного сотрудника
+                int employeeId =
+                    Convert.ToInt32(comboBoxSotrudnik.SelectedValue);
+
+                int? selectedUserId = null;
+
+                if (employeeId != 0)
+                {
+                    selectedUserId = employeeId;
+                }
+
+                // Выполняем поиск
+                List<Receipt> receipts =
+                    receiptService_.GetReceiptsByFilters(
+                        selectedDate, selectedUserId);
+
+                // Обновляем таблицу
+                dataGridViewReceipts.DataSource = null;
+                dataGridViewReceipts.DataSource = receipts;
+
+                // Восстанавливаем названия столбцов и оформление
+                ConfigureReceiptsGrid();
+
+                // Проверяем результат поиска
+                if (receipts.Count == 0)
+                {
+                    string message = "Поступлений по выбранным условиям не найдено.";
+
+                    if (selectedUserId.HasValue && selectedDate.HasValue)
+                    {
+                        message = "У выбранного сотрудника нет поступлений за эту дату.";
+                    }
+                    else if (selectedUserId.HasValue)
+                    {
+                        message = "У выбранного сотрудника нет поступлений.";
+                    }
+                    else if (selectedDate.HasValue)
+                    {
+                        message = "За выбранную дату поступлений нет.";
+                    }
+
+                    MessageBox.Show(
+                        message,
+                        "Поиск",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Не удалось выполнить поиск. " + ex.Message,
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonResetReceipts_Click(object sender, EventArgs e)
+        {
+            LoadReceipts();
         }
     }
 }
