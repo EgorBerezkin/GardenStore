@@ -119,7 +119,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSalmon;
+            this.panel1.BackColor = System.Drawing.Color.Salmon;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.labelZagolovok);
             this.panel1.Location = new System.Drawing.Point(-4, -2);

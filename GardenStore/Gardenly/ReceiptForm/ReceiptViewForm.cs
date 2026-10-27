@@ -23,7 +23,9 @@ namespace Gardenly.ReceiptForm
             userFullName_ = userFullName;
 
             receiptService_ = new ReceiptService();
-            labelReceiptInfo.Text = "Поступление №" + receiptId_ + "\nДата: " + receiptDate_ + "\nСотрудник: " + userFullName_;
+            labelReceiptInfo.Text = "Поступление №" + receiptId_;
+            labelDateReceipt.Text = "Дата: " + receiptDate_;
+            labelSotrudnik.Text = "Сотрудник: " + userFullName_;
             LoadItems();
         }
 
