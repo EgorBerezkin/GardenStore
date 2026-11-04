@@ -112,7 +112,6 @@ namespace Gardenly
 
         private void LoadCategories()
         {
-            categoryService_ = new CategoryService();
             try
             {
                 List<Category> categories = categoryService_.GetCategories();
@@ -122,9 +121,9 @@ namespace Gardenly
                 comboBoxCategory.DisplayMember = "Name";
                 comboBoxCategory.ValueMember = "Id";
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Не удалось загрузить категории.", "Ошибка",
+                MessageBox.Show("Не удалось загрузить категории." + ex.Message, "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -307,11 +306,6 @@ namespace Gardenly
         private void buttonResetReceipts_Click(object sender, EventArgs e)
         {
             LoadReceipts();
-        }
-
-        private void comboBoxSotrudnik_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

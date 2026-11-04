@@ -212,7 +212,6 @@
             this.comboBoxSotrudnik.Name = "comboBoxSotrudnik";
             this.comboBoxSotrudnik.Size = new System.Drawing.Size(268, 29);
             this.comboBoxSotrudnik.TabIndex = 11;
-            this.comboBoxSotrudnik.SelectedIndexChanged += new System.EventHandler(this.comboBoxSotrudnik_SelectedIndexChanged);
             // 
             // dateTimePickerReceipt
             // 
