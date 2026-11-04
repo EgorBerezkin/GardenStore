@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Npgsql;
 
 namespace Librarygardenly.Products
@@ -15,9 +16,10 @@ namespace Librarygardenly.Products
             {
                 connection.Open();
                 string sql = @"SELECT p.id, p.name, p.category_id, c.name AS category_name, p.price, p.quantity, p.description
-                    FROM products p
-                    INNER JOIN categories c ON p.category_id = c.id
-                    ORDER BY p.id";
+                                    FROM products p
+                                    INNER JOIN categories c ON p.category_id = c.id
+                                    ORDER BY p.id";
+                
                 using (var command = new NpgsqlCommand(sql, connection))
                 using (var reader = command.ExecuteReader())
                 {
@@ -95,9 +97,7 @@ namespace Librarygardenly.Products
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
-
-                string sql = @"DELETE FROM products
-                                    WHERE id = @id";
+                string sql = @"DELETE FROM products WHERE id = @id";
 
                 using (var command = new NpgsqlCommand(sql, connection))
                 {
@@ -105,6 +105,33 @@ namespace Librarygardenly.Products
                     command.ExecuteNonQuery();
                 }
             }
+        }
+        // Поиск товаров по названию
+        public List<Product> SearchProducts(List<Product> products, string searchText)
+        {
+            if (products == null)
+                return new List<Product>();
+
+            if (string.IsNullOrEmpty(searchText))
+                return products.ToList();
+
+            return products
+                .Where(p => p.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
+                .ToList();
+        }
+
+        // Фильтрация товаров по категории
+        public List<Product> FilterProductsByCategory(List<Product> products, int categoryId)
+        {
+            if (products == null)
+                return new List<Product>();
+
+            if (categoryId == 0)
+                return products.ToList();
+
+            return products
+                .Where(p => p.CategoryId == categoryId)
+                .ToList();
         }
     }
 }

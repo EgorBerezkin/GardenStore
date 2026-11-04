@@ -168,18 +168,14 @@ namespace Gardenly
         {
             if (comboBoxCategory.SelectedItem is Category selectedCategory)
             {
-                if (selectedCategory.Id == 0)
-                {
-                    filteredProducts_ = products_.ToList();
-                }
-                else
-                {
-                    filteredProducts_ = products_.Where(p => p.CategoryId == selectedCategory.Id).ToList();
-                }
+                filteredProducts_ = productService_.FilterProductsByCategory(products_, selectedCategory.Id);
+
                 if (filteredProducts_.Count == 0)
                 {
-                    MessageBox.Show("Товаров в выбранной категории нет.\n" + "Выберите другую категорию или выберите «Все категории».", "Фильтр",
+                    dataGridViewProducts.DataSource = filteredProducts_;
+                    MessageBox.Show("Товаров в выбранной категории нет.\nВыберите другую категорию или выберите «Все категории».", "Фильтр",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     return;
                 }
                 dataGridViewProducts.DataSource = filteredProducts_;
@@ -298,60 +294,26 @@ namespace Gardenly
 
         private void buttonSearh_Click(object sender, EventArgs e)
         {
-            try
+            string searchText = textBoxSearch.Text;
+            List<Product> searchResults = productService_.SearchProducts(filteredProducts_, searchText);
+
+            if (searchResults.Count == 0)
             {
-                // Получаем дату, если фильтр даты включён
-                DateTime? selectedDate = null;
+                List<Product> allSearchResults = productService_.SearchProducts(products_, searchText);
 
-                if (dateTimePickerReceipt.Checked)
+                if (allSearchResults.Count == 0)
                 {
-                    selectedDate = dateTimePickerReceipt.Value.Date;
+                    MessageBox.Show("Такого товара нет в базе.", "Поиск",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                // Получаем выбранного сотрудника
-                int employeeId = Convert.ToInt32(comboBoxSotrudnik.SelectedValue);
-
-                int? selectedUserId = null;
-
-                if (employeeId != 0)
+                else
                 {
-                    selectedUserId = employeeId;
+                    MessageBox.Show("Товар не найден в выбранной категории.\nВыберите другую категорию или выберите «Все категории».", "Поиск",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                // Выполняем поиск
-                List<Receipt> receipts = receiptService_.GetReceiptsByFilters(selectedDate, selectedUserId);
-
-                // Обновляем таблицу
-                dataGridViewReceipts.DataSource = null;
-                dataGridViewReceipts.DataSource = receipts;
-
-                // Восстанавливаем названия столбцов и оформление
-                ConfigureReceiptsGrid();
-
-                // Проверяем результат поиска
-                if (receipts.Count == 0)
-                {
-                    string message = "Поступлений по выбранным условиям не найдено.";
-
-                    if (selectedUserId.HasValue && selectedDate.HasValue)
-                    {
-                        message = "У выбранного сотрудника нет поступлений за эту дату.";
-                    }
-                    else if (selectedUserId.HasValue)
-                    {
-                        message = "У выбранного сотрудника нет поступлений.";
-                    }
-                    else if (selectedDate.HasValue)
-                    {
-                        message = "За выбранную дату поступлений нет.";
-                    }
-                }
+                return;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Не удалось выполнить поиск. " + ex.Message, "Ошибка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            dataGridViewProducts.DataSource = searchResults;
         }
 
         private void buttonResetReceipts_Click(object sender, EventArgs e)
