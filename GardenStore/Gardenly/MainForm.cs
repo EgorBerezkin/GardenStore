@@ -7,6 +7,7 @@ using Librarygardenly;
 using Librarygardenly.Categories;
 using Librarygardenly.Products;
 using Librarygardenly.Receipts;
+using Librarygardenly.Registration;
 
 namespace Gardenly
 {
@@ -65,16 +66,20 @@ namespace Gardenly
         {
             try
             {
-                List<Receipt> receipts = receiptService_.GetReceipts();
-
-                var employees = receipts
-                    .Select(r => new { Id = r.UserId, FullName = r.UserFullName})
-                    .Distinct()
-                    .OrderBy(e => e.FullName)
+                UserService userService = new UserService();
+                var employees = userService.GetUsers()
+                    .Select(u => new
+                    {
+                        Id = u.Id,
+                        FullName = u.FullName
+                    })
+                    .OrderBy(u => u.FullName)
                     .ToList();
 
                 comboBoxSotrudnik.DataSource = null;
+
                 var allEmployees = new[] { new { Id = 0, FullName = "Все сотрудники" } };
+
                 comboBoxSotrudnik.DataSource = allEmployees.Concat(employees).ToList();
                 comboBoxSotrudnik.DisplayMember = "FullName";
                 comboBoxSotrudnik.ValueMember = "Id";
@@ -139,26 +144,20 @@ namespace Gardenly
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             string searchText = textBoxSearch.Text;
-            if (searchText == "")
-            {
-                dataGridViewProducts.DataSource = filteredProducts_;
-                return;
-            }
-            List<Product> searchResults = filteredProducts_.Where(p => p.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+            List<Product> searchResults = productService_.SearchProducts(filteredProducts_, searchText);
 
             if (searchResults.Count == 0)
             {
-                List<Product> allSearchResults = products_.Where(p => p.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+                List<Product> allResults = productService_.SearchProducts(products_, searchText);
 
-                if (allSearchResults.Count == 0)
+                if (allResults.Count == 0)
                 {
-                    MessageBox.Show("Такого товара нет в базе.", "Поиск",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    MessageBox.Show("Такого товара нет в базе.", "Поиск");
                 }
-
-                MessageBox.Show("Товар не найден в выбранной категории.\n" + "Выберите другую категорию или выберите «Все категории».", "Поиск",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                {
+                    MessageBox.Show("Товар не найден в выбранной категории.\nВыберите другую категорию.", "Поиск");
+                }
                 return;
             }
             dataGridViewProducts.DataSource = searchResults;
@@ -294,26 +293,20 @@ namespace Gardenly
 
         private void buttonSearh_Click(object sender, EventArgs e)
         {
-            string searchText = textBoxSearch.Text;
-            List<Product> searchResults = productService_.SearchProducts(filteredProducts_, searchText);
+            DateTime? date = dateTimePickerReceipt.Checked ? dateTimePickerReceipt.Value.Date : (DateTime?)null;
 
-            if (searchResults.Count == 0)
+            int employeeId = Convert.ToInt32(comboBoxSotrudnik.SelectedValue);
+            int? userId = employeeId == 0 ? (int?)null : employeeId;
+            List<Receipt> receipts = receiptService_.GetReceiptsByFilters(date, userId);
+
+            dataGridViewReceipts.DataSource = null;
+            dataGridViewReceipts.DataSource = receipts;
+
+            ConfigureReceiptsGrid();
+            if (receipts.Count == 0)
             {
-                List<Product> allSearchResults = productService_.SearchProducts(products_, searchText);
-
-                if (allSearchResults.Count == 0)
-                {
-                    MessageBox.Show("Такого товара нет в базе.", "Поиск",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Товар не найден в выбранной категории.\nВыберите другую категорию или выберите «Все категории».", "Поиск",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                return;
+                MessageBox.Show("Поступлений по выбранным условиям не найдено.", "Поиск поступлений");
             }
-            dataGridViewProducts.DataSource = searchResults;
         }
 
         private void buttonResetReceipts_Click(object sender, EventArgs e)

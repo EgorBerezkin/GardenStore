@@ -52,5 +52,10 @@ namespace Librarygardenly.Registration
         {
             return userList_.FirstOrDefault(u => u.Login == login && u.Password == password);
         }
+        // Получение списка пользователей
+        public List<User> GetUsers()
+        {
+            return userList_.ToList();
+        }
     }
 }
