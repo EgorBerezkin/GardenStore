@@ -27,37 +27,62 @@ namespace Librarygardenly.Receipts
             if (repository_ != null)
                 return repository_.GetReceipts();
 
+            return LoadReceipts(null, null);
+        }
+
+        private List<Receipt> LoadReceipts(DateTime? date, int? userId)
+        {
             List<Receipt> receipts = new List<Receipt>();
 
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
-
                 string sql = @"SELECT r.id, r.user_id, r.receipt_date, u.full_name, r.items_count, r.total_amount
-                                FROM receipts r
-                                INNER JOIN users u ON r.user_id = u.id
-                                ORDER BY r.receipt_date DESC, r.id DESC";
+                                    FROM receipts r
+                                    INNER JOIN users u ON r.user_id = u.id
+                                    WHERE 1 = 1";
+
+                if (date.HasValue)
+                    sql += " AND r.receipt_date >= @date AND r.receipt_date < @nextDate";
+
+                if (userId.HasValue)
+                    sql += " AND r.user_id = @userId";
+
+                sql += " ORDER BY r.receipt_date DESC, r.id DESC";
 
                 using (var command = new NpgsqlCommand(sql, connection))
-                using (var reader = command.ExecuteReader())
                 {
-                    while (reader.Read())
+                    if (date.HasValue)
                     {
-                        Receipt receipt = new Receipt
+                        command.Parameters.AddWithValue("@date", date.Value.Date);
+                        command.Parameters.AddWithValue("@nextDate", date.Value.Date.AddDays(1));
+                    }
+
+                    if (userId.HasValue)
+                    {
+                        command.Parameters.AddWithValue("@userId", userId.Value);
+                    }
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
                         {
-                            Id = Convert.ToInt32(reader["id"]),
-                            UserId = Convert.ToInt32(reader["user_id"]),
-                            ReceiptDate = Convert.ToDateTime(reader["receipt_date"]),
-                            UserFullName = Convert.ToString(reader["full_name"]),
-                            ItemsCount = Convert.ToInt32(reader["items_count"]),
-                            TotalAmount = Convert.ToDouble(reader["total_amount"])
-                        };
-                        receipts.Add(receipt);
+                            receipts.Add(new Receipt
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                UserId = Convert.ToInt32(reader["user_id"]),
+                                ReceiptDate = Convert.ToDateTime(reader["receipt_date"]),
+                                UserFullName = Convert.ToString(reader["full_name"]),
+                                ItemsCount = Convert.ToInt32(reader["items_count"]),
+                                TotalAmount = Convert.ToDouble(reader["total_amount"])
+                            });
+                        }
                     }
                 }
             }
             return receipts;
         }
+
 
         // метод AddReceipts(Receipt receipt, List items)
         public void AddReceipt(Receipt receipt, List<ReceiptItem> items)
@@ -262,7 +287,6 @@ namespace Librarygardenly.Receipts
                 }
             }
             return items;
-            throw new NotImplementedException();
         }
         // для поиска фильтрации
         public List<Receipt> GetReceiptsByFilters(DateTime? date, int? userId)
@@ -270,61 +294,7 @@ namespace Librarygardenly.Receipts
             if (repository_ != null)
                 return repository_.GetReceiptsByFilters(date, userId);
 
-            List<Receipt> receipts = new List<Receipt>();
-
-            using (var connection = new NpgsqlConnection(connectionString))
-            {
-                connection.Open();
-
-                string sql = @"SELECT r.id, r.user_id, r.receipt_date, u.full_name, r.items_count, r.total_amount
-                                FROM receipts r
-                                INNER JOIN users u ON r.user_id = u.id
-                                WHERE 1 = 1";
-
-                if (date.HasValue)
-                {
-                    sql += @" AND r.receipt_date >= @date AND r.receipt_date < @nextDate";
-                }
-                if (userId.HasValue)
-                {
-                    sql += " AND r.user_id = @userId";
-                }
-
-                sql += " ORDER BY r.receipt_date DESC, r.id DESC";
-
-                using (var command = new NpgsqlCommand(sql, connection))
-                {
-                    if (date.HasValue)
-                    {
-                        command.Parameters.AddWithValue("@date", date.Value.Date);
-                        command.Parameters.AddWithValue("@nextDate", date.Value.Date.AddDays(1));
-                    }
-
-                    if (userId.HasValue)
-                    {
-                        command.Parameters.AddWithValue("@userId", userId.Value);
-                    }
-
-                    using (var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            Receipt receipt = new Receipt
-                            {
-                                Id = Convert.ToInt32(reader["id"]),
-                                UserId = Convert.ToInt32(reader["user_id"]),
-                                ReceiptDate = Convert.ToDateTime(reader["receipt_date"]),
-                                UserFullName = Convert.ToString(reader["full_name"]),
-                                ItemsCount = Convert.ToInt32(reader["items_count"]),
-                                TotalAmount = Convert.ToDouble(reader["total_amount"])
-                            };
-                            receipts.Add(receipt);
-                        }
-                    }
-                }
-            }
-            return receipts;
-            throw new NotImplementedException();
+            return LoadReceipts(date, userId);
         }
     }
 }
