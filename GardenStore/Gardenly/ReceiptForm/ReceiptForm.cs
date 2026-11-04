@@ -150,6 +150,13 @@ namespace Gardenly.ReceiptForm
                     UserId = userId_,
                     ReceiptDate = DateTime.Now
                 };
+                receiptService_.AddReceipt(receipt, items_);
+
+                MessageBox.Show("Поступление успешно сохранено.", "Готово",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                DialogResult = DialogResult.OK;
+                Close();
             }
             catch (Exception ex)
             {
