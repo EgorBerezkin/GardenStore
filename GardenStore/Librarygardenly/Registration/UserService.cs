@@ -46,7 +46,6 @@ namespace Librarygardenly.Registration
                     }
                 }
             }
-            
         }
         // метод авторизации
         public User AuthorizeUser(string login, string password)

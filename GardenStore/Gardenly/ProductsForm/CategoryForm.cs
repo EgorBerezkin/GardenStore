@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Librarygardenly.Categories;
 
@@ -23,7 +16,6 @@ namespace Gardenly
         private void buttonSave_Click(object sender, EventArgs e)
         {
             string name = textBoxName.Text;
-
             try
             {
                 if (categoryService_.CategoryExists(name))

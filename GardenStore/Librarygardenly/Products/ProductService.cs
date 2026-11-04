@@ -51,7 +51,7 @@ namespace Librarygardenly.Products
                 connection.Open();
 
                 string sql = @"INSERT INTO products (name, category_id, price, quantity, description)
-                    VALUES (@name, @category_id, @price, @quantity, @description)";
+                                    VALUES (@name, @category_id, @price, @quantity, @description)";
 
                 using (var command = new NpgsqlCommand(sql, connection))
                 {
@@ -73,8 +73,8 @@ namespace Librarygardenly.Products
                 connection.Open();
 
                 string sql = @"UPDATE products
-                       SET name = @name, category_id = @category_id, price = @price, quantity = @quantity, description = @description
-                       WHERE id = @id";
+                                    SET name = @name, category_id = @category_id, price = @price, quantity = @quantity, description = @description
+                                    WHERE id = @id";
 
                 using (var command = new NpgsqlCommand(sql, connection))
                 {
@@ -97,7 +97,7 @@ namespace Librarygardenly.Products
                 connection.Open();
 
                 string sql = @"DELETE FROM products
-                       WHERE id = @id";
+                                    WHERE id = @id";
 
                 using (var command = new NpgsqlCommand(sql, connection))
                 {

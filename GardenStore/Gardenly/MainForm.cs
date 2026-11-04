@@ -56,12 +56,8 @@ namespace Gardenly
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    "Не удалось загрузить поступления. Проверьте подключение к базе данных.\n"
-                    + ex.Message,
-                    "Ошибка",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show("Не удалось загрузить поступления. Проверьте подключение к базе данных.\n" + ex.Message, "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -72,36 +68,22 @@ namespace Gardenly
                 List<Receipt> receipts = receiptService_.GetReceipts();
 
                 var employees = receipts
-                    .Select(r => new
-                    {
-                        Id = r.UserId,
-                        FullName = r.UserFullName
-                    })
+                    .Select(r => new { Id = r.UserId, FullName = r.UserFullName})
                     .Distinct()
                     .OrderBy(e => e.FullName)
                     .ToList();
 
                 comboBoxSotrudnik.DataSource = null;
-
-                var allEmployees = new[]
-                {
-            new { Id = 0, FullName = "Все сотрудники" }
-        };
-
-                comboBoxSotrudnik.DataSource =
-                    allEmployees.Concat(employees).ToList();
-
+                var allEmployees = new[] { new { Id = 0, FullName = "Все сотрудники" } };
+                comboBoxSotrudnik.DataSource = allEmployees.Concat(employees).ToList();
                 comboBoxSotrudnik.DisplayMember = "FullName";
                 comboBoxSotrudnik.ValueMember = "Id";
                 comboBoxSotrudnik.SelectedValue = 0;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    "Не удалось загрузить список сотрудников. " + ex.Message,
-                    "Ошибка",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show("Не удалось загрузить список сотрудников. " + ex.Message, "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -276,8 +258,7 @@ namespace Gardenly
             dataGridViewReceipts.Columns["UserId"].Visible = false;
 
             dataGridViewReceipts.Columns["ReceiptDate"].HeaderText = "Дата";
-            dataGridViewReceipts.Columns["ReceiptDate"]
-                .DefaultCellStyle.Format = "dd.MM.yyyy";
+            dataGridViewReceipts.Columns["ReceiptDate"].DefaultCellStyle.Format = "dd.MM.yyyy";
 
             dataGridViewReceipts.Columns["UserFullName"].HeaderText = "Сотрудник";
             dataGridViewReceipts.Columns["ItemsCount"].HeaderText = "Количество";
@@ -328,8 +309,7 @@ namespace Gardenly
                 }
 
                 // Получаем выбранного сотрудника
-                int employeeId =
-                    Convert.ToInt32(comboBoxSotrudnik.SelectedValue);
+                int employeeId = Convert.ToInt32(comboBoxSotrudnik.SelectedValue);
 
                 int? selectedUserId = null;
 
@@ -339,9 +319,7 @@ namespace Gardenly
                 }
 
                 // Выполняем поиск
-                List<Receipt> receipts =
-                    receiptService_.GetReceiptsByFilters(
-                        selectedDate, selectedUserId);
+                List<Receipt> receipts = receiptService_.GetReceiptsByFilters(selectedDate, selectedUserId);
 
                 // Обновляем таблицу
                 dataGridViewReceipts.DataSource = null;
@@ -367,21 +345,12 @@ namespace Gardenly
                     {
                         message = "За выбранную дату поступлений нет.";
                     }
-
-                    MessageBox.Show(
-                        message,
-                        "Поиск",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    "Не удалось выполнить поиск. " + ex.Message,
-                    "Ошибка",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show("Не удалось выполнить поиск. " + ex.Message, "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
