@@ -55,7 +55,7 @@ namespace Librarygardenly.Registration
         // Получение списка пользователей
         public List<User> GetUsers()
         {
-            return userList_.ToList();
+            return userList_.OrderBy(u => u.FullName).ToList();
         }
     }
 }

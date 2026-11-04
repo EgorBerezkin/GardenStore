@@ -68,12 +68,7 @@ namespace Gardenly
             {
                 UserService userService = new UserService();
                 var employees = userService.GetUsers()
-                    .Select(u => new
-                    {
-                        Id = u.Id,
-                        FullName = u.FullName
-                    })
-                    .OrderBy(u => u.FullName)
+                    .Select(u => new { Id = u.Id, FullName = u.FullName })
                     .ToList();
 
                 comboBoxSotrudnik.DataSource = null;

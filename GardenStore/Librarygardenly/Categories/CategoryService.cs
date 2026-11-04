@@ -31,6 +31,12 @@ namespace Librarygardenly.Categories
         // метод для добавления новой категории
         public void AddCategory(string name)
         {
+            if (string.IsNullOrWhiteSpace(name))
+                throw new ArgumentException("Название категории не может быть пустым.");
+
+            if (CategoryExists(name))
+                throw new ArgumentException("Такая категория уже существует.");
+
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();

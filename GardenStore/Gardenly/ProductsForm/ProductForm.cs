@@ -32,11 +32,7 @@ namespace Gardenly
             categoryService_ = new CategoryService();
             productService_ = new ProductService();
 
-            List<Category> categories = categoryService_.GetCategories();
-
-            comboBoxCategory.DataSource = categories;
-            comboBoxCategory.DisplayMember = "Name";
-            comboBoxCategory.ValueMember = "Id";
+            LoadCategories();
 
             textBoxName.Text = product_.Name;
             comboBoxCategory.SelectedValue = product_.CategoryId;
@@ -52,7 +48,6 @@ namespace Gardenly
 
         private void LoadCategories()
         {
-            categoryService_ = new CategoryService();
             try
             {
                 List<Category> categories = categoryService_.GetCategories();
@@ -77,72 +72,21 @@ namespace Gardenly
         {
             try
             {
-                string name = textBoxName.Text.Trim();
+                categoryService_.AddCategory(textBoxName.Text);
 
-                if (string.IsNullOrWhiteSpace(name))
-                {
-                    MessageBox.Show("Введите название товара.");
-                    return;
-                }
+                MessageBox.Show("Категория успешно добавлена.", "Готово",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                if (comboBoxCategory.SelectedValue == null)
-                {
-                    MessageBox.Show("Выберите категорию товара.");
-                    return;
-                }
-
-                int categoryId;
-
-                if (!int.TryParse(comboBoxCategory.SelectedValue.ToString(), out categoryId) || categoryId <= 0)
-                {
-                    MessageBox.Show("Выберите корректную категорию.");
-                    return;
-                }
-
-                double price;
-
-                if (!double.TryParse(textBoxPrice.Text, out price) || double.IsNaN(price) || double.IsInfinity(price) || price < 0)
-                {
-                    MessageBox.Show("Введите корректную цену товара.");
-                    return;
-                }
-
-                int quantity;
-
-                if (!int.TryParse(textBoxQuantity.Text, out quantity) || quantity <= 0)
-                {
-                    MessageBox.Show("Количество должно быть положительным целым числом.");
-                    return;
-                }
-
-                string description = textBoxDescription.Text;
-
-                if (product_ == null)
-                {
-                    Product product = new Product(0, name, categoryId, "", price, quantity, description);
-                    if (receiptMode_)
-                    {
-                        CreatedProduct = product;
-                        DialogResult = DialogResult.OK;
-                        Close();
-                        return;
-                    }
-                    productService_.AddProduct(product);
-                }
-                else
-                {
-                    product_.Name = name;
-                    product_.CategoryId = categoryId;
-                    product_.Price = price;
-                    product_.Quantity = quantity;
-                    product_.Description = description;
-                    productService_.UpdateProduct(product_);
-                }
                 this.Close();
             }
-            catch (Exception ex)
+            catch (ArgumentException ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Не удалось добавить категорию.", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
