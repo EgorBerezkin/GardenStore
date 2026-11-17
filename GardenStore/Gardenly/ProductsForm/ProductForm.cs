@@ -100,15 +100,7 @@ namespace Gardenly
                     return;
                 }
 
-                Product product = new Product(
-                    product_ == null ? 0 : product_.Id,
-                    name,
-                    category.Id,
-                    category.Name,
-                    price,
-                    quantity,
-                    textBoxDescription.Text
-                );
+                Product product = new Product(product_ == null ? 0 : product_.Id, name, category.Id, category.Name, price, quantity, textBoxDescription.Text );
 
                 if (receiptMode_)
                 {
@@ -132,7 +124,7 @@ namespace Gardenly
                 }
 
                 DialogResult = DialogResult.OK;
-                Close();
+                this.Close();
             }
             catch (ArgumentException ex)
             {

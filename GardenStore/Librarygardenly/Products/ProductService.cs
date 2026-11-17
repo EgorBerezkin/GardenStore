@@ -32,7 +32,7 @@ namespace Librarygardenly.Products
                             reader.GetString(3),
                             reader.GetDouble(4),
                             reader.GetInt32(5),
-                            reader.IsDBNull(6) ? "" : reader.GetString(6)
+                            reader.GetString(6)
                         );
                         products.Add(product);
                     }

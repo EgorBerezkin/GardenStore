@@ -42,27 +42,27 @@
             this.labelOrderInfo.AutoSize = true;
             this.labelOrderInfo.Location = new System.Drawing.Point(13, 25);
             this.labelOrderInfo.Name = "labelOrderInfo";
-            this.labelOrderInfo.Size = new System.Drawing.Size(44, 16);
+            this.labelOrderInfo.Size = new System.Drawing.Size(92, 16);
             this.labelOrderInfo.TabIndex = 0;
-            this.labelOrderInfo.Text = "label1";
+            this.labelOrderInfo.Text = "Информация";
             // 
             // labelDateOrder
             // 
             this.labelDateOrder.AutoSize = true;
             this.labelDateOrder.Location = new System.Drawing.Point(16, 63);
             this.labelDateOrder.Name = "labelDateOrder";
-            this.labelDateOrder.Size = new System.Drawing.Size(44, 16);
+            this.labelDateOrder.Size = new System.Drawing.Size(99, 16);
             this.labelDateOrder.TabIndex = 1;
-            this.labelDateOrder.Text = "label1";
+            this.labelDateOrder.Text = "Дата продажи";
             // 
             // labelSotrudnik
             // 
             this.labelSotrudnik.AutoSize = true;
             this.labelSotrudnik.Location = new System.Drawing.Point(254, 25);
             this.labelSotrudnik.Name = "labelSotrudnik";
-            this.labelSotrudnik.Size = new System.Drawing.Size(44, 16);
+            this.labelSotrudnik.Size = new System.Drawing.Size(78, 16);
             this.labelSotrudnik.TabIndex = 2;
-            this.labelSotrudnik.Text = "label1";
+            this.labelSotrudnik.Text = "Сотрудник";
             // 
             // dataGridViewItems
             // 
@@ -71,7 +71,7 @@
             this.dataGridViewItems.Name = "dataGridViewItems";
             this.dataGridViewItems.RowHeadersWidth = 51;
             this.dataGridViewItems.RowTemplate.Height = 24;
-            this.dataGridViewItems.Size = new System.Drawing.Size(364, 150);
+            this.dataGridViewItems.Size = new System.Drawing.Size(617, 150);
             this.dataGridViewItems.TabIndex = 3;
             // 
             // labelTotal
@@ -79,9 +79,9 @@
             this.labelTotal.AutoSize = true;
             this.labelTotal.Location = new System.Drawing.Point(19, 287);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(44, 16);
+            this.labelTotal.Size = new System.Drawing.Size(93, 16);
             this.labelTotal.TabIndex = 4;
-            this.labelTotal.Text = "label1";
+            this.labelTotal.Text = "Общая сумма";
             // 
             // buttonClose
             // 

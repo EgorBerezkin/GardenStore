@@ -70,7 +70,7 @@ namespace Gardenly.ReceiptForm
             }
 
             double total = items_.Sum(item => (double)item.Quantity * (double)item.Price);
-            labelTotal.Text = "Итого: " + total.ToString("N2") + " ₽";
+            labelTotal.Text = "Итого: " + total.ToString() + " ₽";
         }
 
         private void buttonNewProduct_Click(object sender, EventArgs e)
@@ -141,6 +141,7 @@ namespace Gardenly.ReceiptForm
             if (items_.Count == 0)
             {
                 MessageBox.Show("Добавьте хотя бы один товар в поступление.");
+                DialogResult = DialogResult.OK;
                 return;
             }
             try
@@ -152,10 +153,6 @@ namespace Gardenly.ReceiptForm
                 };
                 receiptService_.AddReceipt(receipt, items_);
 
-                MessageBox.Show("Поступление успешно сохранено.", "Готово",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                DialogResult = DialogResult.OK;
                 Close();
             }
             catch (Exception ex)

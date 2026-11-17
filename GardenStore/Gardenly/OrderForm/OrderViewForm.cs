@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Librarygardenly.Orders;
 
@@ -13,10 +9,10 @@ namespace Gardenly.OrderForm
 {
     public partial class OrderViewForm : Form
     {
-        private readonly int orderId_;
-        private readonly string orderDate_;
-        private readonly string userFullName_;
-        private readonly OrderService orderService_;
+        private int orderId_;
+        private string orderDate_;
+        private string userFullName_;
+        private OrderService orderService_;
 
         public OrderViewForm(int orderId, string orderDate, string userFullName)
         {
@@ -60,7 +56,7 @@ namespace Gardenly.OrderForm
                 }
 
                 double total = items.Sum(item => (double)item.Quantity * item.Price);
-                labelTotal.Text = "Итого: " + total.ToString("N2") + " ₽";
+                labelTotal.Text = "Итого: " + total.ToString() + " ₽";
             }
             catch (Exception ex)
             {

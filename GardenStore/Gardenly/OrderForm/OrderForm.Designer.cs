@@ -73,7 +73,7 @@
             // 
             this.buttonAdd.Location = new System.Drawing.Point(242, 12);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(110, 43);
+            this.buttonAdd.Size = new System.Drawing.Size(140, 59);
             this.buttonAdd.TabIndex = 2;
             this.buttonAdd.Text = "Добавление товара";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -81,11 +81,15 @@
             // 
             // dataGridViewItems
             // 
+            this.dataGridViewItems.AllowUserToAddRows = false;
             this.dataGridViewItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewItems.Location = new System.Drawing.Point(12, 90);
+            this.dataGridViewItems.MultiSelect = false;
             this.dataGridViewItems.Name = "dataGridViewItems";
+            this.dataGridViewItems.ReadOnly = true;
             this.dataGridViewItems.RowHeadersWidth = 51;
             this.dataGridViewItems.RowTemplate.Height = 24;
+            this.dataGridViewItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewItems.Size = new System.Drawing.Size(340, 115);
             this.dataGridViewItems.TabIndex = 3;
             // 

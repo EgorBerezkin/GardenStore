@@ -74,6 +74,23 @@
             this.buttonFilterCategories = new System.Windows.Forms.Button();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabPageOrder = new System.Windows.Forms.TabPage();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.buttonViewOrder = new System.Windows.Forms.Button();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.buttonAddOrder = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabPageReceipt.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -93,6 +110,13 @@
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tabControl.SuspendLayout();
+            this.tabPageOrder.SuspendLayout();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
+            this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel18.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelUser
@@ -331,7 +355,7 @@
             this.buttonAddReceipt.Name = "buttonAddReceipt";
             this.buttonAddReceipt.Size = new System.Drawing.Size(499, 35);
             this.buttonAddReceipt.TabIndex = 5;
-            this.buttonAddReceipt.Text = "Добавить поступление";
+            this.buttonAddReceipt.Text = "Оформление поступления";
             this.buttonAddReceipt.UseVisualStyleBackColor = true;
             this.buttonAddReceipt.Click += new System.EventHandler(this.buttonAddReceipt_Click);
             // 
@@ -624,6 +648,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.tabPageProducts);
             this.tabControl.Controls.Add(this.tabPageReceipt);
+            this.tabControl.Controls.Add(this.tabPageOrder);
             this.tabControl.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabControl.Location = new System.Drawing.Point(-1, -2);
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
@@ -632,6 +657,206 @@
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1834, 700);
             this.tabControl.TabIndex = 10;
+            // 
+            // tabPageOrder
+            // 
+            this.tabPageOrder.Controls.Add(this.panel10);
+            this.tabPageOrder.Controls.Add(this.panel11);
+            this.tabPageOrder.Controls.Add(this.panel17);
+            this.tabPageOrder.Location = new System.Drawing.Point(4, 29);
+            this.tabPageOrder.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageOrder.Name = "tabPageOrder";
+            this.tabPageOrder.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageOrder.Size = new System.Drawing.Size(1826, 667);
+            this.tabPageOrder.TabIndex = 7;
+            this.tabPageOrder.Text = "Продажи";
+            this.tabPageOrder.UseVisualStyleBackColor = true;
+            // 
+            // panel10
+            // 
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel10.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel10.Controls.Add(this.dataGridViewOrders);
+            this.panel10.Location = new System.Drawing.Point(11, 10);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1180, 648);
+            this.panel10.TabIndex = 7;
+            // 
+            // dataGridViewOrders
+            // 
+            this.dataGridViewOrders.AccessibleRole = System.Windows.Forms.AccessibleRole.Column;
+            this.dataGridViewOrders.AllowUserToAddRows = false;
+            this.dataGridViewOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewOrders.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewOrders.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOrders.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewOrders.Location = new System.Drawing.Point(9, 10);
+            this.dataGridViewOrders.Name = "dataGridViewOrders";
+            this.dataGridViewOrders.ReadOnly = true;
+            this.dataGridViewOrders.RowHeadersWidth = 51;
+            this.dataGridViewOrders.RowTemplate.Height = 24;
+            this.dataGridViewOrders.Size = new System.Drawing.Size(1159, 628);
+            this.dataGridViewOrders.TabIndex = 2;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel11.Controls.Add(this.label8);
+            this.panel11.Controls.Add(this.comboBox1);
+            this.panel11.Controls.Add(this.dateTimePicker1);
+            this.panel11.Controls.Add(this.button1);
+            this.panel11.Controls.Add(this.button2);
+            this.panel11.Controls.Add(this.label11);
+            this.panel11.Controls.Add(this.panel12);
+            this.panel11.Location = new System.Drawing.Point(1212, 180);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(524, 197);
+            this.panel11.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(10, 99);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(197, 21);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Фильтрация по ФИО:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(245, 96);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(268, 29);
+            this.comboBox1.TabIndex = 11;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.Salmon;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.Salmon;
+            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.Salmon;
+            this.dateTimePicker1.Location = new System.Drawing.Point(245, 55);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowCheckBox = true;
+            this.dateTimePicker1.Size = new System.Drawing.Size(268, 27);
+            this.dateTimePicker1.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(273, 141);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 34);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Поиск";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(396, 141);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(117, 34);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Сброс";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(10, 55);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(199, 21);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Фильтрация по дате:";
+            // 
+            // panel12
+            // 
+            this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel12.BackColor = System.Drawing.Color.Salmon;
+            this.panel12.Controls.Add(this.label13);
+            this.panel12.Location = new System.Drawing.Point(-15, -5);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(577, 43);
+            this.panel12.TabIndex = 7;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Georgia", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(57, 12);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(412, 24);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Фильтрация  по дате и сотруднику";
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel17.Controls.Add(this.buttonViewOrder);
+            this.panel17.Controls.Add(this.panel18);
+            this.panel17.Controls.Add(this.buttonAddOrder);
+            this.panel17.Location = new System.Drawing.Point(1212, 10);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(524, 144);
+            this.panel17.TabIndex = 4;
+            // 
+            // buttonViewOrder
+            // 
+            this.buttonViewOrder.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonViewOrder.Location = new System.Drawing.Point(14, 55);
+            this.buttonViewOrder.Name = "buttonViewOrder";
+            this.buttonViewOrder.Size = new System.Drawing.Size(499, 35);
+            this.buttonViewOrder.TabIndex = 7;
+            this.buttonViewOrder.Text = "Просмотр поступления";
+            this.buttonViewOrder.UseVisualStyleBackColor = true;
+            this.buttonViewOrder.Click += new System.EventHandler(this.buttonViewOrder_Click);
+            // 
+            // panel18
+            // 
+            this.panel18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel18.BackColor = System.Drawing.Color.Salmon;
+            this.panel18.Controls.Add(this.label14);
+            this.panel18.Location = new System.Drawing.Point(-15, 0);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(562, 42);
+            this.panel18.TabIndex = 6;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Georgia", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(129, 8);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(274, 24);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Действия с продажами";
+            // 
+            // buttonAddOrder
+            // 
+            this.buttonAddOrder.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAddOrder.Location = new System.Drawing.Point(14, 96);
+            this.buttonAddOrder.Name = "buttonAddOrder";
+            this.buttonAddOrder.Size = new System.Drawing.Size(499, 35);
+            this.buttonAddOrder.TabIndex = 5;
+            this.buttonAddOrder.Text = "Добавить продажу";
+            this.buttonAddOrder.UseVisualStyleBackColor = true;
+            this.buttonAddOrder.Click += new System.EventHandler(this.buttonAddOrder_Click);
             // 
             // MainForm
             // 
@@ -675,6 +900,16 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.tabControl.ResumeLayout(false);
+            this.tabPageOrder.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).EndInit();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -726,5 +961,22 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerReceipt;
         private System.Windows.Forms.ComboBox comboBoxSotrudnik;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage tabPageOrder;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.DataGridView dataGridViewOrders;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Button buttonViewOrder;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button buttonAddOrder;
     }
 }

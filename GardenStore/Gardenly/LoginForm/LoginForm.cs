@@ -66,11 +66,7 @@ namespace Gardenly
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Вы уверены, что хотите выйти из программы?", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            Application.Exit();
         }
     }
 }

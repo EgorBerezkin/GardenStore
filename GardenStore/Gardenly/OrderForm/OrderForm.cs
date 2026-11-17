@@ -29,7 +29,6 @@ namespace Gardenly.OrderForm
             items_ = new List<OrderItem>();
 
             LoadProducts();
-            ConfigureGrid();
         }
 
         // Загрузка товаров
@@ -51,16 +50,6 @@ namespace Gardenly.OrderForm
             }
         }
 
-        // Настройка таблицы
-        private void ConfigureGrid()
-        {
-            dataGridViewItems.AutoGenerateColumns = true;
-            dataGridViewItems.ReadOnly = true;
-            dataGridViewItems.AllowUserToAddRows = false;
-            dataGridViewItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewItems.MultiSelect = false;
-        }
-
         // Обновление таблицы и суммы
         private void RefreshItems()
         {
@@ -76,7 +65,7 @@ namespace Gardenly.OrderForm
 
             dataGridViewItems.DataSource = rows;
             double total = items_.Sum(item => item.Quantity * item.Price);
-            labelTotal.Text = "Итого: " + total.ToString("N2") + " ₽";
+            labelTotal.Text = "Итого: " + total.ToString() + " ₽";
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -119,7 +108,6 @@ namespace Gardenly.OrderForm
                 });
             }
             RefreshItems();
-            numericUpDownQuantity.Value = 1;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -127,6 +115,7 @@ namespace Gardenly.OrderForm
             if (items_.Count == 0)
             {
                 MessageBox.Show("Добавьте хотя бы один товар в продажу.");
+                DialogResult = DialogResult.OK;
                 return;
             }
 
@@ -137,13 +126,8 @@ namespace Gardenly.OrderForm
                     UserId = userId_,
                     OrderDate = DateTime.Now
                 };
-
                 orderService_.AddOrder(order, items_);
 
-                MessageBox.Show("Продажа успешно оформлена.", "Готово",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)

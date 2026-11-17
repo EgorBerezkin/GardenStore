@@ -46,7 +46,7 @@ namespace Gardenly.ReceiptForm
                     dataGridViewItems.Columns["Сумма"].HeaderText = "Сумма";
                 }
                 double total = items.Sum(item => (double)item.Quantity * (double)item.Price);
-                labelTotal.Text = "Итого: " + total.ToString("N2") + " ₽";
+                labelTotal.Text = "Итого: " + total.ToString() + " ₽";
             }
             catch (Exception ex)
             {
