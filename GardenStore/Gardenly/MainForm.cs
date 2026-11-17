@@ -190,11 +190,14 @@ namespace Gardenly
             LoadCategories();
         }
         // -------------------------------------Работа с поступлениями--------------------------------------------
-        private void LoadReceipts()
+        private void LoadReceipts(List<Receipt> receipts = null)
         {
             try
             {
-                List<Receipt> receipts = receiptService_.GetReceipts();
+                if (receipts == null)
+                {
+                    receipts = receiptService_.GetReceipts();
+                }
 
                 dataGridViewReceipts.DataSource = null;
                 dataGridViewReceipts.DataSource = receipts;
@@ -227,14 +230,14 @@ namespace Gardenly
                     .Select(u => new { Id = u.Id, FullName = u.FullName })
                     .ToList();
 
-                comboBoxSotrudnik.DataSource = null;
+                comboBoxReceiptSotrudnik.DataSource = null;
 
                 var allEmployees = new[] { new { Id = 0, FullName = "Все сотрудники" } };
 
-                comboBoxSotrudnik.DataSource = allEmployees.Concat(employees).ToList();
-                comboBoxSotrudnik.DisplayMember = "FullName";
-                comboBoxSotrudnik.ValueMember = "Id";
-                comboBoxSotrudnik.SelectedValue = 0;
+                comboBoxReceiptSotrudnik.DataSource = allEmployees.Concat(employees).ToList();
+                comboBoxReceiptSotrudnik.DisplayMember = "FullName";
+                comboBoxReceiptSotrudnik.ValueMember = "Id";
+                comboBoxReceiptSotrudnik.SelectedValue = 0;
             }
             catch (Exception ex)
             {
@@ -273,18 +276,18 @@ namespace Gardenly
             }
         }
         // Кнопка поиска поступления по дате и сотруднику
-        private void buttonSearh_Click(object sender, EventArgs e)
+        private void buttonSearchReceipts_Click(object sender, EventArgs e)
         {
             DateTime? date = dateTimePickerReceipt.Checked ? dateTimePickerReceipt.Value.Date : (DateTime?)null;
 
-            int employeeId = Convert.ToInt32(comboBoxSotrudnik.SelectedValue);
+            int employeeId = Convert.ToInt32(comboBoxReceiptSotrudnik.SelectedValue);
             int? userId = employeeId == 0 ? (int?)null : employeeId;
             List<Receipt> receipts = receiptService_.GetReceiptsByFilters(date, userId);
 
             dataGridViewReceipts.DataSource = null;
             dataGridViewReceipts.DataSource = receipts;
 
-            LoadReceipts();
+            LoadReceipts(receipts);
             if (receipts.Count == 0)
             {
                 MessageBox.Show("Поступлений по выбранным условиям не найдено.", "Поиск поступлений");
@@ -359,5 +362,7 @@ namespace Gardenly
             loginForm.Show();
             this.Close();
         }
+
+        
     }
 }

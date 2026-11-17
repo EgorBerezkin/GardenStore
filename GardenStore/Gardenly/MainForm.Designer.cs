@@ -36,10 +36,10 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.dataGridViewReceipts = new System.Windows.Forms.DataGridView();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.buttonSearchReceipts = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxSotrudnik = new System.Windows.Forms.ComboBox();
+            this.comboBoxReceiptSotrudnik = new System.Windows.Forms.ComboBox();
             this.dateTimePickerReceipt = new System.Windows.Forms.DateTimePicker();
-            this.buttonSearh = new System.Windows.Forms.Button();
             this.buttonResetReceipts = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -80,7 +80,7 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -205,10 +205,10 @@
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel13.Controls.Add(this.buttonSearchReceipts);
             this.panel13.Controls.Add(this.label4);
-            this.panel13.Controls.Add(this.comboBoxSotrudnik);
+            this.panel13.Controls.Add(this.comboBoxReceiptSotrudnik);
             this.panel13.Controls.Add(this.dateTimePickerReceipt);
-            this.panel13.Controls.Add(this.buttonSearh);
             this.panel13.Controls.Add(this.buttonResetReceipts);
             this.panel13.Controls.Add(this.label9);
             this.panel13.Controls.Add(this.panel14);
@@ -216,6 +216,17 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(524, 197);
             this.panel13.TabIndex = 5;
+            // 
+            // buttonSearchReceipts
+            // 
+            this.buttonSearchReceipts.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearchReceipts.Location = new System.Drawing.Point(273, 141);
+            this.buttonSearchReceipts.Name = "buttonSearchReceipts";
+            this.buttonSearchReceipts.Size = new System.Drawing.Size(117, 34);
+            this.buttonSearchReceipts.TabIndex = 13;
+            this.buttonSearchReceipts.Text = "Поиск";
+            this.buttonSearchReceipts.UseVisualStyleBackColor = true;
+            this.buttonSearchReceipts.Click += new System.EventHandler(this.buttonSearchReceipts_Click);
             // 
             // label4
             // 
@@ -228,14 +239,14 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Фильтрация по ФИО:";
             // 
-            // comboBoxSotrudnik
+            // comboBoxReceiptSotrudnik
             // 
-            this.comboBoxSotrudnik.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxSotrudnik.FormattingEnabled = true;
-            this.comboBoxSotrudnik.Location = new System.Drawing.Point(245, 96);
-            this.comboBoxSotrudnik.Name = "comboBoxSotrudnik";
-            this.comboBoxSotrudnik.Size = new System.Drawing.Size(268, 29);
-            this.comboBoxSotrudnik.TabIndex = 11;
+            this.comboBoxReceiptSotrudnik.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxReceiptSotrudnik.FormattingEnabled = true;
+            this.comboBoxReceiptSotrudnik.Location = new System.Drawing.Point(245, 96);
+            this.comboBoxReceiptSotrudnik.Name = "comboBoxReceiptSotrudnik";
+            this.comboBoxReceiptSotrudnik.Size = new System.Drawing.Size(268, 29);
+            this.comboBoxReceiptSotrudnik.TabIndex = 11;
             // 
             // dateTimePickerReceipt
             // 
@@ -248,17 +259,6 @@
             this.dateTimePickerReceipt.ShowCheckBox = true;
             this.dateTimePickerReceipt.Size = new System.Drawing.Size(268, 27);
             this.dateTimePickerReceipt.TabIndex = 10;
-            // 
-            // buttonSearh
-            // 
-            this.buttonSearh.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearh.Location = new System.Drawing.Point(273, 141);
-            this.buttonSearh.Name = "buttonSearh";
-            this.buttonSearh.Size = new System.Drawing.Size(117, 34);
-            this.buttonSearh.TabIndex = 8;
-            this.buttonSearh.Text = "Поиск";
-            this.buttonSearh.UseVisualStyleBackColor = true;
-            this.buttonSearh.Click += new System.EventHandler(this.buttonSearh_Click);
             // 
             // buttonResetReceipts
             // 
@@ -708,7 +708,7 @@
             this.panel11.BackColor = System.Drawing.Color.YellowGreen;
             this.panel11.Controls.Add(this.label8);
             this.panel11.Controls.Add(this.comboBox1);
-            this.panel11.Controls.Add(this.dateTimePicker1);
+            this.panel11.Controls.Add(this.dateTimePicker);
             this.panel11.Controls.Add(this.button1);
             this.panel11.Controls.Add(this.button2);
             this.panel11.Controls.Add(this.label11);
@@ -738,17 +738,17 @@
             this.comboBox1.Size = new System.Drawing.Size(268, 29);
             this.comboBox1.TabIndex = 11;
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.Salmon;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.Salmon;
-            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.Salmon;
-            this.dateTimePicker1.Location = new System.Drawing.Point(245, 55);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowCheckBox = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(268, 27);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dateTimePicker.CalendarFont = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker.CalendarTitleBackColor = System.Drawing.Color.Salmon;
+            this.dateTimePicker.CalendarTitleForeColor = System.Drawing.Color.Salmon;
+            this.dateTimePicker.CalendarTrailingForeColor = System.Drawing.Color.Salmon;
+            this.dateTimePicker.Location = new System.Drawing.Point(245, 55);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.ShowCheckBox = true;
+            this.dateTimePicker.Size = new System.Drawing.Size(268, 27);
+            this.dateTimePicker.TabIndex = 10;
             // 
             // button1
             // 
@@ -956,10 +956,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button buttonSearh;
         private System.Windows.Forms.Button buttonResetReceipts;
         private System.Windows.Forms.DateTimePicker dateTimePickerReceipt;
-        private System.Windows.Forms.ComboBox comboBoxSotrudnik;
+        private System.Windows.Forms.ComboBox comboBoxReceiptSotrudnik;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabPage tabPageOrder;
         private System.Windows.Forms.Panel panel10;
@@ -967,7 +966,7 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label11;
@@ -978,5 +977,6 @@
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button buttonAddOrder;
+        private System.Windows.Forms.Button buttonSearchReceipts;
     }
 }
