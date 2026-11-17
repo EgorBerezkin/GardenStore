@@ -352,7 +352,7 @@ namespace Gardenly
                 }
             }
         }
-        // -------------------------Кнопка выхода с главной формы------------------------------
+        // -------------------------Кнопка выхода с главной формы-------------------------------
         private void buttonExit_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
