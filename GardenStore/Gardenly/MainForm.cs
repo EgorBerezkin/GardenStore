@@ -14,13 +14,13 @@ namespace Gardenly
 {
     public partial class MainForm : Form
     {
-        private User user_;                         // пользователи
-        private ProductService productService_;     // действия с товарами 
-        private CategoryService categoryService_;   // действия с категориями
-        private List<Product> products_;            // для товаров
-        private List<Product> filteredProducts_;    // для поиска товара в фильтре по категориям
-        private ReceiptService receiptService_;
-        private OrderService orderService_;
+        private User user_;                         // хранение данных о пользователе
+        private ProductService productService_;     // для работы с товарами
+        private CategoryService categoryService_;   // для работы с категориями
+        private List<Product> products_;            // список загруженных товаров
+        private List<Product> filteredProducts_;    // список товаров после фильтрации
+        private ReceiptService receiptService_;     // для работы с поступлениями
+        private OrderService orderService_;         // для работы с продажами
 
 
         public MainForm(User user)
@@ -311,7 +311,7 @@ namespace Gardenly
                 dataGridViewOrders.Columns["Id"].HeaderText = "Номер";
                 dataGridViewOrders.Columns["UserId"].Visible = false;
                 dataGridViewOrders.Columns["OrderDate"].HeaderText = "Дата";
-                dataGridViewOrders.Columns["OrderDate"].DefaultCellStyle.Format = "dd.MM.yyyy";
+                dataGridViewOrders.Columns["OrderDate"].DefaultCellStyle.Format = "dd.MM.yyyy HH:mm";
                 dataGridViewOrders.Columns["UserFullName"].HeaderText = "Сотрудник";
                 dataGridViewOrders.Columns["TotalAmount"].HeaderText = "Сумма";
             }
@@ -335,7 +335,7 @@ namespace Gardenly
             if (order == null)
                 return;
 
-            using (OrderForm.OrderViewForm form = new OrderForm.OrderViewForm(order.Id, order.OrderDate.ToString("dd.MM.yyyy"), order.UserFullName))
+            using (OrderForm.OrderViewForm form = new OrderForm.OrderViewForm(order.Id, order.OrderDate.ToString("dd.MM.yyyy HH:mm"), order.UserFullName))
             {
                 form.ShowDialog();
             }

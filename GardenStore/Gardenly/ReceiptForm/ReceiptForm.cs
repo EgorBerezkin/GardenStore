@@ -141,7 +141,6 @@ namespace Gardenly.ReceiptForm
             if (items_.Count == 0)
             {
                 MessageBox.Show("Добавьте хотя бы один товар в поступление.");
-                DialogResult = DialogResult.OK;
                 return;
             }
             try
@@ -153,6 +152,7 @@ namespace Gardenly.ReceiptForm
                 };
                 receiptService_.AddReceipt(receipt, items_);
 
+                DialogResult = DialogResult.OK;
                 Close();
             }
             catch (Exception ex)

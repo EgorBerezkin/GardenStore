@@ -132,6 +132,7 @@ namespace Librarygardenly.Orders
                     catch
                     {
                         transaction.Rollback();
+                        throw;
                     }
                 }
             }

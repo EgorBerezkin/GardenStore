@@ -115,7 +115,6 @@ namespace Gardenly.OrderForm
             if (items_.Count == 0)
             {
                 MessageBox.Show("Добавьте хотя бы один товар в продажу.");
-                DialogResult = DialogResult.OK;
                 return;
             }
 
@@ -128,6 +127,7 @@ namespace Gardenly.OrderForm
                 };
                 orderService_.AddOrder(order, items_);
 
+                DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
