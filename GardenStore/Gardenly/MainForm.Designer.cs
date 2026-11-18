@@ -79,10 +79,10 @@
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.comboBoxOrders = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerOrders = new System.Windows.Forms.DateTimePicker();
+            this.buttonSearchOrders = new System.Windows.Forms.Button();
+            this.buttonResetOrder = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
@@ -707,10 +707,10 @@
             // 
             this.panel11.BackColor = System.Drawing.Color.YellowGreen;
             this.panel11.Controls.Add(this.label8);
-            this.panel11.Controls.Add(this.comboBox1);
-            this.panel11.Controls.Add(this.dateTimePicker);
-            this.panel11.Controls.Add(this.button1);
-            this.panel11.Controls.Add(this.button2);
+            this.panel11.Controls.Add(this.comboBoxOrders);
+            this.panel11.Controls.Add(this.dateTimePickerOrders);
+            this.panel11.Controls.Add(this.buttonSearchOrders);
+            this.panel11.Controls.Add(this.buttonResetOrder);
             this.panel11.Controls.Add(this.label11);
             this.panel11.Controls.Add(this.panel12);
             this.panel11.Location = new System.Drawing.Point(1212, 180);
@@ -729,46 +729,48 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Фильтрация по ФИО:";
             // 
-            // comboBox1
+            // comboBoxOrders
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(245, 96);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(268, 29);
-            this.comboBox1.TabIndex = 11;
+            this.comboBoxOrders.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxOrders.FormattingEnabled = true;
+            this.comboBoxOrders.Location = new System.Drawing.Point(245, 96);
+            this.comboBoxOrders.Name = "comboBoxOrders";
+            this.comboBoxOrders.Size = new System.Drawing.Size(268, 29);
+            this.comboBoxOrders.TabIndex = 11;
             // 
-            // dateTimePicker
+            // dateTimePickerOrders
             // 
-            this.dateTimePicker.CalendarFont = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker.CalendarTitleBackColor = System.Drawing.Color.Salmon;
-            this.dateTimePicker.CalendarTitleForeColor = System.Drawing.Color.Salmon;
-            this.dateTimePicker.CalendarTrailingForeColor = System.Drawing.Color.Salmon;
-            this.dateTimePicker.Location = new System.Drawing.Point(245, 55);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.ShowCheckBox = true;
-            this.dateTimePicker.Size = new System.Drawing.Size(268, 27);
-            this.dateTimePicker.TabIndex = 10;
+            this.dateTimePickerOrders.CalendarFont = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePickerOrders.CalendarTitleBackColor = System.Drawing.Color.Salmon;
+            this.dateTimePickerOrders.CalendarTitleForeColor = System.Drawing.Color.Salmon;
+            this.dateTimePickerOrders.CalendarTrailingForeColor = System.Drawing.Color.Salmon;
+            this.dateTimePickerOrders.Location = new System.Drawing.Point(245, 55);
+            this.dateTimePickerOrders.Name = "dateTimePickerOrders";
+            this.dateTimePickerOrders.ShowCheckBox = true;
+            this.dateTimePickerOrders.Size = new System.Drawing.Size(268, 27);
+            this.dateTimePickerOrders.TabIndex = 10;
             // 
-            // button1
+            // buttonSearchOrders
             // 
-            this.button1.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(273, 141);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 34);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Поиск";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonSearchOrders.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearchOrders.Location = new System.Drawing.Point(273, 141);
+            this.buttonSearchOrders.Name = "buttonSearchOrders";
+            this.buttonSearchOrders.Size = new System.Drawing.Size(117, 34);
+            this.buttonSearchOrders.TabIndex = 8;
+            this.buttonSearchOrders.Text = "Поиск";
+            this.buttonSearchOrders.UseVisualStyleBackColor = true;
+            this.buttonSearchOrders.Click += new System.EventHandler(this.buttonSearchOrders_Click);
             // 
-            // button2
+            // buttonResetOrder
             // 
-            this.button2.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(396, 141);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 34);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Сброс";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonResetOrder.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonResetOrder.Location = new System.Drawing.Point(396, 141);
+            this.buttonResetOrder.Name = "buttonResetOrder";
+            this.buttonResetOrder.Size = new System.Drawing.Size(117, 34);
+            this.buttonResetOrder.TabIndex = 9;
+            this.buttonResetOrder.Text = "Сброс";
+            this.buttonResetOrder.UseVisualStyleBackColor = true;
+            this.buttonResetOrder.Click += new System.EventHandler(this.buttonResetOrder_Click);
             // 
             // label11
             // 
@@ -965,10 +967,10 @@
         private System.Windows.Forms.DataGridView dataGridViewOrders;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBoxOrders;
+        private System.Windows.Forms.DateTimePicker dateTimePickerOrders;
+        private System.Windows.Forms.Button buttonSearchOrders;
+        private System.Windows.Forms.Button buttonResetOrder;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label13;

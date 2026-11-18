@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using Librarygardenly.Orders;
@@ -122,8 +121,7 @@ namespace Gardenly.OrderForm
             {
                 Order order = new Order
                 {
-                    UserId = userId_,
-                    OrderDate = DateTime.Now
+                    UserId = userId_
                 };
                 orderService_.AddOrder(order, items_);
 

@@ -32,8 +32,7 @@ namespace Gardenly
                 labelAttemps.Text = "Осталось попыток: " + attempts_;
             }
             // Проверяем пустые поля
-            if (string.IsNullOrWhiteSpace(textBoxLogin.Text) ||
-                string.IsNullOrWhiteSpace(textBoxPassword.Text))
+            if (string.IsNullOrWhiteSpace(textBoxLogin.Text) || string.IsNullOrWhiteSpace(textBoxPassword.Text))
             {
                 MessageBox.Show("Введите логин и пароль");
                 return;
@@ -55,7 +54,7 @@ namespace Gardenly
                 if (attempts_ == 0)
                 {
                     blockUntil_ = DateTime.Now.AddMinutes(5);
-                    MessageBox.Show("Вы три раза ввели неверный логин или пароль.\n\n" + "Вход заблокирован на 5 минут.", "Вход заблокирован", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Вход заблокирован на 5 минут.", "Вход заблокирован", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {

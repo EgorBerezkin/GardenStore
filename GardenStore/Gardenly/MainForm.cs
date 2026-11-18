@@ -22,7 +22,6 @@ namespace Gardenly
         private ReceiptService receiptService_;     // для работы с поступлениями
         private OrderService orderService_;         // для работы с продажами
 
-
         public MainForm(User user)
         {
             InitializeComponent();
@@ -47,6 +46,7 @@ namespace Gardenly
 
             orderService_ = new OrderService();
             LoadOrders();
+            LoadOrderEmployees();
         }
         // ----------------------------------Вкладка товары---------------------------------------
         private void LoadProducts()
@@ -284,9 +284,6 @@ namespace Gardenly
             int? userId = employeeId == 0 ? (int?)null : employeeId;
             List<Receipt> receipts = receiptService_.GetReceiptsByFilters(date, userId);
 
-            dataGridViewReceipts.DataSource = null;
-            dataGridViewReceipts.DataSource = receipts;
-
             LoadReceipts(receipts);
             if (receipts.Count == 0)
             {
@@ -299,11 +296,14 @@ namespace Gardenly
             LoadReceipts();
         }
         // --------------------------------------Вкладка продажи-----------------------------------------
-        private void LoadOrders()
+        private void LoadOrders(List<Order> orders = null)
         {
             try
             {
-                List<Order> orders = orderService_.GetOrders();
+                if (orders == null)
+                {
+                    orders = orderService_.GetOrders();
+                }
 
                 dataGridViewOrders.DataSource = null;
                 dataGridViewOrders.DataSource = orders;
@@ -322,6 +322,30 @@ namespace Gardenly
             {
                 MessageBox.Show("Не удалось загрузить продажи. Проверьте подключение к базе данных.\n" + ex.Message, "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void LoadOrderEmployees()
+        {
+            try
+            {
+                UserService userService = new UserService();
+
+                var employees = userService.GetUsers().Select(u => new { Id = u.Id, FullName = u.FullName }).ToList();
+                comboBoxOrders.DataSource = null;
+
+                var allEmployees = new[]
+                {
+                    new { Id = 0, FullName = "Все сотрудники" }
+                };
+
+                comboBoxOrders.DataSource = allEmployees.Concat(employees).ToList();
+                comboBoxOrders.DisplayMember = "FullName";
+                comboBoxOrders.ValueMember = "Id";
+                comboBoxOrders.SelectedValue = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось загрузить список сотрудников. " + ex.Message);
             }
         }
         // Кнопка просмотра продажи
@@ -355,6 +379,26 @@ namespace Gardenly
                 }
             }
         }
+        // Кнопка фильтрации продаж
+        private void buttonSearchOrders_Click(object sender, EventArgs e)
+        {
+            DateTime? date = dateTimePickerOrders.Checked ? dateTimePickerOrders.Value.Date : (DateTime?)null;
+
+            int employeeId = Convert.ToInt32(comboBoxOrders.SelectedValue);
+            int? userId = employeeId == 0 ? (int?)null : employeeId;
+            List<Order> orders = orderService_.GetOrdersByFilters(date, userId);
+
+            LoadOrders(orders);
+            if (orders.Count == 0)
+            {
+                MessageBox.Show("Продаж по выбранным условиям не найдено.", "Поиск продаж");
+            }
+        }
+        // Кнопка сброса фильтра
+        private void buttonResetOrder_Click(object sender, EventArgs e)
+        {
+            LoadOrders();
+        }
         // -------------------------Кнопка выхода с главной формы-------------------------------
         private void buttonExit_Click(object sender, EventArgs e)
         {
@@ -362,7 +406,5 @@ namespace Gardenly
             loginForm.Show();
             this.Close();
         }
-
-        
     }
 }
