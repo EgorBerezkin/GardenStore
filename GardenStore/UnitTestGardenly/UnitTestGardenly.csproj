@@ -105,6 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UnitTestOrders.cs" />
     <Compile Include="UnitTestReceipts.cs" />
     <Compile Include="UnitTestProducts.cs" />
     <Compile Include="UnitTestAuth.cs" />
