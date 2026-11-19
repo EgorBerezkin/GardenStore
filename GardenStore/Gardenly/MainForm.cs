@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Gardenly.ReceiptForm;
@@ -398,6 +399,32 @@ namespace Gardenly
         private void buttonResetOrder_Click(object sender, EventArgs e)
         {
             LoadOrders();
+        }
+        // ------------------------ЗВкладка запросы и задача по запросам во вкладке товары
+        private void dataGridViewProducts_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            DataGridViewRow row = dataGridViewProducts.Rows[e.RowIndex];
+
+            if (row.Cells["Quantity"].Value == null)
+                return;
+
+            int quantity = Convert.ToInt32(row.Cells["Quantity"].Value);
+
+            if (quantity == 0)
+            {
+                row.DefaultCellStyle.BackColor = Color.DarkSalmon;
+            }
+            else if (quantity >= 1 && quantity <= 10)
+            {
+                row.DefaultCellStyle.BackColor = Color.Khaki;
+            }
+            else
+            {
+                row.DefaultCellStyle.BackColor = Color.Empty;
+            }
         }
         // -------------------------Кнопка выхода с главной формы-------------------------------
         private void buttonExit_Click(object sender, EventArgs e)

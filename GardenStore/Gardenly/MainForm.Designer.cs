@@ -402,6 +402,7 @@
             this.dataGridViewProducts.RowTemplate.Height = 24;
             this.dataGridViewProducts.Size = new System.Drawing.Size(1159, 628);
             this.dataGridViewProducts.TabIndex = 2;
+            this.dataGridViewProducts.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridViewProducts_RowPrePaint);
             // 
             // panelAdministrator
             // 
