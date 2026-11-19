@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Librarygardenly.Restock
 {
-    public class RestocRequestItem
+    public class RestockRequestItem
     {
         public int Id { get; set; }
         public int RequestId { get; set; }
