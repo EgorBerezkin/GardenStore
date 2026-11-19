@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderForm));
             this.comboBoxProduct = new System.Windows.Forms.ComboBox();
             this.numericUpDownQuantity = new System.Windows.Forms.NumericUpDown();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -208,6 +209,7 @@
             this.Controls.Add(this.numericUpDownQuantity);
             this.Controls.Add(this.comboBoxProduct);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "OrderForm";
             this.Text = "OrderForm";
