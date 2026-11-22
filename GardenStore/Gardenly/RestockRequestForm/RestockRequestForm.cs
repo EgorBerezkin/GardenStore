@@ -16,10 +16,8 @@ namespace Gardenly.RestockRequest
     public partial class RestockRequestForm : Form
     {
         private int userId_;
-
         private ProductService productService_;
         private RestockRequestService requestService_;
-
         private List<Product> products_;
         private List<RestockRequestItem> items_;
 
@@ -79,17 +77,14 @@ namespace Gardenly.RestockRequest
 
             try
             {
-                Librarygardenly.Restock.RestockRequest request = 
+                Librarygardenly.Restock.RestockRequest request =
                 new Librarygardenly.Restock.RestockRequest
                 {
                     UserId = userId_,
                     RequestDate = DateTime.Now,
                     Status = "Ожидает рассмотрения"
                 };
-
                 requestService_.AddRequest(request, items_);
-
-
                 DialogResult = DialogResult.OK;
                 Close();
             }
@@ -109,7 +104,6 @@ namespace Gardenly.RestockRequest
             }
 
             int quantity;
-
             if (!int.TryParse(textBoxQuantity.Text, out quantity) || quantity <= 0)
             {
                 MessageBox.Show("Введите корректное количество.");
@@ -117,7 +111,6 @@ namespace Gardenly.RestockRequest
             }
 
             RestockRequestItem existingItem = items_.FirstOrDefault(item => item.ProductId == product.Id);
-
             if (existingItem != null)
             {
                 existingItem.Quantity += quantity;
@@ -128,10 +121,10 @@ namespace Gardenly.RestockRequest
                 {
                     ProductId = product.Id,
                     ProductName = product.Name,
-                    Quantity = quantity
+                    Quantity = quantity,
+                    Price = product.Price
                 });
             }
-
             RefreshItems();
             textBoxQuantity.Clear();
         }
@@ -143,16 +136,13 @@ namespace Gardenly.RestockRequest
                 MessageBox.Show("Выберите товар для удаления.");
                 return;
             }
-
             int index = dataGridViewItems.CurrentRow.Index;
-
             if (index >= 0 && index < items_.Count)
             {
                 items_.RemoveAt(index);
                 RefreshItems();
             }
         }
-
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Close();

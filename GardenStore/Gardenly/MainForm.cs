@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Gardenly.ReceiptForm;
+using Gardenly.RestockRequest;
 using Librarygardenly;
 using Librarygardenly.Categories;
 using Librarygardenly.Orders;
@@ -436,6 +437,16 @@ namespace Gardenly
         {
             try
             {
+                if (user_ == null)
+                {
+                    MessageBox.Show("Ошибка: пользователь не передан в MainForm.");
+                    return;
+                }
+                if (requestService_ == null)
+                {
+                    requestService_ = new RestockRequestService();
+                }
+
                 List<Librarygardenly.Restock.RestockRequest> requests;
 
                 if (user_.Role == "sotrudnik")
@@ -450,19 +461,58 @@ namespace Gardenly
                 dataGridViewRestockRequest.DataSource = null;
                 dataGridViewRestockRequest.DataSource = requests;
 
-                if (dataGridViewRestockRequest.Columns.Count > 0)
-                {
-                    dataGridViewRestockRequest.Columns["Id"].HeaderText = "Номер заявки";
-                    dataGridViewRestockRequest.Columns["UserId"].Visible = false;
-                    dataGridViewRestockRequest.Columns["RequestDate"].HeaderText = "Дата создания";
-                    dataGridViewRestockRequest.Columns["UserFullName"].HeaderText = "Сотрудник";
-                    dataGridViewRestockRequest.Columns["Status"].HeaderText = "Статус";
-                }
+                if (dataGridViewRestockRequest.Columns.Count == 0)
+                    return;
+
+                dataGridViewRestockRequest.Columns["Id"].HeaderText = "Номер заявки";
+                dataGridViewRestockRequest.Columns["UserId"].Visible = false;
+                dataGridViewRestockRequest.Columns["RequestDate"].HeaderText = "Дата создания";
+                dataGridViewRestockRequest.Columns["RequestDate"].DefaultCellStyle.Format = "dd.MM.yyyy HH:mm";
+                dataGridViewRestockRequest.Columns["UserFullName"].HeaderText = "Сотрудник";
+                dataGridViewRestockRequest.Columns["Status"].HeaderText = "Статус";
+                dataGridViewRestockRequest.Columns["ItemsCount"].HeaderText = "Количество товаров";
+                dataGridViewRestockRequest.Columns["TotalAmount"].HeaderText = "Общая сумма";
+                dataGridViewRestockRequest.Columns["TotalAmount"].DefaultCellStyle.Format = "N2";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Не удалось загрузить заявки. " + ex.Message, "Ошибка",
+                MessageBox.Show("Не удалось загрузить заявки.\n" + ex.ToString(), "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void buttonViewRequest_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewRestockRequest.CurrentRow == null)
+            {
+                MessageBox.Show("Выберите заявку.");
+                return;
+            }
+            Librarygardenly.Restock.RestockRequest selectedRequest = dataGridViewRestockRequest.CurrentRow.DataBoundItem as Librarygardenly.Restock.RestockRequest;
+
+            if (selectedRequest == null)
+                return;
+
+            bool isAdministrator = user_.Role != "sotrudnik";
+            using (RequestViewForm form = new RequestViewForm(selectedRequest, isAdministrator))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadRequests();
+                }
+            }
+        }
+
+        private void buttonAddRequest_Click(object sender, EventArgs e)
+        {
+            using (RestockRequestForm form = new RestockRequestForm(user_.Id))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadRequests();
+
+                    MessageBox.Show("Заявка успешно добавлена.", "Успешно",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
         // -------------------------Кнопка выхода с главной формы-------------------------------

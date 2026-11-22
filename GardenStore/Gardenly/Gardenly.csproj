@@ -152,10 +152,16 @@
     <Compile Include="ReceiptForm\ReceiptViewForm.Designer.cs">
       <DependentUpon>ReceiptViewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RestockRequest\RestockRequestForm.cs">
+    <Compile Include="RestockRequestForm\RequestViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RestockRequest\RestockRequestForm.Designer.cs">
+    <Compile Include="RestockRequestForm\RequestViewForm.Designer.cs">
+      <DependentUpon>RequestViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestockRequestForm\RestockRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestockRequestForm\RestockRequestForm.Designer.cs">
       <DependentUpon>RestockRequestForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="OrderForm\OrderForm.resx">
@@ -191,7 +197,10 @@
     <EmbeddedResource Include="ReceiptForm\ReceiptViewForm.resx">
       <DependentUpon>ReceiptViewForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RestockRequest\RestockRequestForm.resx">
+    <EmbeddedResource Include="RestockRequestForm\RequestViewForm.resx">
+      <DependentUpon>RequestViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestockRequestForm\RestockRequestForm.resx">
       <DependentUpon>RestockRequestForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

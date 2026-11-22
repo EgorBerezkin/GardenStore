@@ -941,6 +941,7 @@
             this.buttonAddRequest.TabIndex = 7;
             this.buttonAddRequest.Text = "Добавление заявки";
             this.buttonAddRequest.UseVisualStyleBackColor = true;
+            this.buttonAddRequest.Click += new System.EventHandler(this.buttonAddRequest_Click);
             // 
             // panel23
             // 
@@ -973,6 +974,7 @@
             this.buttonViewRequest.TabIndex = 5;
             this.buttonViewRequest.Text = "Просмотр заявки";
             this.buttonViewRequest.UseVisualStyleBackColor = true;
+            this.buttonViewRequest.Click += new System.EventHandler(this.buttonViewRequest_Click);
             // 
             // buttonUpdateListRequest
             // 

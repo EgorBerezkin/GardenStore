@@ -9,5 +9,7 @@ namespace Librarygardenly.Restock
         public DateTime RequestDate { get; set; }
         public string UserFullName { get; set; }
         public string Status { get; set; }
+        public int CountItems { get; set; }
+        public double TotalAmount { get; set; }
     }
 }
