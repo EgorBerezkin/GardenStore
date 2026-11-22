@@ -91,6 +91,15 @@
             this.panel18 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.buttonAddOrder = new System.Windows.Forms.Button();
+            this.tabPageRestockRequest = new System.Windows.Forms.TabPage();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.dataGridViewRestockRequest = new System.Windows.Forms.DataGridView();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.buttonAddRequest = new System.Windows.Forms.Button();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.buttonViewRequest = new System.Windows.Forms.Button();
+            this.buttonUpdateListRequest = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabPageReceipt.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -117,6 +126,11 @@
             this.panel12.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel18.SuspendLayout();
+            this.tabPageRestockRequest.SuspendLayout();
+            this.panel19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRestockRequest)).BeginInit();
+            this.panel22.SuspendLayout();
+            this.panel23.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelUser
@@ -650,6 +664,7 @@
             this.tabControl.Controls.Add(this.tabPageProducts);
             this.tabControl.Controls.Add(this.tabPageReceipt);
             this.tabControl.Controls.Add(this.tabPageOrder);
+            this.tabControl.Controls.Add(this.tabPageRestockRequest);
             this.tabControl.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabControl.Location = new System.Drawing.Point(-1, -2);
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
@@ -861,6 +876,114 @@
             this.buttonAddOrder.UseVisualStyleBackColor = true;
             this.buttonAddOrder.Click += new System.EventHandler(this.buttonAddOrder_Click);
             // 
+            // tabPageRestockRequest
+            // 
+            this.tabPageRestockRequest.Controls.Add(this.panel19);
+            this.tabPageRestockRequest.Controls.Add(this.panel22);
+            this.tabPageRestockRequest.Location = new System.Drawing.Point(4, 29);
+            this.tabPageRestockRequest.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageRestockRequest.Name = "tabPageRestockRequest";
+            this.tabPageRestockRequest.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageRestockRequest.Size = new System.Drawing.Size(1826, 667);
+            this.tabPageRestockRequest.TabIndex = 8;
+            this.tabPageRestockRequest.Text = "Заявки на поплнение";
+            this.tabPageRestockRequest.UseVisualStyleBackColor = true;
+            // 
+            // panel19
+            // 
+            this.panel19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel19.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel19.Controls.Add(this.dataGridViewRestockRequest);
+            this.panel19.Location = new System.Drawing.Point(11, 10);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(1180, 648);
+            this.panel19.TabIndex = 7;
+            // 
+            // dataGridViewRestockRequest
+            // 
+            this.dataGridViewRestockRequest.AccessibleRole = System.Windows.Forms.AccessibleRole.Column;
+            this.dataGridViewRestockRequest.AllowUserToAddRows = false;
+            this.dataGridViewRestockRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewRestockRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewRestockRequest.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewRestockRequest.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewRestockRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRestockRequest.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewRestockRequest.Location = new System.Drawing.Point(9, 10);
+            this.dataGridViewRestockRequest.Name = "dataGridViewRestockRequest";
+            this.dataGridViewRestockRequest.ReadOnly = true;
+            this.dataGridViewRestockRequest.RowHeadersWidth = 51;
+            this.dataGridViewRestockRequest.RowTemplate.Height = 24;
+            this.dataGridViewRestockRequest.Size = new System.Drawing.Size(1159, 628);
+            this.dataGridViewRestockRequest.TabIndex = 2;
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel22.Controls.Add(this.buttonUpdateListRequest);
+            this.panel22.Controls.Add(this.buttonAddRequest);
+            this.panel22.Controls.Add(this.panel23);
+            this.panel22.Controls.Add(this.buttonViewRequest);
+            this.panel22.Location = new System.Drawing.Point(1212, 10);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(524, 364);
+            this.panel22.TabIndex = 4;
+            // 
+            // buttonAddRequest
+            // 
+            this.buttonAddRequest.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAddRequest.Location = new System.Drawing.Point(14, 55);
+            this.buttonAddRequest.Name = "buttonAddRequest";
+            this.buttonAddRequest.Size = new System.Drawing.Size(499, 35);
+            this.buttonAddRequest.TabIndex = 7;
+            this.buttonAddRequest.Text = "Добавление заявки";
+            this.buttonAddRequest.UseVisualStyleBackColor = true;
+            // 
+            // panel23
+            // 
+            this.panel23.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel23.BackColor = System.Drawing.Color.Salmon;
+            this.panel23.Controls.Add(this.label18);
+            this.panel23.Location = new System.Drawing.Point(-15, 0);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(562, 42);
+            this.panel23.TabIndex = 6;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Georgia", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(129, 8);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(274, 24);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Действия с продажами";
+            // 
+            // buttonViewRequest
+            // 
+            this.buttonViewRequest.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonViewRequest.Location = new System.Drawing.Point(14, 96);
+            this.buttonViewRequest.Name = "buttonViewRequest";
+            this.buttonViewRequest.Size = new System.Drawing.Size(499, 35);
+            this.buttonViewRequest.TabIndex = 5;
+            this.buttonViewRequest.Text = "Просмотр заявки";
+            this.buttonViewRequest.UseVisualStyleBackColor = true;
+            // 
+            // buttonUpdateListRequest
+            // 
+            this.buttonUpdateListRequest.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonUpdateListRequest.Location = new System.Drawing.Point(14, 137);
+            this.buttonUpdateListRequest.Name = "buttonUpdateListRequest";
+            this.buttonUpdateListRequest.Size = new System.Drawing.Size(499, 35);
+            this.buttonUpdateListRequest.TabIndex = 8;
+            this.buttonUpdateListRequest.Text = "Обновить список";
+            this.buttonUpdateListRequest.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -913,6 +1036,12 @@
             this.panel17.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
+            this.tabPageRestockRequest.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRestockRequest)).EndInit();
+            this.panel22.ResumeLayout(false);
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -981,5 +1110,14 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button buttonAddOrder;
         private System.Windows.Forms.Button buttonSearchReceipts;
+        private System.Windows.Forms.TabPage tabPageRestockRequest;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.DataGridView dataGridViewRestockRequest;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Button buttonAddRequest;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button buttonViewRequest;
+        private System.Windows.Forms.Button buttonUpdateListRequest;
     }
 }

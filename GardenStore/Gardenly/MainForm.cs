@@ -10,6 +10,7 @@ using Librarygardenly.Orders;
 using Librarygardenly.Products;
 using Librarygardenly.Receipts;
 using Librarygardenly.Registration;
+using Librarygardenly.Restock;
 
 namespace Gardenly
 {
@@ -22,6 +23,7 @@ namespace Gardenly
         private List<Product> filteredProducts_;    // список товаров после фильтрации
         private ReceiptService receiptService_;     // для работы с поступлениями
         private OrderService orderService_;         // для работы с продажами
+        private RestockRequestService requestService_;
 
         public MainForm(User user)
         {
@@ -48,6 +50,9 @@ namespace Gardenly
             orderService_ = new OrderService();
             LoadOrders();
             LoadOrderEmployees();
+
+            requestService_ = new RestockRequestService();
+            LoadRequests();
         }
         // ----------------------------------Вкладка товары---------------------------------------
         private void LoadProducts()
@@ -400,7 +405,7 @@ namespace Gardenly
         {
             LoadOrders();
         }
-        // ------------------------ЗВкладка запросы и задача по запросам во вкладке товары
+        // ------------------------Вкладка запросы и задача по запросам во вкладке товары
         private void dataGridViewProducts_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -424,6 +429,40 @@ namespace Gardenly
             else
             {
                 row.DefaultCellStyle.BackColor = Color.Empty;
+            }
+        }
+        // Загрузка заявок на пополнение
+        private void LoadRequests()
+        {
+            try
+            {
+                List<Librarygardenly.Restock.RestockRequest> requests;
+
+                if (user_.Role == "sotrudnik")
+                {
+                    requests = requestService_.GetRequestsByUser(user_.Id);
+                }
+                else
+                {
+                    requests = requestService_.GetRequests();
+                }
+
+                dataGridViewRestockRequest.DataSource = null;
+                dataGridViewRestockRequest.DataSource = requests;
+
+                if (dataGridViewRestockRequest.Columns.Count > 0)
+                {
+                    dataGridViewRestockRequest.Columns["Id"].HeaderText = "Номер заявки";
+                    dataGridViewRestockRequest.Columns["UserId"].Visible = false;
+                    dataGridViewRestockRequest.Columns["RequestDate"].HeaderText = "Дата создания";
+                    dataGridViewRestockRequest.Columns["UserFullName"].HeaderText = "Сотрудник";
+                    dataGridViewRestockRequest.Columns["Status"].HeaderText = "Статус";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось загрузить заявки. " + ex.Message, "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         // -------------------------Кнопка выхода с главной формы-------------------------------

@@ -44,6 +44,46 @@ namespace Librarygardenly.Restock
             return requests;
         }
 
+        // Получение заявок определённого сотрудника
+        public List<RestockRequest> GetRequestsByUser(int userId)
+        {
+            List<RestockRequest> requests = new List<RestockRequest>();
+
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = @"SELECT r.id, r.user_id, r.request_date,
+                              u.full_name, r.status
+                       FROM restock_requests r
+                       INNER JOIN users u ON r.user_id = u.id
+                       WHERE r.user_id = @userId
+                       ORDER BY r.request_date DESC, r.id DESC";
+
+                using (var command = new NpgsqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@userId", userId);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            requests.Add(new RestockRequest
+                            {
+                                Id = reader.GetInt32(0),
+                                UserId = reader.GetInt32(1),
+                                RequestDate = reader.GetDateTime(2),
+                                UserFullName = reader.GetString(3),
+                                Status = reader.GetString(4)
+                            });
+                        }
+                    }
+                }
+            }
+
+            return requests;
+        }
+
         // Добавление новой заявки
         public void AddRequest(RestockRequest request, List<RestockRequestItem> items)
         {
