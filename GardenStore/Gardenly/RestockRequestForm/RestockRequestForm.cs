@@ -121,8 +121,7 @@ namespace Gardenly.RestockRequest
                 {
                     ProductId = product.Id,
                     ProductName = product.Name,
-                    Quantity = quantity,
-                    Price = product.Price
+                    Quantity = quantity
                 });
             }
             RefreshItems();

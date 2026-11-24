@@ -99,7 +99,6 @@
             this.panel23 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.buttonViewRequest = new System.Windows.Forms.Button();
-            this.buttonUpdateListRequest = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabPageReceipt.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -923,7 +922,6 @@
             // panel22
             // 
             this.panel22.BackColor = System.Drawing.Color.YellowGreen;
-            this.panel22.Controls.Add(this.buttonUpdateListRequest);
             this.panel22.Controls.Add(this.buttonAddRequest);
             this.panel22.Controls.Add(this.panel23);
             this.panel22.Controls.Add(this.buttonViewRequest);
@@ -975,16 +973,6 @@
             this.buttonViewRequest.Text = "Просмотр заявки";
             this.buttonViewRequest.UseVisualStyleBackColor = true;
             this.buttonViewRequest.Click += new System.EventHandler(this.buttonViewRequest_Click);
-            // 
-            // buttonUpdateListRequest
-            // 
-            this.buttonUpdateListRequest.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonUpdateListRequest.Location = new System.Drawing.Point(14, 137);
-            this.buttonUpdateListRequest.Name = "buttonUpdateListRequest";
-            this.buttonUpdateListRequest.Size = new System.Drawing.Size(499, 35);
-            this.buttonUpdateListRequest.TabIndex = 8;
-            this.buttonUpdateListRequest.Text = "Обновить список";
-            this.buttonUpdateListRequest.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -1120,6 +1108,5 @@
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button buttonViewRequest;
-        private System.Windows.Forms.Button buttonUpdateListRequest;
     }
 }

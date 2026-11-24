@@ -31,12 +31,9 @@ namespace Gardenly
             InitializeComponent();
 
             user_ = user;
+            ConfigureInterface();
             labelUser.Text = "Вы вошли как: " + user_.FullName;
-            if (user_.Role == "sotrudnik")
-            {
-                panelAdministrator.Visible = false;
-                // tabPageUsers.Parent = null;
-            }
+            
 
             productService_ = new ProductService();
             LoadProducts();
@@ -54,6 +51,16 @@ namespace Gardenly
 
             requestService_ = new RestockRequestService();
             LoadRequests();
+        }
+        private void ConfigureInterface()
+        {
+            bool isAdministrator = user_.Role != "sotrudnik";
+
+            // Панель администратора
+            panelAdministrator.Visible = isAdministrator;
+
+            // Кнопка создания заявки
+            buttonAddRequest.Visible = !isAdministrator;
         }
         // ----------------------------------Вкладка товары---------------------------------------
         private void LoadProducts()
@@ -437,16 +444,6 @@ namespace Gardenly
         {
             try
             {
-                if (user_ == null)
-                {
-                    MessageBox.Show("Ошибка: пользователь не передан в MainForm.");
-                    return;
-                }
-                if (requestService_ == null)
-                {
-                    requestService_ = new RestockRequestService();
-                }
-
                 List<Librarygardenly.Restock.RestockRequest> requests;
 
                 if (user_.Role == "sotrudnik")
@@ -470,10 +467,16 @@ namespace Gardenly
                 dataGridViewRestockRequest.Columns["RequestDate"].DefaultCellStyle.Format = "dd.MM.yyyy HH:mm";
                 dataGridViewRestockRequest.Columns["UserFullName"].HeaderText = "Сотрудник";
                 dataGridViewRestockRequest.Columns["Status"].HeaderText = "Статус";
-                dataGridViewRestockRequest.Columns["ItemsCount"].HeaderText = "Количество товаров";
-                dataGridViewRestockRequest.Columns["TotalAmount"].HeaderText = "Общая сумма";
-                dataGridViewRestockRequest.Columns["TotalAmount"].DefaultCellStyle.Format = "N2";
+                
+
+
+
+                if (dataGridViewRestockRequest.Columns.Contains("ItemsCount"))
+                    dataGridViewRestockRequest.Columns["ItemsCount"].HeaderText = "Количество товаров";
+
+                
             }
+            
             catch (Exception ex)
             {
                 MessageBox.Show("Не удалось загрузить заявки.\n" + ex.ToString(), "Ошибка",

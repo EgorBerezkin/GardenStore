@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Npgsql;
 
 namespace Librarygardenly.Restock
@@ -20,11 +18,11 @@ namespace Librarygardenly.Restock
             {
                 connection.Open();
 
-                string sql = @"SELECT r.id, r.user_id, r.request_date, u.full_name, r.status, COUNT(ri.id) AS items_count, r.total_amount
+                string sql = @"SELECT r.id, r.user_id, r.request_date, u.full_name, r.status, COUNT(ri.id) AS items_count
                                     FROM restock_requests r
                                     INNER JOIN users u ON r.user_id = u.id
                                     LEFT JOIN restock_request_items ri ON r.id = ri.request_id
-                                    GROUP BY r.id, r.user_id, r.request_date, u.full_name, r.status, r.total_amount
+                                    GROUP BY r.id, r.user_id, r.request_date, u.full_name, r.status
                                     ORDER BY r.request_date DESC, r.id DESC";
 
                 using (var command = new NpgsqlCommand(sql, connection))
@@ -39,8 +37,7 @@ namespace Librarygardenly.Restock
                             RequestDate = Convert.ToDateTime(reader["request_date"]),
                             UserFullName = Convert.ToString(reader["full_name"]),
                             Status = Convert.ToString(reader["status"]),
-                            CountItems = Convert.ToInt32(reader["items_count"]),
-                            TotalAmount = Convert.ToDouble(reader["total_amount"])
+                            CountItems = Convert.ToInt32(reader["items_count"])
                         });
                     }
                 }
@@ -57,12 +54,12 @@ namespace Librarygardenly.Restock
             {
                 connection.Open();
 
-                string sql = @"SELECT r.id, r.user_id, r.request_date, u.full_name, r.status, COUNT(ri.id) AS items_count, r.total_amount
+                string sql = @"SELECT r.id, r.user_id, r.request_date, u.full_name, r.status, COUNT(ri.id) AS items_count
                                     FROM restock_requests r
                                     INNER JOIN users u ON r.user_id = u.id
                                     LEFT JOIN restock_request_items ri ON r.id = ri.request_id
                                     WHERE r.user_id = @userId
-                                    GROUP BY r.id, r.user_id, r.request_date, u.full_name, r.status, r.total_amount
+                                    GROUP BY r.id, r.user_id, r.request_date, u.full_name, r.status
                                     ORDER BY r.request_date DESC, r.id DESC";
 
                 using (var command = new NpgsqlCommand(sql, connection))
@@ -79,8 +76,7 @@ namespace Librarygardenly.Restock
                                 RequestDate = Convert.ToDateTime(reader["request_date"]),
                                 UserFullName = Convert.ToString(reader["full_name"]),
                                 Status = Convert.ToString(reader["status"]),
-                                CountItems = Convert.ToInt32(reader["items_count"]),
-                                TotalAmount = Convert.ToDouble(reader["total_amount"])
+                                CountItems = Convert.ToInt32(reader["items_count"])
                             });
                         }
                     }
@@ -112,10 +108,8 @@ namespace Librarygardenly.Restock
                 {
                     try
                     {
-                        double totalAmount = items.Sum(item => item.Quantity * item.Price);
-
-                        string sql = @"INSERT INTO restock_requests (user_id, request_date, status, total_amount)
-                                                VALUES (@userId, @requestDate, @status, @totalAmount)
+                        string sql = @"INSERT INTO restock_requests (user_id, request_date, status)
+                                                VALUES (@userId, @requestDate, @status)
                                                 RETURNING id";
 
                         int requestId;
@@ -125,13 +119,12 @@ namespace Librarygardenly.Restock
                             command.Parameters.AddWithValue("@userId", request.UserId);
                             command.Parameters.AddWithValue("@requestDate", request.RequestDate);
                             command.Parameters.AddWithValue("@status", "Ожидает рассмотрения");
-                            command.Parameters.AddWithValue("@totalAmount", totalAmount);
 
                             requestId = Convert.ToInt32(command.ExecuteScalar());
                         }
 
-                        string itemSql = @"INSERT INTO restock_request_items (request_id, product_id, quantity, unit_price)
-                                                    VALUES (@requestId, @productId, @quantity, @price)";
+                        string itemSql = @"INSERT INTO restock_request_items (request_id, product_id, quantity)
+                                                    VALUES (@requestId, @productId, @quantity)";
 
                         foreach (RestockRequestItem item in items)
                         {
@@ -140,7 +133,6 @@ namespace Librarygardenly.Restock
                                 command.Parameters.AddWithValue("@requestId", requestId);
                                 command.Parameters.AddWithValue("@productId", item.ProductId);
                                 command.Parameters.AddWithValue("@quantity", item.Quantity);
-                                command.Parameters.AddWithValue("@price", item.Price);
 
                                 command.ExecuteNonQuery();
                             }
@@ -164,7 +156,7 @@ namespace Librarygardenly.Restock
             {
                 connection.Open();
 
-                string sql = @"SELECT ri.id, ri.request_id, ri.product_id, p.name, ri.quantity, ri.unit_price
+                string sql = @"SELECT ri.id, ri.request_id, ri.product_id, p.name, ri.quantity
                                         FROM restock_request_items ri
                                         INNER JOIN products p ON ri.product_id = p.id
                                         WHERE ri.request_id = @requestId
@@ -183,8 +175,7 @@ namespace Librarygardenly.Restock
                                 RequestId = reader.GetInt32(1),
                                 ProductId = reader.GetInt32(2),
                                 ProductName = reader.GetString(3),
-                                Quantity = reader.GetInt32(4),
-                                Price = reader.GetDouble(5)
+                                Quantity = reader.GetInt32(4)
                             });
                         }
                     }

@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Librarygardenly.Restock;
 
@@ -52,9 +48,7 @@ namespace Gardenly.RestockRequest
             var rows = items.Select(item => new
             {
                 Товар = item.ProductName,
-                Количество = item.Quantity,
-                ЦенаЗаЕдиницу = item.Price,
-                ОбщаяСумма = item.TotalPrice
+                Количество = item.Quantity
             }).ToList();
 
             dataGridViewItems.DataSource = null;
@@ -64,13 +58,7 @@ namespace Gardenly.RestockRequest
             {
                 dataGridViewItems.Columns["Товар"].HeaderText = "Товар";
                 dataGridViewItems.Columns["Количество"].HeaderText = "Количество";
-                dataGridViewItems.Columns["ЦенаЗаЕдиницу"].HeaderText = "Цена за единицу";
-                dataGridViewItems.Columns["ОбщаяСумма"].HeaderText = "Общая сумма";
-                dataGridViewItems.Columns["ЦенаЗаЕдиницу"].DefaultCellStyle.Format = "N2";
-                dataGridViewItems.Columns["ОбщаяСумма"].DefaultCellStyle.Format = "N2";
             }
-            double total = items.Sum(item => item.TotalPrice);
-            labelTotalRequest.Text = "Общая сумма заявки: " + total.ToString("N2") + " ₽";
         }
 
         private void buttonApprove_Click(object sender, EventArgs e)
