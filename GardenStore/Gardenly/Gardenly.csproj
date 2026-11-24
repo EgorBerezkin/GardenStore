@@ -190,6 +190,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ReceiptForm\ReceiptForm.resx">
       <DependentUpon>ReceiptForm.cs</DependentUpon>
@@ -221,6 +222,7 @@
     <Content Include="Database\GardenlyDB.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\logotip.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Librarygardenly\Librarygardenly.csproj">

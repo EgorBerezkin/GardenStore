@@ -58,11 +58,10 @@ namespace Gardenly
                 }
                 else
                 {
-                    MessageBox.Show( "Неверный логин или пароль", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Неверный логин или пароль", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
-
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();

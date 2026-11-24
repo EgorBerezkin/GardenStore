@@ -37,126 +37,154 @@
             this.labelAttemps = new System.Windows.Forms.Label();
             this.labelZagolovok = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelNameAuth = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelLogin
             // 
             this.labelLogin.AutoSize = true;
-            this.labelLogin.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelLogin.Location = new System.Drawing.Point(33, 90);
-            this.labelLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelLogin.BackColor = System.Drawing.Color.Salmon;
+            this.labelLogin.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelLogin.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelLogin.Location = new System.Drawing.Point(12, 160);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(77, 24);
+            this.labelLogin.Size = new System.Drawing.Size(115, 35);
             this.labelLogin.TabIndex = 0;
             this.labelLogin.Text = "Логин:";
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxLogin.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxLogin.Location = new System.Drawing.Point(103, 87);
-            this.textBoxLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxLogin.BackColor = System.Drawing.Color.SeaShell;
+            this.textBoxLogin.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLogin.ForeColor = System.Drawing.Color.Salmon;
+            this.textBoxLogin.Location = new System.Drawing.Point(140, 157);
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(330, 30);
+            this.textBoxLogin.Size = new System.Drawing.Size(381, 38);
             this.textBoxLogin.TabIndex = 1;
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPassword.Location = new System.Drawing.Point(23, 129);
-            this.labelPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelPassword.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPassword.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelPassword.Location = new System.Drawing.Point(12, 208);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(88, 24);
+            this.labelPassword.Size = new System.Drawing.Size(133, 35);
             this.labelPassword.TabIndex = 2;
             this.labelPassword.Text = "Пароль:";
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxPassword.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPassword.Location = new System.Drawing.Point(103, 129);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPassword.BackColor = System.Drawing.Color.SeaShell;
+            this.textBoxPassword.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPassword.ForeColor = System.Drawing.Color.Salmon;
+            this.textBoxPassword.Location = new System.Drawing.Point(140, 208);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(330, 30);
+            this.textBoxPassword.Size = new System.Drawing.Size(381, 38);
             this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonLogin.Location = new System.Drawing.Point(212, 173);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonLogin.BackColor = System.Drawing.Color.SeaShell;
+            this.buttonLogin.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonLogin.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonLogin.Location = new System.Drawing.Point(140, 252);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(107, 30);
+            this.buttonLogin.Size = new System.Drawing.Size(192, 49);
             this.buttonLogin.TabIndex = 4;
             this.buttonLogin.Text = "Войти";
-            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // labelAttemps
             // 
             this.labelAttemps.AutoSize = true;
-            this.labelAttemps.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelAttemps.Location = new System.Drawing.Point(262, 221);
-            this.labelAttemps.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelAttemps.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelAttemps.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelAttemps.Location = new System.Drawing.Point(345, 313);
             this.labelAttemps.Name = "labelAttemps";
-            this.labelAttemps.Size = new System.Drawing.Size(189, 20);
+            this.labelAttemps.Size = new System.Drawing.Size(223, 24);
             this.labelAttemps.TabIndex = 5;
             this.labelAttemps.Text = "Осталось попыток: 3";
             // 
             // labelZagolovok
             // 
             this.labelZagolovok.AutoSize = true;
-            this.labelZagolovok.Location = new System.Drawing.Point(115, 34);
-            this.labelZagolovok.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelZagolovok.Location = new System.Drawing.Point(172, 48);
             this.labelZagolovok.Name = "labelZagolovok";
-            this.labelZagolovok.Size = new System.Drawing.Size(0, 17);
+            this.labelZagolovok.Size = new System.Drawing.Size(0, 24);
             this.labelZagolovok.TabIndex = 6;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Salmon;
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.SeaShell;
+            this.panel1.Controls.Add(this.labelNameAuth);
+            this.panel1.Controls.Add(this.labelName);
             this.panel1.Controls.Add(this.labelZagolovok);
-            this.panel1.Location = new System.Drawing.Point(-4, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(-6, -3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(475, 68);
+            this.panel1.Size = new System.Drawing.Size(556, 144);
             this.panel1.TabIndex = 7;
             // 
-            // label1
+            // labelName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(69, 19);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(450, 35);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Авторизация пользоватя";
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Georgia", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelName.ForeColor = System.Drawing.Color.Salmon;
+            this.labelName.Location = new System.Drawing.Point(178, 30);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(458, 46);
+            this.labelName.TabIndex = 7;
+            this.labelName.Text = "Магазин \"Gardenly\"";
             // 
             // buttonExit
             // 
-            this.buttonExit.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonExit.Location = new System.Drawing.Point(324, 173);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonExit.BackColor = System.Drawing.Color.SeaShell;
+            this.buttonExit.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonExit.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonExit.Location = new System.Drawing.Point(340, 252);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(107, 30);
+            this.buttonExit.Size = new System.Drawing.Size(181, 49);
             this.buttonExit.TabIndex = 8;
             this.buttonExit.Text = "Выйти";
-            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Gardenly.Properties.Resources.logotip;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(201, 139);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // labelNameAuth
+            // 
+            this.labelNameAuth.AutoSize = true;
+            this.labelNameAuth.Font = new System.Drawing.Font("Georgia", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNameAuth.ForeColor = System.Drawing.Color.YellowGreen;
+            this.labelNameAuth.Location = new System.Drawing.Point(254, 76);
+            this.labelNameAuth.Name = "labelNameAuth";
+            this.labelNameAuth.Size = new System.Drawing.Size(273, 39);
+            this.labelNameAuth.TabIndex = 9;
+            this.labelNameAuth.Text = "Авторизация";
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.YellowGreen;
-            this.ClientSize = new System.Drawing.Size(455, 250);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.Salmon;
+            this.ClientSize = new System.Drawing.Size(547, 351);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelAttemps);
@@ -165,17 +193,18 @@
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.labelLogin);
-            this.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ForeColor = System.Drawing.Color.Black;
+            this.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Магазин \"Gardenly\"";
             this.TransparencyKey = System.Drawing.Color.White;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,8 +220,10 @@
         private System.Windows.Forms.Label labelAttemps;
         private System.Windows.Forms.Label labelZagolovok;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelNameAuth;
     }
 }
 
