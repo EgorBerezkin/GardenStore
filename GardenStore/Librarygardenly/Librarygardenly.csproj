@@ -113,6 +113,7 @@
     <Compile Include="Registration\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration\UserService.cs" />
+    <Compile Include="Restock\IRestockRequestRepository.cs" />
     <Compile Include="Restock\RestockRequest.cs" />
     <Compile Include="Restock\RestockRequestService.cs" />
     <Compile Include="Restock\RestockRequestItem.cs" />

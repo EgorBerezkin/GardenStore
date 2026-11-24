@@ -7,11 +7,15 @@ namespace Librarygardenly.Restock
 {
     public class RestockRequestService
     {
+        private readonly IRestockRequestRepository repository_;
         private string connectionString = "Host=localhost;Database=GardenlyDB;Username=postgres;Encoding=UTF8";
 
         // Получение всех заявок
         public List<RestockRequest> GetRequests()
         {
+            if (repository_ != null)
+                return repository_.GetRequests();
+
             List<RestockRequest> requests = new List<RestockRequest>();
 
             using (var connection = new NpgsqlConnection(connectionString))
@@ -48,6 +52,9 @@ namespace Librarygardenly.Restock
         // Получение заявок определённого сотрудника
         public List<RestockRequest> GetRequestsByUser(int userId)
         {
+            if (repository_ != null)
+                return repository_.GetRequestsByUser(userId);
+
             List<RestockRequest> requests = new List<RestockRequest>();
 
             using (var connection = new NpgsqlConnection(connectionString))
@@ -89,17 +96,21 @@ namespace Librarygardenly.Restock
         public void AddRequest(RestockRequest request, List<RestockRequestItem> items)
         {
             if (request == null)
-                throw new ArgumentNullException(nameof(request));
+                throw new ArgumentNullException("Заявка не указана.");
 
             if (items == null || items.Count == 0)
-                throw new ArgumentException("Добавьте хотя бы один товар в заявку.");
+                throw new ArgumentException("Добавьте товары в заявку.");
 
             foreach (RestockRequestItem item in items)
             {
-                if (item == null || item.ProductId <= 0 || item.Quantity <= 0)
-                    throw new ArgumentException("Проверьте товары и их количество.");
+                if (item.Quantity <= 0)
+                    throw new ArgumentException("Количество товара должно быть больше нуля.");
             }
-
+            if (repository_ != null)
+            {
+                repository_.AddRequest(request, items);
+                return;
+            }
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
@@ -151,6 +162,9 @@ namespace Librarygardenly.Restock
         // Получение товаров выбранной заявки
         public List<RestockRequestItem> GetRequestItems(int requestId)
         {
+            if (repository_ != null)
+                return repository_.GetRequestItems(requestId);
+
             List<RestockRequestItem> items = new List<RestockRequestItem>();
             using (var connection = new NpgsqlConnection(connectionString))
             {
@@ -187,6 +201,12 @@ namespace Librarygardenly.Restock
         // Изменение статуса заявки
         public void UpdateRequestStatus(int requestId, string status)
         {
+            if (repository_ != null)
+            {
+                repository_.UpdateRequestStatus(requestId, status);
+                return;
+            }
+
             if (requestId <= 0)
                 throw new ArgumentException("Некорректный номер заявки.");
 
@@ -212,6 +232,17 @@ namespace Librarygardenly.Restock
                         throw new Exception("Заявка не найдена.");
                 }
             }
+        }
+        // Для автоматического тестирования
+        public RestockRequestService(IRestockRequestRepository repository)
+        {
+            repository_ = repository ?? throw new ArgumentNullException(nameof(repository));
+        }
+
+        // Для основной программы
+        public RestockRequestService()
+        {
+            repository_ = null;
         }
     }
 }
