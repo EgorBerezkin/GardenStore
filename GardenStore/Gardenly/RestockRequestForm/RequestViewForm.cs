@@ -36,7 +36,7 @@ namespace Gardenly.RestockRequest
 
         private void LoadRequestInfo()
         {
-            labelRequestNumber.Text = "Заявка №" + request_.Id;
+            labelName.Text = "Просмотр заявки №" + request_.Id;
             labelSotrudnik.Text = "Сотрудник: " + request_.UserFullName;
             labelDate.Text = "Дата: " + request_.RequestDate.ToString("dd.MM.yyyy HH:mm");
             labelStatus.Text = "Статус: " + request_.Status;

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelRequestNumber = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestViewForm));
             this.labelSotrudnik = new System.Windows.Forms.Label();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
@@ -36,42 +36,46 @@
             this.buttonApprove = new System.Windows.Forms.Button();
             this.buttonReject = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelZagolovok = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // labelRequestNumber
-            // 
-            this.labelRequestNumber.AutoSize = true;
-            this.labelRequestNumber.Location = new System.Drawing.Point(13, 13);
-            this.labelRequestNumber.Name = "labelRequestNumber";
-            this.labelRequestNumber.Size = new System.Drawing.Size(50, 16);
-            this.labelRequestNumber.TabIndex = 0;
-            this.labelRequestNumber.Text = "Номер";
             // 
             // labelSotrudnik
             // 
             this.labelSotrudnik.AutoSize = true;
-            this.labelSotrudnik.Location = new System.Drawing.Point(13, 47);
+            this.labelSotrudnik.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelSotrudnik.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelSotrudnik.Location = new System.Drawing.Point(23, 111);
+            this.labelSotrudnik.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSotrudnik.Name = "labelSotrudnik";
-            this.labelSotrudnik.Size = new System.Drawing.Size(78, 16);
+            this.labelSotrudnik.Size = new System.Drawing.Size(136, 27);
             this.labelSotrudnik.TabIndex = 1;
             this.labelSotrudnik.Text = "Сотрудник";
             // 
             // labelDate
             // 
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(556, 22);
+            this.labelDate.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Italic);
+            this.labelDate.ForeColor = System.Drawing.Color.YellowGreen;
+            this.labelDate.Location = new System.Drawing.Point(179, 55);
+            this.labelDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(39, 16);
+            this.labelDate.Size = new System.Drawing.Size(91, 32);
             this.labelDate.TabIndex = 2;
             this.labelDate.Text = "Дата";
             // 
             // labelStatus
             // 
             this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(12, 318);
+            this.labelStatus.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelStatus.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelStatus.Location = new System.Drawing.Point(23, 143);
+            this.labelStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(53, 16);
+            this.labelStatus.Size = new System.Drawing.Size(103, 27);
             this.labelStatus.TabIndex = 3;
             this.labelStatus.Text = "Статус";
             // 
@@ -79,21 +83,26 @@
             // 
             this.dataGridViewItems.AllowUserToAddRows = false;
             this.dataGridViewItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewItems.BackgroundColor = System.Drawing.Color.SeaShell;
             this.dataGridViewItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewItems.Location = new System.Drawing.Point(13, 77);
+            this.dataGridViewItems.Location = new System.Drawing.Point(23, 174);
+            this.dataGridViewItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewItems.Name = "dataGridViewItems";
             this.dataGridViewItems.ReadOnly = true;
             this.dataGridViewItems.RowHeadersWidth = 51;
             this.dataGridViewItems.RowTemplate.Height = 24;
             this.dataGridViewItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewItems.Size = new System.Drawing.Size(683, 220);
+            this.dataGridViewItems.Size = new System.Drawing.Size(546, 210);
             this.dataGridViewItems.TabIndex = 4;
             // 
             // buttonApprove
             // 
-            this.buttonApprove.Location = new System.Drawing.Point(227, 363);
+            this.buttonApprove.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonApprove.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonApprove.Location = new System.Drawing.Point(23, 392);
+            this.buttonApprove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonApprove.Name = "buttonApprove";
-            this.buttonApprove.Size = new System.Drawing.Size(95, 50);
+            this.buttonApprove.Size = new System.Drawing.Size(177, 49);
             this.buttonApprove.TabIndex = 5;
             this.buttonApprove.Text = "Одобрить";
             this.buttonApprove.UseVisualStyleBackColor = true;
@@ -101,9 +110,12 @@
             // 
             // buttonReject
             // 
-            this.buttonReject.Location = new System.Drawing.Point(328, 363);
+            this.buttonReject.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonReject.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonReject.Location = new System.Drawing.Point(208, 392);
+            this.buttonReject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonReject.Name = "buttonReject";
-            this.buttonReject.Size = new System.Drawing.Size(92, 50);
+            this.buttonReject.Size = new System.Drawing.Size(177, 49);
             this.buttonReject.TabIndex = 6;
             this.buttonReject.Text = "Отклонить";
             this.buttonReject.UseVisualStyleBackColor = true;
@@ -111,38 +123,77 @@
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(426, 363);
+            this.buttonClose.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonClose.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonClose.Location = new System.Drawing.Point(393, 392);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(75, 50);
+            this.buttonClose.Size = new System.Drawing.Size(177, 49);
             this.buttonClose.TabIndex = 7;
             this.buttonClose.Text = "Закрыть";
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SeaShell;
+            this.panel1.Controls.Add(this.labelDate);
+            this.panel1.Controls.Add(this.labelName);
+            this.panel1.Controls.Add(this.labelZagolovok);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(597, 100);
+            this.panel1.TabIndex = 8;
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Georgia", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelName.ForeColor = System.Drawing.Color.Salmon;
+            this.labelName.Location = new System.Drawing.Point(106, 9);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(417, 46);
+            this.labelName.TabIndex = 7;
+            this.labelName.Text = "Просмотр заявки";
+            // 
+            // labelZagolovok
+            // 
+            this.labelZagolovok.AutoSize = true;
+            this.labelZagolovok.Location = new System.Drawing.Point(172, 48);
+            this.labelZagolovok.Name = "labelZagolovok";
+            this.labelZagolovok.Size = new System.Drawing.Size(0, 21);
+            this.labelZagolovok.TabIndex = 6;
+            // 
             // RequestViewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.Salmon;
+            this.ClientSize = new System.Drawing.Size(597, 453);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonReject);
             this.Controls.Add(this.buttonApprove);
             this.Controls.Add(this.dataGridViewItems);
             this.Controls.Add(this.labelStatus);
-            this.Controls.Add(this.labelDate);
             this.Controls.Add(this.labelSotrudnik);
-            this.Controls.Add(this.labelRequestNumber);
+            this.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
             this.Name = "RequestViewForm";
-            this.Text = "RequestViewForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Магазин \"Gardenly\"";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelRequestNumber;
         private System.Windows.Forms.Label labelSotrudnik;
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Label labelStatus;
@@ -150,5 +201,8 @@
         private System.Windows.Forms.Button buttonApprove;
         private System.Windows.Forms.Button buttonReject;
         private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelZagolovok;
     }
 }

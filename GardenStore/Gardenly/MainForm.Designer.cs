@@ -901,6 +901,7 @@
             // 
             // panelRestockRequestViewAndAdd
             // 
+            this.panelRestockRequestViewAndAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelRestockRequestViewAndAdd.BackColor = System.Drawing.Color.YellowGreen;
             this.panelRestockRequestViewAndAdd.Controls.Add(this.buttonAddRequest);
             this.panelRestockRequestViewAndAdd.Controls.Add(this.buttonViewRequest);
@@ -980,7 +981,7 @@
             this.labelNameMainForm.AutoSize = true;
             this.labelNameMainForm.Font = new System.Drawing.Font("Georgia", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelNameMainForm.ForeColor = System.Drawing.Color.YellowGreen;
-            this.labelNameMainForm.Location = new System.Drawing.Point(424, 109);
+            this.labelNameMainForm.Location = new System.Drawing.Point(439, 110);
             this.labelNameMainForm.Name = "labelNameMainForm";
             this.labelNameMainForm.Size = new System.Drawing.Size(362, 38);
             this.labelNameMainForm.TabIndex = 10;

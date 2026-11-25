@@ -125,16 +125,15 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.SeaShell;
             this.panel1.Controls.Add(this.labelNameAuth);
             this.panel1.Controls.Add(this.labelName);
             this.panel1.Controls.Add(this.labelZagolovok);
             this.panel1.Controls.Add(this.pictureBoxLogotip);
-            this.panel1.Location = new System.Drawing.Point(-6, -3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(556, 144);
+            this.panel1.Size = new System.Drawing.Size(547, 144);
             this.panel1.TabIndex = 7;
             // 
             // labelNameAuth
@@ -162,7 +161,7 @@
             // pictureBoxLogotip
             // 
             this.pictureBoxLogotip.Image = global::Gardenly.Properties.Resources.logotip1;
-            this.pictureBoxLogotip.Location = new System.Drawing.Point(0, 5);
+            this.pictureBoxLogotip.Location = new System.Drawing.Point(-10, 5);
             this.pictureBoxLogotip.Name = "pictureBoxLogotip";
             this.pictureBoxLogotip.Size = new System.Drawing.Size(201, 139);
             this.pictureBoxLogotip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
