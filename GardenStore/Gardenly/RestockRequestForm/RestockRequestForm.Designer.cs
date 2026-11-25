@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestockRequestForm));
             this.dataGridViewItems = new System.Windows.Forms.DataGridView();
             this.buttonSend = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -37,24 +38,35 @@
             this.buttonDeleteItem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panelInfo = new System.Windows.Forms.Panel();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelZagolovok = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
+            this.panelInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewItems
             // 
+            this.dataGridViewItems.AllowUserToAddRows = false;
+            this.dataGridViewItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewItems.BackgroundColor = System.Drawing.Color.SeaShell;
             this.dataGridViewItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewItems.Location = new System.Drawing.Point(12, 130);
+            this.dataGridViewItems.Location = new System.Drawing.Point(21, 192);
             this.dataGridViewItems.Name = "dataGridViewItems";
+            this.dataGridViewItems.ReadOnly = true;
             this.dataGridViewItems.RowHeadersWidth = 51;
             this.dataGridViewItems.RowTemplate.Height = 24;
-            this.dataGridViewItems.Size = new System.Drawing.Size(559, 164);
-            this.dataGridViewItems.TabIndex = 0;
+            this.dataGridViewItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewItems.Size = new System.Drawing.Size(563, 164);
+            this.dataGridViewItems.TabIndex = 4;
             // 
             // buttonSend
             // 
-            this.buttonSend.Location = new System.Drawing.Point(21, 321);
+            this.buttonSend.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.buttonSend.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonSend.Location = new System.Drawing.Point(101, 420);
             this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(143, 64);
+            this.buttonSend.Size = new System.Drawing.Size(240, 52);
             this.buttonSend.TabIndex = 1;
             this.buttonSend.Text = "Отправить заявку";
             this.buttonSend.UseVisualStyleBackColor = true;
@@ -62,9 +74,11 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(189, 321);
+            this.buttonCancel.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.buttonCancel.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonCancel.Location = new System.Drawing.Point(344, 420);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(143, 64);
+            this.buttonCancel.Size = new System.Drawing.Size(240, 52);
             this.buttonCancel.TabIndex = 2;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -72,9 +86,11 @@
             // 
             // buttonAddItem
             // 
-            this.buttonAddItem.Location = new System.Drawing.Point(577, 104);
+            this.buttonAddItem.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.buttonAddItem.ForeColor = System.Drawing.Color.YellowGreen;
+            this.buttonAddItem.Location = new System.Drawing.Point(101, 362);
             this.buttonAddItem.Name = "buttonAddItem";
-            this.buttonAddItem.Size = new System.Drawing.Size(133, 64);
+            this.buttonAddItem.Size = new System.Drawing.Size(240, 52);
             this.buttonAddItem.TabIndex = 4;
             this.buttonAddItem.Text = "Добавление товара";
             this.buttonAddItem.UseVisualStyleBackColor = true;
@@ -82,24 +98,30 @@
             // 
             // comboBoxProducts
             // 
+            this.comboBoxProducts.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.comboBoxProducts.ForeColor = System.Drawing.Color.Salmon;
             this.comboBoxProducts.FormattingEnabled = true;
-            this.comboBoxProducts.Location = new System.Drawing.Point(134, 31);
+            this.comboBoxProducts.Location = new System.Drawing.Point(285, 101);
             this.comboBoxProducts.Name = "comboBoxProducts";
-            this.comboBoxProducts.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxProducts.Size = new System.Drawing.Size(299, 35);
             this.comboBoxProducts.TabIndex = 5;
             // 
             // textBoxQuantity
             // 
-            this.textBoxQuantity.Location = new System.Drawing.Point(134, 80);
+            this.textBoxQuantity.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.textBoxQuantity.ForeColor = System.Drawing.Color.Salmon;
+            this.textBoxQuantity.Location = new System.Drawing.Point(285, 143);
             this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.Size = new System.Drawing.Size(121, 22);
+            this.textBoxQuantity.Size = new System.Drawing.Size(299, 34);
             this.textBoxQuantity.TabIndex = 6;
             // 
             // buttonDeleteItem
             // 
-            this.buttonDeleteItem.Location = new System.Drawing.Point(577, 174);
+            this.buttonDeleteItem.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.buttonDeleteItem.ForeColor = System.Drawing.Color.YellowGreen;
+            this.buttonDeleteItem.Location = new System.Drawing.Point(344, 362);
             this.buttonDeleteItem.Name = "buttonDeleteItem";
-            this.buttonDeleteItem.Size = new System.Drawing.Size(133, 64);
+            this.buttonDeleteItem.Size = new System.Drawing.Size(240, 52);
             this.buttonDeleteItem.TabIndex = 7;
             this.buttonDeleteItem.Text = "Удаление товара";
             this.buttonDeleteItem.UseVisualStyleBackColor = true;
@@ -108,26 +130,61 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 31);
+            this.label1.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.label1.ForeColor = System.Drawing.Color.SeaShell;
+            this.label1.Location = new System.Drawing.Point(16, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 16);
+            this.label1.Size = new System.Drawing.Size(209, 27);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Товар:";
+            this.label1.Text = "Выберите товар:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 83);
+            this.label2.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.label2.ForeColor = System.Drawing.Color.SeaShell;
+            this.label2.Location = new System.Drawing.Point(16, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 16);
+            this.label2.Size = new System.Drawing.Size(249, 27);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Количество:";
+            this.label2.Text = "Введите количество:";
+            // 
+            // panelInfo
+            // 
+            this.panelInfo.BackColor = System.Drawing.Color.SeaShell;
+            this.panelInfo.Controls.Add(this.labelName);
+            this.panelInfo.Controls.Add(this.labelZagolovok);
+            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelInfo.Location = new System.Drawing.Point(0, 0);
+            this.panelInfo.Name = "panelInfo";
+            this.panelInfo.Size = new System.Drawing.Size(599, 86);
+            this.panelInfo.TabIndex = 10;
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Georgia", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelName.ForeColor = System.Drawing.Color.Salmon;
+            this.labelName.Location = new System.Drawing.Point(110, 18);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(461, 46);
+            this.labelName.TabIndex = 7;
+            this.labelName.Text = "Оформление заявки";
+            // 
+            // labelZagolovok
+            // 
+            this.labelZagolovok.AutoSize = true;
+            this.labelZagolovok.Location = new System.Drawing.Point(172, 48);
+            this.labelZagolovok.Name = "labelZagolovok";
+            this.labelZagolovok.Size = new System.Drawing.Size(0, 27);
+            this.labelZagolovok.TabIndex = 6;
             // 
             // RestockRequestForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 537);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.Salmon;
+            this.ClientSize = new System.Drawing.Size(599, 487);
+            this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonDeleteItem);
@@ -137,9 +194,16 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.dataGridViewItems);
+            this.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "RestockRequestForm";
-            this.Text = "RestockRequestForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Магазин \"Gardenly\"";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).EndInit();
+            this.panelInfo.ResumeLayout(false);
+            this.panelInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +220,8 @@
         private System.Windows.Forms.Button buttonDeleteItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panelInfo;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelZagolovok;
     }
 }

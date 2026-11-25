@@ -36,11 +36,11 @@
             this.buttonApprove = new System.Windows.Forms.Button();
             this.buttonReject = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelInfo = new System.Windows.Forms.Panel();
             this.labelName = new System.Windows.Forms.Label();
             this.labelZagolovok = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelSotrudnik
@@ -86,7 +86,7 @@
             this.dataGridViewItems.BackgroundColor = System.Drawing.Color.SeaShell;
             this.dataGridViewItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewItems.Location = new System.Drawing.Point(23, 174);
-            this.dataGridViewItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewItems.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewItems.Name = "dataGridViewItems";
             this.dataGridViewItems.ReadOnly = true;
             this.dataGridViewItems.RowHeadersWidth = 51;
@@ -100,7 +100,7 @@
             this.buttonApprove.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonApprove.ForeColor = System.Drawing.Color.Salmon;
             this.buttonApprove.Location = new System.Drawing.Point(23, 392);
-            this.buttonApprove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonApprove.Margin = new System.Windows.Forms.Padding(4);
             this.buttonApprove.Name = "buttonApprove";
             this.buttonApprove.Size = new System.Drawing.Size(177, 49);
             this.buttonApprove.TabIndex = 5;
@@ -113,7 +113,7 @@
             this.buttonReject.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonReject.ForeColor = System.Drawing.Color.Salmon;
             this.buttonReject.Location = new System.Drawing.Point(208, 392);
-            this.buttonReject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonReject.Margin = new System.Windows.Forms.Padding(4);
             this.buttonReject.Name = "buttonReject";
             this.buttonReject.Size = new System.Drawing.Size(177, 49);
             this.buttonReject.TabIndex = 6;
@@ -126,7 +126,7 @@
             this.buttonClose.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonClose.ForeColor = System.Drawing.Color.Salmon;
             this.buttonClose.Location = new System.Drawing.Point(393, 392);
-            this.buttonClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(4);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(177, 49);
             this.buttonClose.TabIndex = 7;
@@ -134,17 +134,17 @@
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
-            // panel1
+            // panelInfo
             // 
-            this.panel1.BackColor = System.Drawing.Color.SeaShell;
-            this.panel1.Controls.Add(this.labelDate);
-            this.panel1.Controls.Add(this.labelName);
-            this.panel1.Controls.Add(this.labelZagolovok);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(597, 100);
-            this.panel1.TabIndex = 8;
+            this.panelInfo.BackColor = System.Drawing.Color.SeaShell;
+            this.panelInfo.Controls.Add(this.labelDate);
+            this.panelInfo.Controls.Add(this.labelName);
+            this.panelInfo.Controls.Add(this.labelZagolovok);
+            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelInfo.Location = new System.Drawing.Point(0, 0);
+            this.panelInfo.Name = "panelInfo";
+            this.panelInfo.Size = new System.Drawing.Size(597, 100);
+            this.panelInfo.TabIndex = 8;
             // 
             // labelName
             // 
@@ -162,7 +162,7 @@
             this.labelZagolovok.AutoSize = true;
             this.labelZagolovok.Location = new System.Drawing.Point(172, 48);
             this.labelZagolovok.Name = "labelZagolovok";
-            this.labelZagolovok.Size = new System.Drawing.Size(0, 21);
+            this.labelZagolovok.Size = new System.Drawing.Size(0, 27);
             this.labelZagolovok.TabIndex = 6;
             // 
             // RequestViewForm
@@ -170,24 +170,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Salmon;
             this.ClientSize = new System.Drawing.Size(597, 453);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonReject);
             this.Controls.Add(this.buttonApprove);
             this.Controls.Add(this.dataGridViewItems);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.labelSotrudnik);
-            this.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "RequestViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Магазин \"Gardenly\"";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelInfo.ResumeLayout(false);
+            this.panelInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,7 +201,7 @@
         private System.Windows.Forms.Button buttonApprove;
         private System.Windows.Forms.Button buttonReject;
         private System.Windows.Forms.Button buttonClose;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelZagolovok;
     }

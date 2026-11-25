@@ -444,16 +444,7 @@ namespace Gardenly
         {
             try
             {
-                List<Librarygardenly.Restock.RestockRequest> requests;
-
-                if (user_.Role == "sotrudnik")
-                {
-                    requests = requestService_.GetRequestsByUser(user_.Id);
-                }
-                else
-                {
-                    requests = requestService_.GetRequests();
-                }
+                List<Librarygardenly.Restock.RestockRequest> requests = requestService_.GetRequests();
 
                 dataGridViewRestockRequest.DataSource = null;
                 dataGridViewRestockRequest.DataSource = requests;
@@ -467,14 +458,9 @@ namespace Gardenly
                 dataGridViewRestockRequest.Columns["RequestDate"].DefaultCellStyle.Format = "dd.MM.yyyy HH:mm";
                 dataGridViewRestockRequest.Columns["UserFullName"].HeaderText = "Сотрудник";
                 dataGridViewRestockRequest.Columns["Status"].HeaderText = "Статус";
-                
-
-
 
                 if (dataGridViewRestockRequest.Columns.Contains("ItemsCount"))
                     dataGridViewRestockRequest.Columns["ItemsCount"].HeaderText = "Количество товаров";
-
-                
             }
             
             catch (Exception ex)
