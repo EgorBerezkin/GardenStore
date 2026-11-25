@@ -32,7 +32,7 @@ namespace Gardenly
 
             user_ = user;
             ConfigureInterface();
-            labelUser.Text = "Вы вошли как: " + user_.FullName;
+            labelUser.Text = user_.FullName;
             
 
             productService_ = new ProductService();

@@ -222,6 +222,7 @@
     <Content Include="Database\GardenlyDB.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\lists.png" />
     <None Include="Resources\logotip.png" />
   </ItemGroup>
   <ItemGroup>
