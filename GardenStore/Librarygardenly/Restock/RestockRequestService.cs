@@ -244,5 +244,77 @@ namespace Librarygardenly.Restock
         {
             repository_ = null;
         }
+
+        // Получение заявок с фильтрацией по дате и сотруднику
+        public List<RestockRequest> GetRequestsByFilters(DateTime? date, int? userId)
+        {
+            // Для автоматических тестов
+            if (repository_ != null)
+            {
+                List<RestockRequest> requests = repository_.GetRequests();
+
+                if (date.HasValue)
+                    requests = requests.Where(r => r.RequestDate.Date == date.Value.Date).ToList();
+
+                if (userId.HasValue)
+                    requests = requests.Where(r => r.UserId == userId.Value).ToList();
+
+                return requests;
+            }
+
+            List<RestockRequest> filteredRequests = new List<RestockRequest>();
+
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = @"SELECT r.id, r.user_id, r.request_date, u.full_name, r.status, COUNT(ri.id) AS items_count
+                                    FROM restock_requests r
+                                    INNER JOIN users u ON r.user_id = u.id
+                                    LEFT JOIN restock_request_items ri ON r.id = ri.request_id
+                                    WHERE 1 = 1";
+
+                if (date.HasValue)
+                    sql += " AND r.request_date >= @date AND r.request_date < @nextDate";
+
+                if (userId.HasValue)
+                    sql += " AND r.user_id = @userId";
+
+                sql += @" GROUP BY r.id, r.user_id, r.request_date, u.full_name, r.status
+                                ORDER BY r.request_date DESC, r.id DESC";
+
+                using (var command = new NpgsqlCommand(sql, connection))
+                {
+                    if (date.HasValue)
+                    {
+                        command.Parameters.Add("@date", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = date.Value.Date;
+                        command.Parameters.Add("@nextDate", NpgsqlTypes.NpgsqlDbType.Timestamp).Value = date.Value.Date.AddDays(1);
+                    }
+                    if (userId.HasValue)
+                    {
+                        command.Parameters.Add("@userId", NpgsqlTypes.NpgsqlDbType.Integer).Value = userId.Value;
+                    }
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            filteredRequests.Add(new RestockRequest
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                UserId = Convert.ToInt32(reader["user_id"]),
+                                RequestDate = Convert.ToDateTime(reader["request_date"]),
+                                UserFullName = Convert.ToString(reader["full_name"]),
+                                Status = Convert.ToString(reader["status"]),
+                                CountItems = Convert.ToInt32(reader["items_count"])
+                            });
+                        }
+                    }
+                }
+            }
+
+            return filteredRequests;
+        }
+
     }
 }

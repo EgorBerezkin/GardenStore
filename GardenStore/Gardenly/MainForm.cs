@@ -51,6 +51,7 @@ namespace Gardenly
 
             requestService_ = new RestockRequestService();
             LoadRequests();
+            LoadRequestEmployees();
         }
         private void ConfigureInterface()
         {
@@ -469,6 +470,35 @@ namespace Gardenly
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        // Загрузка списка сотрудников для фильтра заявок
+        private void LoadRequestEmployees()
+        {
+            try
+            {
+                UserService userService = new UserService();
+                var employees = userService.GetUsers()
+                    .Select(u => new { Id = u.Id, FullName = u.FullName })
+                    .ToList();
+
+                comboBoxFIORequest.DataSource = null;
+
+                var allEmployees = new[]
+                {
+                    new { Id = 0, FullName = "Все сотрудники" }
+                };
+
+                comboBoxFIORequest.DataSource = allEmployees.Concat(employees).ToList();
+                comboBoxFIORequest.DisplayMember = "FullName";
+                comboBoxFIORequest.ValueMember = "Id";
+                comboBoxFIORequest.SelectedValue = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось загрузить список сотрудников. " + ex.Message);
+            }
+        }
+
         private void buttonViewRequest_Click(object sender, EventArgs e)
         {
             if (dataGridViewRestockRequest.CurrentRow == null)
@@ -503,6 +533,44 @@ namespace Gardenly
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+        private void buttonSearchRequest_Click(object sender, EventArgs e)
+        {
+            DateTime? date = dateTimePickerRequest.Checked ? dateTimePickerRequest.Value.Date : (DateTime?)null;
+
+            int employeeId = Convert.ToInt32(comboBoxFIORequest.SelectedValue);
+            int? userId = employeeId == 0 ? (int?)null : employeeId;
+
+            List<Librarygardenly.Restock.RestockRequest> requests = requestService_.GetRequestsByFilters(date, userId);
+            dataGridViewRestockRequest.DataSource = null;
+            dataGridViewRestockRequest.DataSource = requests;
+
+            // Настраиваем заголовки таблицы
+            if (dataGridViewRestockRequest.Columns.Count > 0)
+            {
+                dataGridViewRestockRequest.Columns["Id"].HeaderText = "Номер заявки";
+                dataGridViewRestockRequest.Columns["UserId"].Visible = false;
+                dataGridViewRestockRequest.Columns["RequestDate"].HeaderText = "Дата создания";
+                dataGridViewRestockRequest.Columns["RequestDate"].DefaultCellStyle.Format = "dd.MM.yyyy HH:mm";
+                dataGridViewRestockRequest.Columns["UserFullName"].HeaderText = "Сотрудник";
+                dataGridViewRestockRequest.Columns["Status"].HeaderText = "Статус";
+
+                if (dataGridViewRestockRequest.Columns.Contains("ItemsCount"))
+                    dataGridViewRestockRequest.Columns["ItemsCount"].HeaderText = "Количество товаров";
+            }
+
+            if (requests.Count == 0)
+            {
+                MessageBox.Show("Заявок по выбранным условиям не найдено.",
+                    "Поиск заявок", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void buttonClearRequest_Click(object sender, EventArgs e)
+        {
+            dateTimePickerRequest.Checked = false;
+            comboBoxFIORequest.SelectedValue = 0;
+
+            LoadRequests();
         }
         // -------------------------Кнопка выхода с главной формы-------------------------------
         private void buttonExit_Click(object sender, EventArgs e)

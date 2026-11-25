@@ -107,6 +107,15 @@
             this.buttonAddOrder = new System.Windows.Forms.Button();
             this.panelInfoRequest = new System.Windows.Forms.Panel();
             this.labelInfoRequest = new System.Windows.Forms.Label();
+            this.panelFilterRequest = new System.Windows.Forms.Panel();
+            this.comboBoxFIORequest = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerRequest = new System.Windows.Forms.DateTimePicker();
+            this.labelFIORequest = new System.Windows.Forms.Label();
+            this.buttonSearchRequest = new System.Windows.Forms.Button();
+            this.buttonClearRequest = new System.Windows.Forms.Button();
+            this.labelDateRequest = new System.Windows.Forms.Label();
+            this.panelInfoFilterRequest = new System.Windows.Forms.Panel();
+            this.labelInfoFilterRequest = new System.Windows.Forms.Label();
             this.panelExit.SuspendLayout();
             this.tabPageReceipt.SuspendLayout();
             this.panelReceipt.SuspendLayout();
@@ -141,6 +150,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogotip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKartinka)).BeginInit();
             this.panelInfoRequest.SuspendLayout();
+            this.panelFilterRequest.SuspendLayout();
+            this.panelInfoFilterRequest.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelUser
@@ -855,6 +866,7 @@
             // 
             // tabPageRestockRequest
             // 
+            this.tabPageRestockRequest.Controls.Add(this.panelFilterRequest);
             this.tabPageRestockRequest.Controls.Add(this.panelRestockRequest);
             this.tabPageRestockRequest.Controls.Add(this.panelRestockRequestViewAndAdd);
             this.tabPageRestockRequest.Location = new System.Drawing.Point(4, 36);
@@ -1108,6 +1120,112 @@
             this.labelInfoRequest.TabIndex = 4;
             this.labelInfoRequest.Text = "Действия с заявками";
             // 
+            // panelFilterRequest
+            // 
+            this.panelFilterRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelFilterRequest.BackColor = System.Drawing.Color.YellowGreen;
+            this.panelFilterRequest.Controls.Add(this.comboBoxFIORequest);
+            this.panelFilterRequest.Controls.Add(this.dateTimePickerRequest);
+            this.panelFilterRequest.Controls.Add(this.labelFIORequest);
+            this.panelFilterRequest.Controls.Add(this.buttonSearchRequest);
+            this.panelFilterRequest.Controls.Add(this.buttonClearRequest);
+            this.panelFilterRequest.Controls.Add(this.labelDateRequest);
+            this.panelFilterRequest.Controls.Add(this.panelInfoFilterRequest);
+            this.panelFilterRequest.Location = new System.Drawing.Point(1225, 205);
+            this.panelFilterRequest.Name = "panelFilterRequest";
+            this.panelFilterRequest.Size = new System.Drawing.Size(578, 216);
+            this.panelFilterRequest.TabIndex = 8;
+            // 
+            // comboBoxFIORequest
+            // 
+            this.comboBoxFIORequest.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxFIORequest.ForeColor = System.Drawing.Color.Salmon;
+            this.comboBoxFIORequest.FormattingEnabled = true;
+            this.comboBoxFIORequest.Location = new System.Drawing.Point(292, 113);
+            this.comboBoxFIORequest.Name = "comboBoxFIORequest";
+            this.comboBoxFIORequest.Size = new System.Drawing.Size(275, 35);
+            this.comboBoxFIORequest.TabIndex = 11;
+            // 
+            // dateTimePickerRequest
+            // 
+            this.dateTimePickerRequest.CalendarFont = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePickerRequest.CalendarForeColor = System.Drawing.Color.Salmon;
+            this.dateTimePickerRequest.CalendarTitleBackColor = System.Drawing.Color.Salmon;
+            this.dateTimePickerRequest.CalendarTitleForeColor = System.Drawing.Color.Salmon;
+            this.dateTimePickerRequest.CalendarTrailingForeColor = System.Drawing.Color.Salmon;
+            this.dateTimePickerRequest.Location = new System.Drawing.Point(292, 63);
+            this.dateTimePickerRequest.Name = "dateTimePickerRequest";
+            this.dateTimePickerRequest.ShowCheckBox = true;
+            this.dateTimePickerRequest.Size = new System.Drawing.Size(276, 34);
+            this.dateTimePickerRequest.TabIndex = 10;
+            // 
+            // labelFIORequest
+            // 
+            this.labelFIORequest.AutoSize = true;
+            this.labelFIORequest.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelFIORequest.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelFIORequest.Location = new System.Drawing.Point(10, 112);
+            this.labelFIORequest.Name = "labelFIORequest";
+            this.labelFIORequest.Size = new System.Drawing.Size(270, 32);
+            this.labelFIORequest.TabIndex = 12;
+            this.labelFIORequest.Text = "Сотрудник (ФИО):";
+            // 
+            // buttonSearchRequest
+            // 
+            this.buttonSearchRequest.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearchRequest.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonSearchRequest.Location = new System.Drawing.Point(216, 156);
+            this.buttonSearchRequest.Name = "buttonSearchRequest";
+            this.buttonSearchRequest.Size = new System.Drawing.Size(174, 43);
+            this.buttonSearchRequest.TabIndex = 8;
+            this.buttonSearchRequest.Text = "Поиск";
+            this.buttonSearchRequest.UseVisualStyleBackColor = true;
+            this.buttonSearchRequest.Click += new System.EventHandler(this.buttonSearchRequest_Click);
+            // 
+            // buttonClearRequest
+            // 
+            this.buttonClearRequest.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonClearRequest.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonClearRequest.Location = new System.Drawing.Point(395, 156);
+            this.buttonClearRequest.Name = "buttonClearRequest";
+            this.buttonClearRequest.Size = new System.Drawing.Size(173, 43);
+            this.buttonClearRequest.TabIndex = 9;
+            this.buttonClearRequest.Text = "Сброс";
+            this.buttonClearRequest.UseVisualStyleBackColor = true;
+            this.buttonClearRequest.Click += new System.EventHandler(this.buttonClearRequest_Click);
+            // 
+            // labelDateRequest
+            // 
+            this.labelDateRequest.AutoSize = true;
+            this.labelDateRequest.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelDateRequest.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelDateRequest.Location = new System.Drawing.Point(10, 65);
+            this.labelDateRequest.Name = "labelDateRequest";
+            this.labelDateRequest.Size = new System.Drawing.Size(273, 32);
+            this.labelDateRequest.TabIndex = 7;
+            this.labelDateRequest.Text = "Дата оформления:";
+            // 
+            // panelInfoFilterRequest
+            // 
+            this.panelInfoFilterRequest.BackColor = System.Drawing.Color.Salmon;
+            this.panelInfoFilterRequest.Controls.Add(this.labelInfoFilterRequest);
+            this.panelInfoFilterRequest.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelInfoFilterRequest.Location = new System.Drawing.Point(0, 0);
+            this.panelInfoFilterRequest.Name = "panelInfoFilterRequest";
+            this.panelInfoFilterRequest.Size = new System.Drawing.Size(578, 57);
+            this.panelInfoFilterRequest.TabIndex = 7;
+            // 
+            // labelInfoFilterRequest
+            // 
+            this.labelInfoFilterRequest.AutoSize = true;
+            this.labelInfoFilterRequest.Font = new System.Drawing.Font("Georgia", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelInfoFilterRequest.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelInfoFilterRequest.Location = new System.Drawing.Point(32, 12);
+            this.labelInfoFilterRequest.Name = "labelInfoFilterRequest";
+            this.labelInfoFilterRequest.Size = new System.Drawing.Size(476, 27);
+            this.labelInfoFilterRequest.TabIndex = 4;
+            this.labelInfoFilterRequest.Text = "Фильтрация  по дате и сотруднику";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1170,6 +1288,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKartinka)).EndInit();
             this.panelInfoRequest.ResumeLayout(false);
             this.panelInfoRequest.PerformLayout();
+            this.panelFilterRequest.ResumeLayout(false);
+            this.panelFilterRequest.PerformLayout();
+            this.panelInfoFilterRequest.ResumeLayout(false);
+            this.panelInfoFilterRequest.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1254,5 +1376,14 @@
         private System.Windows.Forms.Button buttonAddOrder;
         private System.Windows.Forms.Panel panelInfoRequest;
         private System.Windows.Forms.Label labelInfoRequest;
+        private System.Windows.Forms.Panel panelFilterRequest;
+        private System.Windows.Forms.ComboBox comboBoxFIORequest;
+        private System.Windows.Forms.DateTimePicker dateTimePickerRequest;
+        private System.Windows.Forms.Label labelFIORequest;
+        private System.Windows.Forms.Button buttonSearchRequest;
+        private System.Windows.Forms.Button buttonClearRequest;
+        private System.Windows.Forms.Label labelDateRequest;
+        private System.Windows.Forms.Panel panelInfoFilterRequest;
+        private System.Windows.Forms.Label labelInfoFilterRequest;
     }
 }
