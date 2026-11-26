@@ -139,5 +139,20 @@ namespace Gardenly.OrderForm
         {
             this.Close();
         }
+
+        private void buttonDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewItems.CurrentRow == null)
+            {
+                MessageBox.Show("Выберите товар для удаления.");
+                return;
+            }
+            int index = dataGridViewItems.CurrentRow.Index;
+            if (index >= 0 && index < items_.Count)
+            {
+                items_.RemoveAt(index);
+                RefreshItems();
+            }
+        }
     }
 }

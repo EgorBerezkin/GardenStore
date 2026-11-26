@@ -36,29 +36,32 @@
             this.labelTotal = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.panelInfo = new System.Windows.Forms.Panel();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelZagolovok = new System.Windows.Forms.Label();
+            this.buttonDeleteItem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.panelInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxProduct
             // 
-            this.comboBoxProduct.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxProduct.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.comboBoxProduct.ForeColor = System.Drawing.Color.Salmon;
             this.comboBoxProduct.FormattingEnabled = true;
-            this.comboBoxProduct.Location = new System.Drawing.Point(229, 71);
+            this.comboBoxProduct.Location = new System.Drawing.Point(269, 107);
             this.comboBoxProduct.Name = "comboBoxProduct";
-            this.comboBoxProduct.Size = new System.Drawing.Size(190, 29);
+            this.comboBoxProduct.Size = new System.Drawing.Size(325, 35);
             this.comboBoxProduct.TabIndex = 0;
             // 
             // numericUpDownQuantity
             // 
-            this.numericUpDownQuantity.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDownQuantity.Location = new System.Drawing.Point(229, 123);
+            this.numericUpDownQuantity.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.numericUpDownQuantity.ForeColor = System.Drawing.Color.Salmon;
+            this.numericUpDownQuantity.Location = new System.Drawing.Point(269, 149);
             this.numericUpDownQuantity.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -70,7 +73,7 @@
             0,
             0});
             this.numericUpDownQuantity.Name = "numericUpDownQuantity";
-            this.numericUpDownQuantity.Size = new System.Drawing.Size(190, 28);
+            this.numericUpDownQuantity.Size = new System.Drawing.Size(325, 34);
             this.numericUpDownQuantity.TabIndex = 1;
             this.numericUpDownQuantity.Value = new decimal(new int[] {
             1,
@@ -80,10 +83,11 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic);
-            this.buttonAdd.Location = new System.Drawing.Point(457, 71);
+            this.buttonAdd.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.buttonAdd.ForeColor = System.Drawing.Color.YellowGreen;
+            this.buttonAdd.Location = new System.Drawing.Point(68, 428);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(143, 59);
+            this.buttonAdd.Size = new System.Drawing.Size(262, 52);
             this.buttonAdd.TabIndex = 2;
             this.buttonAdd.Text = "Добавление товара";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -92,34 +96,37 @@
             // dataGridViewItems
             // 
             this.dataGridViewItems.AllowUserToAddRows = false;
+            this.dataGridViewItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewItems.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewItems.Location = new System.Drawing.Point(15, 206);
+            this.dataGridViewItems.Location = new System.Drawing.Point(12, 198);
             this.dataGridViewItems.MultiSelect = false;
             this.dataGridViewItems.Name = "dataGridViewItems";
             this.dataGridViewItems.ReadOnly = true;
             this.dataGridViewItems.RowHeadersWidth = 51;
             this.dataGridViewItems.RowTemplate.Height = 24;
             this.dataGridViewItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewItems.Size = new System.Drawing.Size(403, 169);
+            this.dataGridViewItems.Size = new System.Drawing.Size(582, 169);
             this.dataGridViewItems.TabIndex = 3;
             // 
             // labelTotal
             // 
             this.labelTotal.AutoSize = true;
-            this.labelTotal.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic);
-            this.labelTotal.Location = new System.Drawing.Point(13, 391);
+            this.labelTotal.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.labelTotal.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelTotal.Location = new System.Drawing.Point(12, 384);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(126, 21);
+            this.labelTotal.Size = new System.Drawing.Size(163, 27);
             this.labelTotal.TabIndex = 4;
             this.labelTotal.Text = "Общая сумма";
             // 
             // buttonSave
             // 
-            this.buttonSave.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic);
-            this.buttonSave.Location = new System.Drawing.Point(457, 141);
+            this.buttonSave.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.buttonSave.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonSave.Location = new System.Drawing.Point(68, 486);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(143, 59);
+            this.buttonSave.Size = new System.Drawing.Size(262, 52);
             this.buttonSave.TabIndex = 5;
             this.buttonSave.Text = "Оформить продажу";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -127,80 +134,89 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic);
-            this.buttonCancel.Location = new System.Drawing.Point(457, 213);
+            this.buttonCancel.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.buttonCancel.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonCancel.Location = new System.Drawing.Point(332, 486);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(143, 59);
+            this.buttonCancel.Size = new System.Drawing.Size(262, 52);
             this.buttonCancel.TabIndex = 6;
             this.buttonCancel.Text = "Отменить операцию";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.Salmon;
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(-6, 1);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(626, 53);
-            this.panel5.TabIndex = 20;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Georgia", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(199, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(246, 24);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Добавление продажи";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 71);
+            this.label1.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.label1.ForeColor = System.Drawing.Color.SeaShell;
+            this.label1.Location = new System.Drawing.Point(12, 107);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 21);
+            this.label1.Size = new System.Drawing.Size(209, 27);
             this.label1.TabIndex = 21;
             this.label1.Text = "Выберите товар:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(12, 125);
+            this.label2.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.label2.ForeColor = System.Drawing.Color.SeaShell;
+            this.label2.Location = new System.Drawing.Point(12, 149);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 21);
+            this.label2.Size = new System.Drawing.Size(242, 27);
             this.label2.TabIndex = 22;
             this.label2.Text = "Количество товара:";
             // 
-            // label3
+            // panelInfo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(12, 174);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 21);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Список:";
+            this.panelInfo.BackColor = System.Drawing.Color.SeaShell;
+            this.panelInfo.Controls.Add(this.labelName);
+            this.panelInfo.Controls.Add(this.labelZagolovok);
+            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelInfo.Location = new System.Drawing.Point(0, 0);
+            this.panelInfo.Name = "panelInfo";
+            this.panelInfo.Size = new System.Drawing.Size(606, 86);
+            this.panelInfo.TabIndex = 24;
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Georgia", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelName.ForeColor = System.Drawing.Color.Salmon;
+            this.labelName.Location = new System.Drawing.Point(91, 18);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(512, 46);
+            this.labelName.TabIndex = 7;
+            this.labelName.Text = "Оформление продажи";
+            // 
+            // labelZagolovok
+            // 
+            this.labelZagolovok.AutoSize = true;
+            this.labelZagolovok.Location = new System.Drawing.Point(172, 48);
+            this.labelZagolovok.Name = "labelZagolovok";
+            this.labelZagolovok.Size = new System.Drawing.Size(0, 27);
+            this.labelZagolovok.TabIndex = 6;
+            // 
+            // buttonDeleteItem
+            // 
+            this.buttonDeleteItem.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.buttonDeleteItem.ForeColor = System.Drawing.Color.YellowGreen;
+            this.buttonDeleteItem.Location = new System.Drawing.Point(332, 428);
+            this.buttonDeleteItem.Name = "buttonDeleteItem";
+            this.buttonDeleteItem.Size = new System.Drawing.Size(262, 52);
+            this.buttonDeleteItem.TabIndex = 25;
+            this.buttonDeleteItem.Text = "Удаление товара";
+            this.buttonDeleteItem.UseVisualStyleBackColor = true;
+            this.buttonDeleteItem.Click += new System.EventHandler(this.buttonDeleteItem_Click);
             // 
             // OrderForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.YellowGreen;
-            this.ClientSize = new System.Drawing.Size(612, 429);
-            this.Controls.Add(this.label3);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.Salmon;
+            this.ClientSize = new System.Drawing.Size(606, 546);
+            this.Controls.Add(this.buttonDeleteItem);
+            this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelTotal);
@@ -208,15 +224,17 @@
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.numericUpDownQuantity);
             this.Controls.Add(this.comboBoxProduct);
+            this.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "OrderForm";
-            this.Text = "OrderForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Магазин \"Gardenly\"";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.panelInfo.ResumeLayout(false);
+            this.panelInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,10 +249,11 @@
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panelInfo;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelZagolovok;
+        private System.Windows.Forms.Button buttonDeleteItem;
     }
 }
