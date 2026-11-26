@@ -75,7 +75,7 @@
             this.dataGridViewItems.RowHeadersWidth = 51;
             this.dataGridViewItems.RowTemplate.Height = 24;
             this.dataGridViewItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewItems.Size = new System.Drawing.Size(610, 172);
+            this.dataGridViewItems.Size = new System.Drawing.Size(677, 172);
             this.dataGridViewItems.TabIndex = 3;
             // 
             // labelTotal
@@ -93,7 +93,7 @@
             // 
             this.buttonClose.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
             this.buttonClose.ForeColor = System.Drawing.Color.Salmon;
-            this.buttonClose.Location = new System.Drawing.Point(445, 348);
+            this.buttonClose.Location = new System.Drawing.Point(512, 348);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(177, 49);
             this.buttonClose.TabIndex = 5;
@@ -110,7 +110,7 @@
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInfo.Location = new System.Drawing.Point(0, 0);
             this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(634, 100);
+            this.panelInfo.Size = new System.Drawing.Size(701, 100);
             this.panelInfo.TabIndex = 22;
             // 
             // labelName
@@ -136,7 +136,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Salmon;
-            this.ClientSize = new System.Drawing.Size(634, 413);
+            this.ClientSize = new System.Drawing.Size(701, 413);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.labelTotal);

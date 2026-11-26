@@ -64,7 +64,7 @@ namespace Gardenly.OrderForm
 
             dataGridViewItems.DataSource = rows;
             double total = items_.Sum(item => item.Quantity * item.Price);
-            labelTotal.Text = "Итого: " + total.ToString() + " ₽";
+            labelTotal.Text = "Общая сумма: " + total.ToString() + " ₽";
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)

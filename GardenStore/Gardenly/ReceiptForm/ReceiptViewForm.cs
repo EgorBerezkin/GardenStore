@@ -22,7 +22,7 @@ namespace Gardenly.ReceiptForm
             userFullName_ = userFullName;
 
             receiptService_ = new ReceiptService();
-            labelReceiptInfo.Text = "Поступление №" + receiptId_;
+            labelName.Text = "Просмотр поступления №" + receiptId_;
             labelDateReceipt.Text = "Дата: " + receiptDate_;
             labelSotrudnik.Text = "Сотрудник: " + userFullName_;
             LoadItems();
@@ -45,7 +45,7 @@ namespace Gardenly.ReceiptForm
                     dataGridViewItems.Columns["Сумма"].HeaderText = "Сумма";
                 }
                 double total = items.Sum(item => (double)item.Quantity * (double)item.Price);
-                labelTotal.Text = "Итого: " + total.ToString() + " ₽";
+                labelTotal.Text = "Общая сумма: " + total.ToString() + " ₽";
             }
             catch (Exception ex)
             {

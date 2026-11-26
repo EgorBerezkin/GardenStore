@@ -84,10 +84,10 @@
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
-            this.buttonAdd.ForeColor = System.Drawing.Color.YellowGreen;
-            this.buttonAdd.Location = new System.Drawing.Point(68, 428);
+            this.buttonAdd.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonAdd.Location = new System.Drawing.Point(17, 428);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(262, 52);
+            this.buttonAdd.Size = new System.Drawing.Size(288, 52);
             this.buttonAdd.TabIndex = 2;
             this.buttonAdd.Text = "Добавление товара";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -124,9 +124,9 @@
             // 
             this.buttonSave.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
             this.buttonSave.ForeColor = System.Drawing.Color.Salmon;
-            this.buttonSave.Location = new System.Drawing.Point(68, 486);
+            this.buttonSave.Location = new System.Drawing.Point(17, 486);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(262, 52);
+            this.buttonSave.Size = new System.Drawing.Size(288, 52);
             this.buttonSave.TabIndex = 5;
             this.buttonSave.Text = "Оформить продажу";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -136,9 +136,9 @@
             // 
             this.buttonCancel.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
             this.buttonCancel.ForeColor = System.Drawing.Color.Salmon;
-            this.buttonCancel.Location = new System.Drawing.Point(332, 486);
+            this.buttonCancel.Location = new System.Drawing.Point(311, 486);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(262, 52);
+            this.buttonCancel.Size = new System.Drawing.Size(283, 52);
             this.buttonCancel.TabIndex = 6;
             this.buttonCancel.Text = "Отменить операцию";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -199,10 +199,10 @@
             // buttonDeleteItem
             // 
             this.buttonDeleteItem.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
-            this.buttonDeleteItem.ForeColor = System.Drawing.Color.YellowGreen;
-            this.buttonDeleteItem.Location = new System.Drawing.Point(332, 428);
+            this.buttonDeleteItem.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonDeleteItem.Location = new System.Drawing.Point(311, 428);
             this.buttonDeleteItem.Name = "buttonDeleteItem";
-            this.buttonDeleteItem.Size = new System.Drawing.Size(262, 52);
+            this.buttonDeleteItem.Size = new System.Drawing.Size(283, 52);
             this.buttonDeleteItem.TabIndex = 25;
             this.buttonDeleteItem.Text = "Удаление товара";
             this.buttonDeleteItem.UseVisualStyleBackColor = true;

@@ -69,7 +69,7 @@ namespace Gardenly.ReceiptForm
             }
 
             double total = items_.Sum(item => (double)item.Quantity * (double)item.Price);
-            labelTotal.Text = "Итого: " + total.ToString() + " ₽";
+            labelTotal.Text = "Общая сумма: " + total.ToString() + " ₽";
         }
 
         private void buttonNewProduct_Click(object sender, EventArgs e)
@@ -164,6 +164,21 @@ namespace Gardenly.ReceiptForm
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewItems.CurrentRow == null)
+            {
+                MessageBox.Show("Выберите товар для удаления.");
+                return;
+            }
+            int index = dataGridViewItems.CurrentRow.Index;
+            if (index >= 0 && index < items_.Count)
+            {
+                items_.RemoveAt(index);
+                RefreshItems();
+            }
         }
     }
 }

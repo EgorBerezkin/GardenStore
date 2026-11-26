@@ -55,7 +55,7 @@ namespace Gardenly.OrderForm
                 }
 
                 double total = items.Sum(item => (double)item.Quantity * item.Price);
-                labelTotal.Text = "Итого: " + total.ToString() + " ₽";
+                labelTotal.Text = "Общая сумма: " + total.ToString() + " ₽";
             }
             catch (Exception ex)
             {
