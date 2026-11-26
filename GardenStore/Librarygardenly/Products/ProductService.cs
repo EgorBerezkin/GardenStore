@@ -18,6 +18,7 @@ namespace Librarygardenly.Products
                 string sql = @"SELECT p.id, p.name, p.category_id, c.name AS category_name, p.price, p.quantity, p.description
                                     FROM products p
                                     INNER JOIN categories c ON p.category_id = c.id
+                                    WHERE p.is_active = TRUE
                                     ORDER BY p.id";
                 
                 using (var command = new NpgsqlCommand(sql, connection))
@@ -97,7 +98,10 @@ namespace Librarygardenly.Products
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
-                string sql = @"DELETE FROM products WHERE id = @id";
+
+                string sql = @"UPDATE products
+                       SET is_active = FALSE
+                       WHERE id = @id";
 
                 using (var command = new NpgsqlCommand(sql, connection))
                 {
