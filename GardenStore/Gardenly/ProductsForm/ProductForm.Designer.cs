@@ -41,109 +41,121 @@
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel5.SuspendLayout();
+            this.panelInfo = new System.Windows.Forms.Panel();
+            this.labelInfo = new System.Windows.Forms.Label();
+            this.labelZagolovok = new System.Windows.Forms.Label();
+            this.panelInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPrice.Location = new System.Drawing.Point(230, 159);
+            this.textBoxPrice.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.textBoxPrice.ForeColor = System.Drawing.Color.Salmon;
+            this.textBoxPrice.Location = new System.Drawing.Point(196, 186);
             this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(268, 28);
+            this.textBoxPrice.Size = new System.Drawing.Size(365, 34);
             this.textBoxPrice.TabIndex = 11;
             // 
             // labelPrice
             // 
             this.labelPrice.AutoSize = true;
-            this.labelPrice.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPrice.Location = new System.Drawing.Point(13, 162);
+            this.labelPrice.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.labelPrice.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelPrice.Location = new System.Drawing.Point(12, 193);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(61, 21);
+            this.labelPrice.Size = new System.Drawing.Size(78, 27);
             this.labelPrice.TabIndex = 10;
             this.labelPrice.Text = "Цена:";
             // 
             // comboBoxCategory
             // 
-            this.comboBoxCategory.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxCategory.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.comboBoxCategory.ForeColor = System.Drawing.Color.Salmon;
             this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Location = new System.Drawing.Point(230, 111);
+            this.comboBoxCategory.Location = new System.Drawing.Point(196, 135);
             this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(268, 29);
+            this.comboBoxCategory.Size = new System.Drawing.Size(365, 35);
             this.comboBoxCategory.TabIndex = 9;
             // 
             // labelCategory
             // 
             this.labelCategory.AutoSize = true;
-            this.labelCategory.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCategory.Location = new System.Drawing.Point(13, 114);
+            this.labelCategory.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.labelCategory.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelCategory.Location = new System.Drawing.Point(12, 143);
             this.labelCategory.Name = "labelCategory";
-            this.labelCategory.Size = new System.Drawing.Size(112, 21);
+            this.labelCategory.Size = new System.Drawing.Size(143, 27);
             this.labelCategory.TabIndex = 8;
             this.labelCategory.Text = "Категория:";
             // 
             // textBoxName
             // 
-            this.textBoxName.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxName.Location = new System.Drawing.Point(230, 67);
+            this.textBoxName.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.textBoxName.ForeColor = System.Drawing.Color.Salmon;
+            this.textBoxName.Location = new System.Drawing.Point(196, 89);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(268, 28);
+            this.textBoxName.Size = new System.Drawing.Size(365, 34);
             this.textBoxName.TabIndex = 7;
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelName.Location = new System.Drawing.Point(13, 68);
+            this.labelName.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.labelName.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelName.Location = new System.Drawing.Point(12, 92);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(215, 21);
+            this.labelName.Size = new System.Drawing.Size(189, 27);
             this.labelName.TabIndex = 6;
-            this.labelName.Text = "Наименование товара: ";
+            this.labelName.Text = "Наименование: ";
             // 
             // labelCount
             // 
             this.labelCount.AutoSize = true;
-            this.labelCount.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCount.Location = new System.Drawing.Point(13, 207);
+            this.labelCount.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.labelCount.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelCount.Location = new System.Drawing.Point(12, 241);
             this.labelCount.Name = "labelCount";
-            this.labelCount.Size = new System.Drawing.Size(121, 21);
+            this.labelCount.Size = new System.Drawing.Size(153, 27);
             this.labelCount.TabIndex = 12;
             this.labelCount.Text = "Количество:";
             // 
             // textBoxQuantity
             // 
-            this.textBoxQuantity.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxQuantity.Location = new System.Drawing.Point(230, 204);
+            this.textBoxQuantity.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.textBoxQuantity.ForeColor = System.Drawing.Color.Salmon;
+            this.textBoxQuantity.Location = new System.Drawing.Point(196, 238);
             this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.Size = new System.Drawing.Size(268, 28);
+            this.textBoxQuantity.Size = new System.Drawing.Size(365, 34);
             this.textBoxQuantity.TabIndex = 13;
             // 
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
-            this.labelDescription.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelDescription.Location = new System.Drawing.Point(13, 256);
+            this.labelDescription.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.labelDescription.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelDescription.Location = new System.Drawing.Point(12, 287);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(98, 21);
+            this.labelDescription.Size = new System.Drawing.Size(126, 27);
             this.labelDescription.TabIndex = 14;
             this.labelDescription.Text = "Описание:";
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxDescription.Location = new System.Drawing.Point(117, 253);
+            this.textBoxDescription.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.textBoxDescription.ForeColor = System.Drawing.Color.Salmon;
+            this.textBoxDescription.Location = new System.Drawing.Point(144, 287);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(381, 50);
+            this.textBoxDescription.Size = new System.Drawing.Size(417, 55);
             this.textBoxDescription.TabIndex = 15;
             // 
             // buttonSave
             // 
-            this.buttonSave.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSave.Location = new System.Drawing.Point(188, 323);
+            this.buttonSave.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.buttonSave.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonSave.Location = new System.Drawing.Point(251, 356);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(152, 37);
+            this.buttonSave.Size = new System.Drawing.Size(152, 52);
             this.buttonSave.TabIndex = 16;
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -151,47 +163,52 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCancel.Location = new System.Drawing.Point(346, 323);
+            this.buttonCancel.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.buttonCancel.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonCancel.Location = new System.Drawing.Point(409, 356);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(152, 37);
+            this.buttonCancel.Size = new System.Drawing.Size(152, 52);
             this.buttonCancel.TabIndex = 17;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // panel5
+            // panelInfo
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.Salmon;
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(-9, -1);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(541, 44);
-            this.panel5.TabIndex = 18;
+            this.panelInfo.BackColor = System.Drawing.Color.SeaShell;
+            this.panelInfo.Controls.Add(this.labelInfo);
+            this.panelInfo.Controls.Add(this.labelZagolovok);
+            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelInfo.Location = new System.Drawing.Point(0, 0);
+            this.panelInfo.Name = "panelInfo";
+            this.panelInfo.Size = new System.Drawing.Size(581, 76);
+            this.panelInfo.TabIndex = 26;
             // 
-            // label1
+            // labelInfo
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(109, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(398, 24);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Добавление или изменение данных";
+            this.labelInfo.AutoSize = true;
+            this.labelInfo.Font = new System.Drawing.Font("Georgia", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelInfo.ForeColor = System.Drawing.Color.Salmon;
+            this.labelInfo.Location = new System.Drawing.Point(88, 18);
+            this.labelInfo.Name = "labelInfo";
+            this.labelInfo.Size = new System.Drawing.Size(510, 46);
+            this.labelInfo.TabIndex = 7;
+            this.labelInfo.Text = "Действия с товарами";
+            // 
+            // labelZagolovok
+            // 
+            this.labelZagolovok.AutoSize = true;
+            this.labelZagolovok.Location = new System.Drawing.Point(172, 48);
+            this.labelZagolovok.Name = "labelZagolovok";
+            this.labelZagolovok.Size = new System.Drawing.Size(0, 27);
+            this.labelZagolovok.TabIndex = 6;
             // 
             // ProductForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.YellowGreen;
-            this.ClientSize = new System.Drawing.Size(510, 372);
-            this.Controls.Add(this.panel5);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.Salmon;
+            this.ClientSize = new System.Drawing.Size(581, 431);
+            this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxDescription);
@@ -204,14 +221,15 @@
             this.Controls.Add(this.labelCategory);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.labelName);
-            this.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ProductForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Магазин \"Gardenly\"";
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.panelInfo.ResumeLayout(false);
+            this.panelInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,7 +249,8 @@
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelInfo;
+        private System.Windows.Forms.Label labelInfo;
+        private System.Windows.Forms.Label labelZagolovok;
     }
 }
