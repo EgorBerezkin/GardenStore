@@ -18,29 +18,20 @@ namespace Gardenly
         public ProductForm()
         {
             InitializeComponent();
-
             categoryService_ = new CategoryService();
             productService_ = new ProductService();
             LoadCategories();
         }
-
-        public ProductForm(Product product)
+        public ProductForm(Product product) : this()
         {
-            InitializeComponent();
             product_ = product;
-
-            categoryService_ = new CategoryService();
-            productService_ = new ProductService();
-
-            LoadCategories();
 
             textBoxName.Text = product_.Name;
             comboBoxCategory.SelectedValue = product_.CategoryId;
             textBoxPrice.Text = product_.Price.ToString();
-            textBoxQuantity.Text = product_.Quantity.ToString();
+            numericUpDownQuantity.Value = product_.Quantity;
             textBoxDescription.Text = product_.Description;
         }
-
         public ProductForm(bool receiptMode) : this()
         {
             receiptMode_ = receiptMode;
@@ -73,19 +64,16 @@ namespace Gardenly
             try
             {
                 string name = textBoxName.Text;
-
                 if (string.IsNullOrWhiteSpace(name))
                 {
                     MessageBox.Show("Введите название товара.");
                     return;
                 }
-
                 if (!(comboBoxCategory.SelectedItem is Category category))
                 {
                     MessageBox.Show("Выберите категорию товара.");
                     return;
                 }
-
                 double price;
                 if (!double.TryParse(textBoxPrice.Text, out price) || double.IsNaN(price) || double.IsInfinity(price) || price < 0)
                 {
@@ -93,15 +81,8 @@ namespace Gardenly
                     return;
                 }
 
-                int quantity;
-                if (!int.TryParse(textBoxQuantity.Text, out quantity) || quantity < 0 || (receiptMode_ && quantity == 0))
-                {
-                    MessageBox.Show(receiptMode_ ? "Количество поступающего товара должно быть больше нуля." : "Количество должно быть целым неотрицательным числом.");
-                    return;
-                }
-
+                int quantity = (int)numericUpDownQuantity.Value;
                 Product product = new Product(product_ == null ? 0 : product_.Id, name, category.Id, category.Name, price, quantity, textBoxDescription.Text );
-
                 if (receiptMode_)
                 {
                     CreatedProduct = product;
@@ -109,7 +90,6 @@ namespace Gardenly
                     Close();
                     return;
                 }
-
                 if (product_ == null)
                 {
                     productService_.AddProduct(product);
@@ -122,7 +102,6 @@ namespace Gardenly
                     MessageBox.Show("Товар успешно изменён.", "Готово",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
                 DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -137,6 +116,5 @@ namespace Gardenly
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    
     }
 }

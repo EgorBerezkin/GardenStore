@@ -36,7 +36,6 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
             this.labelCount = new System.Windows.Forms.Label();
-            this.textBoxQuantity = new System.Windows.Forms.TextBox();
             this.labelDescription = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -44,7 +43,9 @@
             this.panelInfo = new System.Windows.Forms.Panel();
             this.labelNameForm = new System.Windows.Forms.Label();
             this.labelZagolovok = new System.Windows.Forms.Label();
+            this.numericUpDownQuantity = new System.Windows.Forms.NumericUpDown();
             this.panelInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxPrice
@@ -119,15 +120,6 @@
             this.labelCount.TabIndex = 12;
             this.labelCount.Text = "Количество:";
             // 
-            // textBoxQuantity
-            // 
-            this.textBoxQuantity.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
-            this.textBoxQuantity.ForeColor = System.Drawing.Color.Salmon;
-            this.textBoxQuantity.Location = new System.Drawing.Point(196, 238);
-            this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.Size = new System.Drawing.Size(365, 34);
-            this.textBoxQuantity.TabIndex = 13;
-            // 
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
@@ -169,7 +161,7 @@
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(152, 52);
             this.buttonCancel.TabIndex = 17;
-            this.buttonCancel.Text = "Отмена";
+            this.buttonCancel.Text = "Отменить";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
@@ -203,17 +195,41 @@
             this.labelZagolovok.Size = new System.Drawing.Size(0, 27);
             this.labelZagolovok.TabIndex = 6;
             // 
+            // numericUpDownQuantity
+            // 
+            this.numericUpDownQuantity.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.numericUpDownQuantity.ForeColor = System.Drawing.Color.Salmon;
+            this.numericUpDownQuantity.Location = new System.Drawing.Point(196, 234);
+            this.numericUpDownQuantity.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownQuantity.Name = "numericUpDownQuantity";
+            this.numericUpDownQuantity.Size = new System.Drawing.Size(365, 34);
+            this.numericUpDownQuantity.TabIndex = 8;
+            this.numericUpDownQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // ProductForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Salmon;
             this.ClientSize = new System.Drawing.Size(581, 431);
+            this.Controls.Add(this.numericUpDownQuantity);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.labelDescription);
-            this.Controls.Add(this.textBoxQuantity);
             this.Controls.Add(this.labelCount);
             this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.labelPrice);
@@ -230,6 +246,7 @@
             this.Text = "Магазин \"Gardenly\"";
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,7 +261,6 @@
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelCount;
-        private System.Windows.Forms.TextBox textBoxQuantity;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Button buttonSave;
@@ -252,5 +268,6 @@
         private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.Label labelNameForm;
         private System.Windows.Forms.Label labelZagolovok;
+        private System.Windows.Forms.NumericUpDown numericUpDownQuantity;
     }
 }

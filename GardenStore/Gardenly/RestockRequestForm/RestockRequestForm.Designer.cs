@@ -34,15 +34,16 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonAddItem = new System.Windows.Forms.Button();
             this.comboBoxProducts = new System.Windows.Forms.ComboBox();
-            this.textBoxQuantity = new System.Windows.Forms.TextBox();
             this.buttonDeleteItem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.labelNameForm = new System.Windows.Forms.Label();
             this.labelZagolovok = new System.Windows.Forms.Label();
+            this.numericUpDownQuantity = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
             this.panelInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewItems
@@ -80,7 +81,7 @@
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(240, 52);
             this.buttonCancel.TabIndex = 2;
-            this.buttonCancel.Text = "Отмена";
+            this.buttonCancel.Text = "Отменить";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
@@ -105,15 +106,6 @@
             this.comboBoxProducts.Name = "comboBoxProducts";
             this.comboBoxProducts.Size = new System.Drawing.Size(299, 35);
             this.comboBoxProducts.TabIndex = 5;
-            // 
-            // textBoxQuantity
-            // 
-            this.textBoxQuantity.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
-            this.textBoxQuantity.ForeColor = System.Drawing.Color.Salmon;
-            this.textBoxQuantity.Location = new System.Drawing.Point(285, 143);
-            this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.Size = new System.Drawing.Size(299, 34);
-            this.textBoxQuantity.TabIndex = 6;
             // 
             // buttonDeleteItem
             // 
@@ -179,16 +171,40 @@
             this.labelZagolovok.Size = new System.Drawing.Size(0, 27);
             this.labelZagolovok.TabIndex = 6;
             // 
+            // numericUpDownQuantity
+            // 
+            this.numericUpDownQuantity.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.numericUpDownQuantity.ForeColor = System.Drawing.Color.Salmon;
+            this.numericUpDownQuantity.Location = new System.Drawing.Point(285, 143);
+            this.numericUpDownQuantity.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownQuantity.Name = "numericUpDownQuantity";
+            this.numericUpDownQuantity.Size = new System.Drawing.Size(302, 34);
+            this.numericUpDownQuantity.TabIndex = 30;
+            this.numericUpDownQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // RestockRequestForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Salmon;
             this.ClientSize = new System.Drawing.Size(599, 487);
+            this.Controls.Add(this.numericUpDownQuantity);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonDeleteItem);
-            this.Controls.Add(this.textBoxQuantity);
             this.Controls.Add(this.comboBoxProducts);
             this.Controls.Add(this.buttonAddItem);
             this.Controls.Add(this.buttonCancel);
@@ -204,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).EndInit();
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,12 +233,12 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonAddItem;
         private System.Windows.Forms.ComboBox comboBoxProducts;
-        private System.Windows.Forms.TextBox textBoxQuantity;
         private System.Windows.Forms.Button buttonDeleteItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.Label labelNameForm;
         private System.Windows.Forms.Label labelZagolovok;
+        private System.Windows.Forms.NumericUpDown numericUpDownQuantity;
     }
 }

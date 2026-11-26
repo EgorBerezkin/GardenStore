@@ -84,7 +84,7 @@
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
-            this.buttonAdd.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonAdd.ForeColor = System.Drawing.Color.YellowGreen;
             this.buttonAdd.Location = new System.Drawing.Point(17, 428);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(288, 52);
@@ -199,7 +199,7 @@
             // buttonDeleteItem
             // 
             this.buttonDeleteItem.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
-            this.buttonDeleteItem.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonDeleteItem.ForeColor = System.Drawing.Color.YellowGreen;
             this.buttonDeleteItem.Location = new System.Drawing.Point(311, 428);
             this.buttonDeleteItem.Name = "buttonDeleteItem";
             this.buttonDeleteItem.Size = new System.Drawing.Size(283, 52);

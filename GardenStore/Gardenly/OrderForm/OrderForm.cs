@@ -12,7 +12,6 @@ namespace Gardenly.OrderForm
         private readonly int userId_;
         private readonly ProductService productService_;
         private readonly OrderService orderService_;
-
         private List<Product> products_;
         private List<OrderItem> items_;
 
@@ -23,10 +22,8 @@ namespace Gardenly.OrderForm
             userId_ = userId;
             productService_ = new ProductService();
             orderService_ = new OrderService();
-
             products_ = new List<Product>();
             items_ = new List<OrderItem>();
-
             LoadProducts();
         }
 
@@ -53,7 +50,6 @@ namespace Gardenly.OrderForm
         private void RefreshItems()
         {
             dataGridViewItems.DataSource = null;
-
             var rows = items_.Select(item => new
             {
                 Товар = item.ProductName,
@@ -124,7 +120,6 @@ namespace Gardenly.OrderForm
                     UserId = userId_
                 };
                 orderService_.AddOrder(order, items_);
-
                 DialogResult = DialogResult.OK;
                 this.Close();
             }

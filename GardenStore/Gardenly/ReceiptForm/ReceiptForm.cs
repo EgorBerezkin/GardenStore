@@ -12,7 +12,6 @@ namespace Gardenly.ReceiptForm
         private readonly int userId_;
         private readonly ProductService productService_;
         private readonly ReceiptService receiptService_;
-
         private List<Product> products_;
         private List<ReceiptItem> items_;
 
@@ -23,10 +22,8 @@ namespace Gardenly.ReceiptForm
             userId_ = userId;
             productService_ = new ProductService();
             receiptService_ = new ReceiptService();
-
             products_ = new List<Product>();
             items_ = new List<ReceiptItem>();
-
             LoadProducts();
         }
 
@@ -67,7 +64,6 @@ namespace Gardenly.ReceiptForm
                 dataGridViewItems.Columns["ЦенаЗаШтуку"].HeaderText = "Цена за штуку";
                 dataGridViewItems.Columns["Сумма"].HeaderText = "Сумма";
             }
-
             double total = items_.Sum(item => (double)item.Quantity * (double)item.Price);
             labelTotal.Text = "Общая сумма: " + total.ToString() + " ₽";
         }
@@ -96,24 +92,15 @@ namespace Gardenly.ReceiptForm
                 MessageBox.Show("Выберите товар.");
                 return;
             }
-
-            int quantity;
             double price;
-
-            if (!int.TryParse(textBoxQuantity.Text, out quantity) || quantity <= 0)
-            {
-                MessageBox.Show("Количество должно быть положительным целым числом.");
-                return;
-            }
+            int quantity = (int)numericUpDownQuantity.Value;
 
             if (!double.TryParse(textBoxPrice.Text, out price) || double.IsNaN(price) || double.IsInfinity(price) || price < 0)
             {
                 MessageBox.Show("Введите корректную цену.");
                 return;
             }
-
             ReceiptItem existing = items_.FirstOrDefault(i => i.ProductId == product.Id && i.NewProduct == null);
-
             if (existing != null)
             {
                 existing.Quantity += quantity;
@@ -129,9 +116,8 @@ namespace Gardenly.ReceiptForm
                     Price = price
                 });
             }
-
             RefreshItems();
-            textBoxQuantity.Clear();
+            numericUpDownQuantity.Value = 1;
             textBoxPrice.Clear();
         }
 
@@ -150,7 +136,6 @@ namespace Gardenly.ReceiptForm
                     ReceiptDate = DateTime.Now
                 };
                 receiptService_.AddReceipt(receipt, items_);
-
                 DialogResult = DialogResult.OK;
                 Close();
             }

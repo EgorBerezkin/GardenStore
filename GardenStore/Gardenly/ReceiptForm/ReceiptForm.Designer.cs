@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceiptForm));
             this.comboBoxProduct = new System.Windows.Forms.ComboBox();
             this.labelNameProduct = new System.Windows.Forms.Label();
-            this.textBoxQuantity = new System.Windows.Forms.TextBox();
             this.labelCountProduct = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.labelPrice = new System.Windows.Forms.Label();
@@ -45,8 +44,10 @@
             this.labelNameForm = new System.Windows.Forms.Label();
             this.labelZagolovok = new System.Windows.Forms.Label();
             this.buttonDeleteItem = new System.Windows.Forms.Button();
+            this.numericUpDownQuantity = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
             this.panelInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxProduct
@@ -69,15 +70,6 @@
             this.labelNameProduct.Size = new System.Drawing.Size(209, 27);
             this.labelNameProduct.TabIndex = 1;
             this.labelNameProduct.Text = "Выберите товар:";
-            // 
-            // textBoxQuantity
-            // 
-            this.textBoxQuantity.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
-            this.textBoxQuantity.ForeColor = System.Drawing.Color.Salmon;
-            this.textBoxQuantity.Location = new System.Drawing.Point(309, 138);
-            this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.Size = new System.Drawing.Size(498, 34);
-            this.textBoxQuantity.TabIndex = 2;
             // 
             // labelCountProduct
             // 
@@ -225,11 +217,36 @@
             this.buttonDeleteItem.UseVisualStyleBackColor = true;
             this.buttonDeleteItem.Click += new System.EventHandler(this.buttonDeleteItem_Click);
             // 
+            // numericUpDownQuantity
+            // 
+            this.numericUpDownQuantity.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.numericUpDownQuantity.ForeColor = System.Drawing.Color.Salmon;
+            this.numericUpDownQuantity.Location = new System.Drawing.Point(309, 138);
+            this.numericUpDownQuantity.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownQuantity.Name = "numericUpDownQuantity";
+            this.numericUpDownQuantity.Size = new System.Drawing.Size(498, 34);
+            this.numericUpDownQuantity.TabIndex = 29;
+            this.numericUpDownQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // ReceiptForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Salmon;
             this.ClientSize = new System.Drawing.Size(819, 573);
+            this.Controls.Add(this.numericUpDownQuantity);
             this.Controls.Add(this.buttonDeleteItem);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.labelTotal);
@@ -241,7 +258,6 @@
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.labelCountProduct);
-            this.Controls.Add(this.textBoxQuantity);
             this.Controls.Add(this.labelNameProduct);
             this.Controls.Add(this.comboBoxProduct);
             this.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
@@ -254,6 +270,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).EndInit();
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,7 +280,6 @@
 
         private System.Windows.Forms.ComboBox comboBoxProduct;
         private System.Windows.Forms.Label labelNameProduct;
-        private System.Windows.Forms.TextBox textBoxQuantity;
         private System.Windows.Forms.Label labelCountProduct;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.Label labelPrice;
@@ -277,5 +293,6 @@
         private System.Windows.Forms.Label labelNameForm;
         private System.Windows.Forms.Label labelZagolovok;
         private System.Windows.Forms.Button buttonDeleteItem;
+        private System.Windows.Forms.NumericUpDown numericUpDownQuantity;
     }
 }

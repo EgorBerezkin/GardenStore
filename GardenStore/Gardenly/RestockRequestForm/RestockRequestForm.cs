@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Librarygardenly;
 using Librarygardenly.Products;
 using Librarygardenly.Restock;
 
@@ -26,10 +20,8 @@ namespace Gardenly.RestockRequest
             InitializeComponent();
 
             userId_ = userId;
-
             productService_ = new ProductService();
             requestService_ = new RestockRequestService();
-
             products_ = new List<Product>();
             items_ = new List<RestockRequestItem>();
 
@@ -56,13 +48,11 @@ namespace Gardenly.RestockRequest
         {
             dataGridViewItems.DataSource = null;
             dataGridViewItems.DataSource = items_.ToList();
-
             if (dataGridViewItems.Columns.Count > 0)
             {
                 dataGridViewItems.Columns["Id"].Visible = false;
                 dataGridViewItems.Columns["RequestId"].Visible = false;
                 dataGridViewItems.Columns["ProductId"].Visible = false;
-
                 dataGridViewItems.Columns["ProductName"].HeaderText = "Товар";
                 dataGridViewItems.Columns["Quantity"].HeaderText = "Количество";
             }
@@ -74,7 +64,6 @@ namespace Gardenly.RestockRequest
                 MessageBox.Show("Добавьте товары в заявку.");
                 return;
             }
-
             try
             {
                 Librarygardenly.Restock.RestockRequest request =
@@ -103,13 +92,7 @@ namespace Gardenly.RestockRequest
                 return;
             }
 
-            int quantity;
-            if (!int.TryParse(textBoxQuantity.Text, out quantity) || quantity <= 0)
-            {
-                MessageBox.Show("Введите корректное количество.");
-                return;
-            }
-
+            int quantity = (int)numericUpDownQuantity.Value;
             RestockRequestItem existingItem = items_.FirstOrDefault(item => item.ProductId == product.Id);
             if (existingItem != null)
             {
@@ -125,7 +108,7 @@ namespace Gardenly.RestockRequest
                 });
             }
             RefreshItems();
-            textBoxQuantity.Clear();
+            numericUpDownQuantity.Value = 1;
         }
 
         private void buttonDeleteItem_Click(object sender, EventArgs e)
