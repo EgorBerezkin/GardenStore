@@ -39,7 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.labelName = new System.Windows.Forms.Label();
+            this.labelNameForm = new System.Windows.Forms.Label();
             this.labelZagolovok = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
             this.panelInfo.SuspendLayout();
@@ -152,7 +152,7 @@
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.Color.SeaShell;
-            this.panelInfo.Controls.Add(this.labelName);
+            this.panelInfo.Controls.Add(this.labelNameForm);
             this.panelInfo.Controls.Add(this.labelZagolovok);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInfo.Location = new System.Drawing.Point(0, 0);
@@ -160,16 +160,16 @@
             this.panelInfo.Size = new System.Drawing.Size(599, 86);
             this.panelInfo.TabIndex = 10;
             // 
-            // labelName
+            // labelNameForm
             // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Georgia", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelName.ForeColor = System.Drawing.Color.Salmon;
-            this.labelName.Location = new System.Drawing.Point(110, 18);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(461, 46);
-            this.labelName.TabIndex = 7;
-            this.labelName.Text = "Оформление заявки";
+            this.labelNameForm.AutoSize = true;
+            this.labelNameForm.Font = new System.Drawing.Font("Georgia", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNameForm.ForeColor = System.Drawing.Color.Salmon;
+            this.labelNameForm.Location = new System.Drawing.Point(110, 18);
+            this.labelNameForm.Name = "labelNameForm";
+            this.labelNameForm.Size = new System.Drawing.Size(461, 46);
+            this.labelNameForm.TabIndex = 7;
+            this.labelNameForm.Text = "Оформление заявки";
             // 
             // labelZagolovok
             // 
@@ -221,7 +221,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelInfo;
-        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelNameForm;
         private System.Windows.Forms.Label labelZagolovok;
     }
 }

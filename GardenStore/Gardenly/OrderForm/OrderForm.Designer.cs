@@ -39,7 +39,7 @@
             this.labelProductName = new System.Windows.Forms.Label();
             this.labelCountProduct = new System.Windows.Forms.Label();
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.labelName = new System.Windows.Forms.Label();
+            this.labelNameForms = new System.Windows.Forms.Label();
             this.labelZagolovok = new System.Windows.Forms.Label();
             this.buttonDeleteItem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).BeginInit();
@@ -169,7 +169,7 @@
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.Color.SeaShell;
-            this.panelInfo.Controls.Add(this.labelName);
+            this.panelInfo.Controls.Add(this.labelNameForms);
             this.panelInfo.Controls.Add(this.labelZagolovok);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInfo.Location = new System.Drawing.Point(0, 0);
@@ -177,16 +177,16 @@
             this.panelInfo.Size = new System.Drawing.Size(606, 86);
             this.panelInfo.TabIndex = 24;
             // 
-            // labelName
+            // labelNameForms
             // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Georgia", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelName.ForeColor = System.Drawing.Color.Salmon;
-            this.labelName.Location = new System.Drawing.Point(91, 18);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(512, 46);
-            this.labelName.TabIndex = 7;
-            this.labelName.Text = "Оформление продажи";
+            this.labelNameForms.AutoSize = true;
+            this.labelNameForms.Font = new System.Drawing.Font("Georgia", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNameForms.ForeColor = System.Drawing.Color.Salmon;
+            this.labelNameForms.Location = new System.Drawing.Point(91, 18);
+            this.labelNameForms.Name = "labelNameForms";
+            this.labelNameForms.Size = new System.Drawing.Size(512, 46);
+            this.labelNameForms.TabIndex = 7;
+            this.labelNameForms.Text = "Оформление продажи";
             // 
             // labelZagolovok
             // 
@@ -252,7 +252,7 @@
         private System.Windows.Forms.Label labelProductName;
         private System.Windows.Forms.Label labelCountProduct;
         private System.Windows.Forms.Panel panelInfo;
-        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelNameForms;
         private System.Windows.Forms.Label labelZagolovok;
         private System.Windows.Forms.Button buttonDeleteItem;
     }

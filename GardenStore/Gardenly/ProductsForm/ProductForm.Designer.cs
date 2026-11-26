@@ -42,7 +42,7 @@
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.labelInfo = new System.Windows.Forms.Label();
+            this.labelNameForm = new System.Windows.Forms.Label();
             this.labelZagolovok = new System.Windows.Forms.Label();
             this.panelInfo.SuspendLayout();
             this.SuspendLayout();
@@ -176,7 +176,7 @@
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.Color.SeaShell;
-            this.panelInfo.Controls.Add(this.labelInfo);
+            this.panelInfo.Controls.Add(this.labelNameForm);
             this.panelInfo.Controls.Add(this.labelZagolovok);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInfo.Location = new System.Drawing.Point(0, 0);
@@ -184,16 +184,16 @@
             this.panelInfo.Size = new System.Drawing.Size(581, 76);
             this.panelInfo.TabIndex = 26;
             // 
-            // labelInfo
+            // labelNameForm
             // 
-            this.labelInfo.AutoSize = true;
-            this.labelInfo.Font = new System.Drawing.Font("Georgia", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelInfo.ForeColor = System.Drawing.Color.Salmon;
-            this.labelInfo.Location = new System.Drawing.Point(88, 18);
-            this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(510, 46);
-            this.labelInfo.TabIndex = 7;
-            this.labelInfo.Text = "Действия с товарами";
+            this.labelNameForm.AutoSize = true;
+            this.labelNameForm.Font = new System.Drawing.Font("Georgia", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNameForm.ForeColor = System.Drawing.Color.Salmon;
+            this.labelNameForm.Location = new System.Drawing.Point(88, 18);
+            this.labelNameForm.Name = "labelNameForm";
+            this.labelNameForm.Size = new System.Drawing.Size(510, 46);
+            this.labelNameForm.TabIndex = 7;
+            this.labelNameForm.Text = "Действия с товарами";
             // 
             // labelZagolovok
             // 
@@ -250,7 +250,7 @@
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Panel panelInfo;
-        private System.Windows.Forms.Label labelInfo;
+        private System.Windows.Forms.Label labelNameForm;
         private System.Windows.Forms.Label labelZagolovok;
     }
 }
