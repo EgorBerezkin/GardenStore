@@ -63,6 +63,16 @@ namespace Gardenly.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lianaGreen {
+            get {
+                object obj = ResourceManager.GetObject("lianaGreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lists {
             get {
                 object obj = ResourceManager.GetObject("lists", resourceCulture);

@@ -80,33 +80,18 @@
             this.panelFilterOrder = new System.Windows.Forms.Panel();
             this.comboBoxOrders = new System.Windows.Forms.ComboBox();
             this.dateTimePickerOrders = new System.Windows.Forms.DateTimePicker();
+            this.labelFIOOrder = new System.Windows.Forms.Label();
             this.buttonSearchOrders = new System.Windows.Forms.Button();
             this.buttonResetOrder = new System.Windows.Forms.Button();
+            this.labelDateOrder = new System.Windows.Forms.Label();
             this.panelInfoFilterOrder = new System.Windows.Forms.Panel();
+            this.labelInfoFilterOrder = new System.Windows.Forms.Label();
             this.panelOrderViewAndAdd = new System.Windows.Forms.Panel();
             this.buttonViewOrder = new System.Windows.Forms.Button();
-            this.panelInfoOrder = new System.Windows.Forms.Panel();
-            this.tabPageRestockRequest = new System.Windows.Forms.TabPage();
-            this.panelRestockRequest = new System.Windows.Forms.Panel();
-            this.dataGridViewRestockRequest = new System.Windows.Forms.DataGridView();
-            this.panelRestockRequestViewAndAdd = new System.Windows.Forms.Panel();
-            this.buttonAddRequest = new System.Windows.Forms.Button();
-            this.buttonViewRequest = new System.Windows.Forms.Button();
-            this.panelInfo = new System.Windows.Forms.Panel();
-            this.labelRole = new System.Windows.Forms.Label();
-            this.labelInfoUser = new System.Windows.Forms.Label();
-            this.labelNameMainForm = new System.Windows.Forms.Label();
-            this.labelName = new System.Windows.Forms.Label();
-            this.pictureBoxLogotip = new System.Windows.Forms.PictureBox();
-            this.labelProbel = new System.Windows.Forms.Label();
-            this.pictureBoxKartinka = new System.Windows.Forms.PictureBox();
-            this.labelInfoOrder = new System.Windows.Forms.Label();
-            this.labelInfoFilterOrder = new System.Windows.Forms.Label();
-            this.labelFIOOrder = new System.Windows.Forms.Label();
-            this.labelDateOrder = new System.Windows.Forms.Label();
             this.buttonAddOrder = new System.Windows.Forms.Button();
-            this.panelInfoRequest = new System.Windows.Forms.Panel();
-            this.labelInfoRequest = new System.Windows.Forms.Label();
+            this.panelInfoOrder = new System.Windows.Forms.Panel();
+            this.labelInfoOrder = new System.Windows.Forms.Label();
+            this.tabPageRestockRequest = new System.Windows.Forms.TabPage();
             this.panelFilterRequest = new System.Windows.Forms.Panel();
             this.comboBoxFIORequest = new System.Windows.Forms.ComboBox();
             this.dateTimePickerRequest = new System.Windows.Forms.DateTimePicker();
@@ -116,6 +101,22 @@
             this.labelDateRequest = new System.Windows.Forms.Label();
             this.panelInfoFilterRequest = new System.Windows.Forms.Panel();
             this.labelInfoFilterRequest = new System.Windows.Forms.Label();
+            this.panelRestockRequest = new System.Windows.Forms.Panel();
+            this.dataGridViewRestockRequest = new System.Windows.Forms.DataGridView();
+            this.panelRestockRequestViewAndAdd = new System.Windows.Forms.Panel();
+            this.buttonAddRequest = new System.Windows.Forms.Button();
+            this.buttonViewRequest = new System.Windows.Forms.Button();
+            this.panelInfoRequest = new System.Windows.Forms.Panel();
+            this.labelInfoRequest = new System.Windows.Forms.Label();
+            this.panelInfo = new System.Windows.Forms.Panel();
+            this.labelRole = new System.Windows.Forms.Label();
+            this.labelInfoUser = new System.Windows.Forms.Label();
+            this.labelNameMainForm = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelProbel = new System.Windows.Forms.Label();
+            this.pictureBoxLogotip = new System.Windows.Forms.PictureBox();
+            this.pictureBoxKartinka = new System.Windows.Forms.PictureBox();
+            this.pictureBoxKartinkaLiana = new System.Windows.Forms.PictureBox();
             this.panelExit.SuspendLayout();
             this.tabPageReceipt.SuspendLayout();
             this.panelReceipt.SuspendLayout();
@@ -143,15 +144,16 @@
             this.panelOrderViewAndAdd.SuspendLayout();
             this.panelInfoOrder.SuspendLayout();
             this.tabPageRestockRequest.SuspendLayout();
+            this.panelFilterRequest.SuspendLayout();
+            this.panelInfoFilterRequest.SuspendLayout();
             this.panelRestockRequest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRestockRequest)).BeginInit();
             this.panelRestockRequestViewAndAdd.SuspendLayout();
+            this.panelInfoRequest.SuspendLayout();
             this.panelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogotip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKartinka)).BeginInit();
-            this.panelInfoRequest.SuspendLayout();
-            this.panelFilterRequest.SuspendLayout();
-            this.panelInfoFilterRequest.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKartinkaLiana)).BeginInit();
             this.SuspendLayout();
             // 
             // labelUser
@@ -796,6 +798,17 @@
             this.dateTimePickerOrders.Size = new System.Drawing.Size(276, 34);
             this.dateTimePickerOrders.TabIndex = 10;
             // 
+            // labelFIOOrder
+            // 
+            this.labelFIOOrder.AutoSize = true;
+            this.labelFIOOrder.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelFIOOrder.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelFIOOrder.Location = new System.Drawing.Point(10, 112);
+            this.labelFIOOrder.Name = "labelFIOOrder";
+            this.labelFIOOrder.Size = new System.Drawing.Size(270, 32);
+            this.labelFIOOrder.TabIndex = 12;
+            this.labelFIOOrder.Text = "Сотрудник (ФИО):";
+            // 
             // buttonSearchOrders
             // 
             this.buttonSearchOrders.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -820,6 +833,17 @@
             this.buttonResetOrder.UseVisualStyleBackColor = true;
             this.buttonResetOrder.Click += new System.EventHandler(this.buttonResetOrder_Click);
             // 
+            // labelDateOrder
+            // 
+            this.labelDateOrder.AutoSize = true;
+            this.labelDateOrder.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelDateOrder.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelDateOrder.Location = new System.Drawing.Point(10, 65);
+            this.labelDateOrder.Name = "labelDateOrder";
+            this.labelDateOrder.Size = new System.Drawing.Size(273, 32);
+            this.labelDateOrder.TabIndex = 7;
+            this.labelDateOrder.Text = "Дата оформления:";
+            // 
             // panelInfoFilterOrder
             // 
             this.panelInfoFilterOrder.BackColor = System.Drawing.Color.Salmon;
@@ -829,6 +853,17 @@
             this.panelInfoFilterOrder.Name = "panelInfoFilterOrder";
             this.panelInfoFilterOrder.Size = new System.Drawing.Size(578, 57);
             this.panelInfoFilterOrder.TabIndex = 7;
+            // 
+            // labelInfoFilterOrder
+            // 
+            this.labelInfoFilterOrder.AutoSize = true;
+            this.labelInfoFilterOrder.Font = new System.Drawing.Font("Georgia", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelInfoFilterOrder.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelInfoFilterOrder.Location = new System.Drawing.Point(32, 12);
+            this.labelInfoFilterOrder.Name = "labelInfoFilterOrder";
+            this.labelInfoFilterOrder.Size = new System.Drawing.Size(476, 27);
+            this.labelInfoFilterOrder.TabIndex = 4;
+            this.labelInfoFilterOrder.Text = "Фильтрация  по дате и сотруднику";
             // 
             // panelOrderViewAndAdd
             // 
@@ -854,6 +889,18 @@
             this.buttonViewOrder.UseVisualStyleBackColor = true;
             this.buttonViewOrder.Click += new System.EventHandler(this.buttonViewOrder_Click);
             // 
+            // buttonAddOrder
+            // 
+            this.buttonAddOrder.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAddOrder.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonAddOrder.Location = new System.Drawing.Point(14, 111);
+            this.buttonAddOrder.Name = "buttonAddOrder";
+            this.buttonAddOrder.Size = new System.Drawing.Size(550, 42);
+            this.buttonAddOrder.TabIndex = 5;
+            this.buttonAddOrder.Text = "Оформление продажи";
+            this.buttonAddOrder.UseVisualStyleBackColor = true;
+            this.buttonAddOrder.Click += new System.EventHandler(this.buttonAddOrder_Click);
+            // 
             // panelInfoOrder
             // 
             this.panelInfoOrder.BackColor = System.Drawing.Color.Salmon;
@@ -863,6 +910,17 @@
             this.panelInfoOrder.Name = "panelInfoOrder";
             this.panelInfoOrder.Size = new System.Drawing.Size(578, 52);
             this.panelInfoOrder.TabIndex = 6;
+            // 
+            // labelInfoOrder
+            // 
+            this.labelInfoOrder.AutoSize = true;
+            this.labelInfoOrder.Font = new System.Drawing.Font("Georgia", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelInfoOrder.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelInfoOrder.Location = new System.Drawing.Point(121, 12);
+            this.labelInfoOrder.Name = "labelInfoOrder";
+            this.labelInfoOrder.Size = new System.Drawing.Size(314, 27);
+            this.labelInfoOrder.TabIndex = 4;
+            this.labelInfoOrder.Text = "Действия с продажами";
             // 
             // tabPageRestockRequest
             // 
@@ -877,248 +935,6 @@
             this.tabPageRestockRequest.TabIndex = 8;
             this.tabPageRestockRequest.Text = "Заявки на поплнение";
             this.tabPageRestockRequest.UseVisualStyleBackColor = true;
-            // 
-            // panelRestockRequest
-            // 
-            this.panelRestockRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelRestockRequest.BackColor = System.Drawing.Color.Salmon;
-            this.panelRestockRequest.Controls.Add(this.dataGridViewRestockRequest);
-            this.panelRestockRequest.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelRestockRequest.Location = new System.Drawing.Point(11, 10);
-            this.panelRestockRequest.Name = "panelRestockRequest";
-            this.panelRestockRequest.Size = new System.Drawing.Size(1180, 696);
-            this.panelRestockRequest.TabIndex = 7;
-            // 
-            // dataGridViewRestockRequest
-            // 
-            this.dataGridViewRestockRequest.AccessibleRole = System.Windows.Forms.AccessibleRole.Column;
-            this.dataGridViewRestockRequest.AllowUserToAddRows = false;
-            this.dataGridViewRestockRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewRestockRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewRestockRequest.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewRestockRequest.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewRestockRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRestockRequest.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewRestockRequest.Location = new System.Drawing.Point(9, 10);
-            this.dataGridViewRestockRequest.Name = "dataGridViewRestockRequest";
-            this.dataGridViewRestockRequest.ReadOnly = true;
-            this.dataGridViewRestockRequest.RowHeadersWidth = 51;
-            this.dataGridViewRestockRequest.RowTemplate.Height = 24;
-            this.dataGridViewRestockRequest.Size = new System.Drawing.Size(1159, 676);
-            this.dataGridViewRestockRequest.TabIndex = 2;
-            // 
-            // panelRestockRequestViewAndAdd
-            // 
-            this.panelRestockRequestViewAndAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelRestockRequestViewAndAdd.BackColor = System.Drawing.Color.YellowGreen;
-            this.panelRestockRequestViewAndAdd.Controls.Add(this.buttonAddRequest);
-            this.panelRestockRequestViewAndAdd.Controls.Add(this.buttonViewRequest);
-            this.panelRestockRequestViewAndAdd.Controls.Add(this.panelInfoRequest);
-            this.panelRestockRequestViewAndAdd.Location = new System.Drawing.Point(1225, 10);
-            this.panelRestockRequestViewAndAdd.Name = "panelRestockRequestViewAndAdd";
-            this.panelRestockRequestViewAndAdd.Size = new System.Drawing.Size(578, 169);
-            this.panelRestockRequestViewAndAdd.TabIndex = 4;
-            // 
-            // buttonAddRequest
-            // 
-            this.buttonAddRequest.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAddRequest.ForeColor = System.Drawing.Color.Salmon;
-            this.buttonAddRequest.Location = new System.Drawing.Point(14, 112);
-            this.buttonAddRequest.Name = "buttonAddRequest";
-            this.buttonAddRequest.Size = new System.Drawing.Size(548, 42);
-            this.buttonAddRequest.TabIndex = 7;
-            this.buttonAddRequest.Text = "Оформление заявки";
-            this.buttonAddRequest.UseVisualStyleBackColor = true;
-            this.buttonAddRequest.Click += new System.EventHandler(this.buttonAddRequest_Click);
-            // 
-            // buttonViewRequest
-            // 
-            this.buttonViewRequest.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonViewRequest.ForeColor = System.Drawing.Color.Salmon;
-            this.buttonViewRequest.Location = new System.Drawing.Point(14, 64);
-            this.buttonViewRequest.Name = "buttonViewRequest";
-            this.buttonViewRequest.Size = new System.Drawing.Size(548, 42);
-            this.buttonViewRequest.TabIndex = 5;
-            this.buttonViewRequest.Text = "Просмотр заявки";
-            this.buttonViewRequest.UseVisualStyleBackColor = true;
-            this.buttonViewRequest.Click += new System.EventHandler(this.buttonViewRequest_Click);
-            // 
-            // panelInfo
-            // 
-            this.panelInfo.BackColor = System.Drawing.Color.SeaShell;
-            this.panelInfo.Controls.Add(this.labelRole);
-            this.panelInfo.Controls.Add(this.labelInfoUser);
-            this.panelInfo.Controls.Add(this.labelUser);
-            this.panelInfo.Controls.Add(this.labelNameMainForm);
-            this.panelInfo.Controls.Add(this.labelName);
-            this.panelInfo.Controls.Add(this.pictureBoxLogotip);
-            this.panelInfo.Controls.Add(this.labelProbel);
-            this.panelInfo.Controls.Add(this.pictureBoxKartinka);
-            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelInfo.Location = new System.Drawing.Point(0, 0);
-            this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(1822, 186);
-            this.panelInfo.TabIndex = 11;
-            // 
-            // labelRole
-            // 
-            this.labelRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelRole.AutoSize = true;
-            this.labelRole.Font = new System.Drawing.Font("Georgia", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelRole.ForeColor = System.Drawing.Color.YellowGreen;
-            this.labelRole.Location = new System.Drawing.Point(1502, 120);
-            this.labelRole.Name = "labelRole";
-            this.labelRole.Size = new System.Drawing.Size(72, 27);
-            this.labelRole.TabIndex = 14;
-            this.labelRole.Text = "Роль";
-            // 
-            // labelInfoUser
-            // 
-            this.labelInfoUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelInfoUser.AutoSize = true;
-            this.labelInfoUser.Font = new System.Drawing.Font("Georgia", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelInfoUser.ForeColor = System.Drawing.Color.Salmon;
-            this.labelInfoUser.Location = new System.Drawing.Point(1300, 14);
-            this.labelInfoUser.Name = "labelInfoUser";
-            this.labelInfoUser.Size = new System.Drawing.Size(470, 32);
-            this.labelInfoUser.TabIndex = 12;
-            this.labelInfoUser.Text = "Информация о пользователе";
-            // 
-            // labelNameMainForm
-            // 
-            this.labelNameMainForm.AutoSize = true;
-            this.labelNameMainForm.Font = new System.Drawing.Font("Georgia", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNameMainForm.ForeColor = System.Drawing.Color.YellowGreen;
-            this.labelNameMainForm.Location = new System.Drawing.Point(439, 110);
-            this.labelNameMainForm.Name = "labelNameMainForm";
-            this.labelNameMainForm.Size = new System.Drawing.Size(362, 38);
-            this.labelNameMainForm.TabIndex = 10;
-            this.labelNameMainForm.Text = "Главная страница";
-            // 
-            // labelName
-            // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Georgia", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelName.ForeColor = System.Drawing.Color.Salmon;
-            this.labelName.Location = new System.Drawing.Point(257, 41);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(689, 69);
-            this.labelName.TabIndex = 8;
-            this.labelName.Text = "Магазин \"Gardenly\"";
-            // 
-            // pictureBoxLogotip
-            // 
-            this.pictureBoxLogotip.Image = global::Gardenly.Properties.Resources.logotip1;
-            this.pictureBoxLogotip.Location = new System.Drawing.Point(-29, -18);
-            this.pictureBoxLogotip.Name = "pictureBoxLogotip";
-            this.pictureBoxLogotip.Size = new System.Drawing.Size(265, 227);
-            this.pictureBoxLogotip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLogotip.TabIndex = 0;
-            this.pictureBoxLogotip.TabStop = false;
-            // 
-            // labelProbel
-            // 
-            this.labelProbel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelProbel.AutoSize = true;
-            this.labelProbel.Font = new System.Drawing.Font("Georgia", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelProbel.ForeColor = System.Drawing.Color.Salmon;
-            this.labelProbel.Location = new System.Drawing.Point(1253, 46);
-            this.labelProbel.Name = "labelProbel";
-            this.labelProbel.Size = new System.Drawing.Size(579, 27);
-            this.labelProbel.TabIndex = 13;
-            this.labelProbel.Text = "---------------------------------------------------------------";
-            // 
-            // pictureBoxKartinka
-            // 
-            this.pictureBoxKartinka.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxKartinka.Image = global::Gardenly.Properties.Resources.lists1;
-            this.pictureBoxKartinka.Location = new System.Drawing.Point(1074, 0);
-            this.pictureBoxKartinka.Name = "pictureBoxKartinka";
-            this.pictureBoxKartinka.Size = new System.Drawing.Size(321, 192);
-            this.pictureBoxKartinka.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxKartinka.TabIndex = 11;
-            this.pictureBoxKartinka.TabStop = false;
-            // 
-            // labelInfoOrder
-            // 
-            this.labelInfoOrder.AutoSize = true;
-            this.labelInfoOrder.Font = new System.Drawing.Font("Georgia", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelInfoOrder.ForeColor = System.Drawing.Color.SeaShell;
-            this.labelInfoOrder.Location = new System.Drawing.Point(121, 12);
-            this.labelInfoOrder.Name = "labelInfoOrder";
-            this.labelInfoOrder.Size = new System.Drawing.Size(314, 27);
-            this.labelInfoOrder.TabIndex = 4;
-            this.labelInfoOrder.Text = "Действия с продажами";
-            // 
-            // labelInfoFilterOrder
-            // 
-            this.labelInfoFilterOrder.AutoSize = true;
-            this.labelInfoFilterOrder.Font = new System.Drawing.Font("Georgia", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelInfoFilterOrder.ForeColor = System.Drawing.Color.SeaShell;
-            this.labelInfoFilterOrder.Location = new System.Drawing.Point(32, 12);
-            this.labelInfoFilterOrder.Name = "labelInfoFilterOrder";
-            this.labelInfoFilterOrder.Size = new System.Drawing.Size(476, 27);
-            this.labelInfoFilterOrder.TabIndex = 4;
-            this.labelInfoFilterOrder.Text = "Фильтрация  по дате и сотруднику";
-            // 
-            // labelFIOOrder
-            // 
-            this.labelFIOOrder.AutoSize = true;
-            this.labelFIOOrder.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelFIOOrder.ForeColor = System.Drawing.Color.SeaShell;
-            this.labelFIOOrder.Location = new System.Drawing.Point(10, 112);
-            this.labelFIOOrder.Name = "labelFIOOrder";
-            this.labelFIOOrder.Size = new System.Drawing.Size(270, 32);
-            this.labelFIOOrder.TabIndex = 12;
-            this.labelFIOOrder.Text = "Сотрудник (ФИО):";
-            // 
-            // labelDateOrder
-            // 
-            this.labelDateOrder.AutoSize = true;
-            this.labelDateOrder.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelDateOrder.ForeColor = System.Drawing.Color.SeaShell;
-            this.labelDateOrder.Location = new System.Drawing.Point(10, 65);
-            this.labelDateOrder.Name = "labelDateOrder";
-            this.labelDateOrder.Size = new System.Drawing.Size(273, 32);
-            this.labelDateOrder.TabIndex = 7;
-            this.labelDateOrder.Text = "Дата оформления:";
-            // 
-            // buttonAddOrder
-            // 
-            this.buttonAddOrder.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAddOrder.ForeColor = System.Drawing.Color.Salmon;
-            this.buttonAddOrder.Location = new System.Drawing.Point(14, 111);
-            this.buttonAddOrder.Name = "buttonAddOrder";
-            this.buttonAddOrder.Size = new System.Drawing.Size(550, 42);
-            this.buttonAddOrder.TabIndex = 5;
-            this.buttonAddOrder.Text = "Оформление продажи";
-            this.buttonAddOrder.UseVisualStyleBackColor = true;
-            this.buttonAddOrder.Click += new System.EventHandler(this.buttonAddOrder_Click);
-            // 
-            // panelInfoRequest
-            // 
-            this.panelInfoRequest.BackColor = System.Drawing.Color.Salmon;
-            this.panelInfoRequest.Controls.Add(this.labelInfoRequest);
-            this.panelInfoRequest.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelInfoRequest.Location = new System.Drawing.Point(0, 0);
-            this.panelInfoRequest.Name = "panelInfoRequest";
-            this.panelInfoRequest.Size = new System.Drawing.Size(578, 52);
-            this.panelInfoRequest.TabIndex = 6;
-            // 
-            // labelInfoRequest
-            // 
-            this.labelInfoRequest.AutoSize = true;
-            this.labelInfoRequest.Font = new System.Drawing.Font("Georgia", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelInfoRequest.ForeColor = System.Drawing.Color.SeaShell;
-            this.labelInfoRequest.Location = new System.Drawing.Point(143, 12);
-            this.labelInfoRequest.Name = "labelInfoRequest";
-            this.labelInfoRequest.Size = new System.Drawing.Size(285, 27);
-            this.labelInfoRequest.TabIndex = 4;
-            this.labelInfoRequest.Text = "Действия с заявками";
             // 
             // panelFilterRequest
             // 
@@ -1226,6 +1042,204 @@
             this.labelInfoFilterRequest.TabIndex = 4;
             this.labelInfoFilterRequest.Text = "Фильтрация  по дате и сотруднику";
             // 
+            // panelRestockRequest
+            // 
+            this.panelRestockRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelRestockRequest.BackColor = System.Drawing.Color.Salmon;
+            this.panelRestockRequest.Controls.Add(this.dataGridViewRestockRequest);
+            this.panelRestockRequest.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panelRestockRequest.Location = new System.Drawing.Point(11, 10);
+            this.panelRestockRequest.Name = "panelRestockRequest";
+            this.panelRestockRequest.Size = new System.Drawing.Size(1180, 696);
+            this.panelRestockRequest.TabIndex = 7;
+            // 
+            // dataGridViewRestockRequest
+            // 
+            this.dataGridViewRestockRequest.AccessibleRole = System.Windows.Forms.AccessibleRole.Column;
+            this.dataGridViewRestockRequest.AllowUserToAddRows = false;
+            this.dataGridViewRestockRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewRestockRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewRestockRequest.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewRestockRequest.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewRestockRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRestockRequest.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewRestockRequest.Location = new System.Drawing.Point(9, 10);
+            this.dataGridViewRestockRequest.Name = "dataGridViewRestockRequest";
+            this.dataGridViewRestockRequest.ReadOnly = true;
+            this.dataGridViewRestockRequest.RowHeadersWidth = 51;
+            this.dataGridViewRestockRequest.RowTemplate.Height = 24;
+            this.dataGridViewRestockRequest.Size = new System.Drawing.Size(1159, 676);
+            this.dataGridViewRestockRequest.TabIndex = 2;
+            // 
+            // panelRestockRequestViewAndAdd
+            // 
+            this.panelRestockRequestViewAndAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelRestockRequestViewAndAdd.BackColor = System.Drawing.Color.YellowGreen;
+            this.panelRestockRequestViewAndAdd.Controls.Add(this.buttonAddRequest);
+            this.panelRestockRequestViewAndAdd.Controls.Add(this.buttonViewRequest);
+            this.panelRestockRequestViewAndAdd.Controls.Add(this.panelInfoRequest);
+            this.panelRestockRequestViewAndAdd.Location = new System.Drawing.Point(1225, 10);
+            this.panelRestockRequestViewAndAdd.Name = "panelRestockRequestViewAndAdd";
+            this.panelRestockRequestViewAndAdd.Size = new System.Drawing.Size(578, 169);
+            this.panelRestockRequestViewAndAdd.TabIndex = 4;
+            // 
+            // buttonAddRequest
+            // 
+            this.buttonAddRequest.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAddRequest.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonAddRequest.Location = new System.Drawing.Point(14, 112);
+            this.buttonAddRequest.Name = "buttonAddRequest";
+            this.buttonAddRequest.Size = new System.Drawing.Size(548, 42);
+            this.buttonAddRequest.TabIndex = 7;
+            this.buttonAddRequest.Text = "Оформление заявки";
+            this.buttonAddRequest.UseVisualStyleBackColor = true;
+            this.buttonAddRequest.Click += new System.EventHandler(this.buttonAddRequest_Click);
+            // 
+            // buttonViewRequest
+            // 
+            this.buttonViewRequest.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonViewRequest.ForeColor = System.Drawing.Color.Salmon;
+            this.buttonViewRequest.Location = new System.Drawing.Point(14, 64);
+            this.buttonViewRequest.Name = "buttonViewRequest";
+            this.buttonViewRequest.Size = new System.Drawing.Size(548, 42);
+            this.buttonViewRequest.TabIndex = 5;
+            this.buttonViewRequest.Text = "Просмотр заявки";
+            this.buttonViewRequest.UseVisualStyleBackColor = true;
+            this.buttonViewRequest.Click += new System.EventHandler(this.buttonViewRequest_Click);
+            // 
+            // panelInfoRequest
+            // 
+            this.panelInfoRequest.BackColor = System.Drawing.Color.Salmon;
+            this.panelInfoRequest.Controls.Add(this.labelInfoRequest);
+            this.panelInfoRequest.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelInfoRequest.Location = new System.Drawing.Point(0, 0);
+            this.panelInfoRequest.Name = "panelInfoRequest";
+            this.panelInfoRequest.Size = new System.Drawing.Size(578, 52);
+            this.panelInfoRequest.TabIndex = 6;
+            // 
+            // labelInfoRequest
+            // 
+            this.labelInfoRequest.AutoSize = true;
+            this.labelInfoRequest.Font = new System.Drawing.Font("Georgia", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelInfoRequest.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelInfoRequest.Location = new System.Drawing.Point(143, 12);
+            this.labelInfoRequest.Name = "labelInfoRequest";
+            this.labelInfoRequest.Size = new System.Drawing.Size(285, 27);
+            this.labelInfoRequest.TabIndex = 4;
+            this.labelInfoRequest.Text = "Действия с заявками";
+            // 
+            // panelInfo
+            // 
+            this.panelInfo.BackColor = System.Drawing.Color.SeaShell;
+            this.panelInfo.Controls.Add(this.labelRole);
+            this.panelInfo.Controls.Add(this.labelInfoUser);
+            this.panelInfo.Controls.Add(this.labelUser);
+            this.panelInfo.Controls.Add(this.labelNameMainForm);
+            this.panelInfo.Controls.Add(this.labelName);
+            this.panelInfo.Controls.Add(this.pictureBoxLogotip);
+            this.panelInfo.Controls.Add(this.labelProbel);
+            this.panelInfo.Controls.Add(this.pictureBoxKartinka);
+            this.panelInfo.Controls.Add(this.pictureBoxKartinkaLiana);
+            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelInfo.Location = new System.Drawing.Point(0, 0);
+            this.panelInfo.Name = "panelInfo";
+            this.panelInfo.Size = new System.Drawing.Size(1822, 186);
+            this.panelInfo.TabIndex = 11;
+            // 
+            // labelRole
+            // 
+            this.labelRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelRole.AutoSize = true;
+            this.labelRole.Font = new System.Drawing.Font("Georgia", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelRole.ForeColor = System.Drawing.Color.YellowGreen;
+            this.labelRole.Location = new System.Drawing.Point(1424, 120);
+            this.labelRole.Name = "labelRole";
+            this.labelRole.Size = new System.Drawing.Size(72, 27);
+            this.labelRole.TabIndex = 14;
+            this.labelRole.Text = "Роль";
+            // 
+            // labelInfoUser
+            // 
+            this.labelInfoUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelInfoUser.AutoSize = true;
+            this.labelInfoUser.Font = new System.Drawing.Font("Georgia", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelInfoUser.ForeColor = System.Drawing.Color.Salmon;
+            this.labelInfoUser.Location = new System.Drawing.Point(1300, 14);
+            this.labelInfoUser.Name = "labelInfoUser";
+            this.labelInfoUser.Size = new System.Drawing.Size(470, 32);
+            this.labelInfoUser.TabIndex = 12;
+            this.labelInfoUser.Text = "Информация о пользователе";
+            // 
+            // labelNameMainForm
+            // 
+            this.labelNameMainForm.AutoSize = true;
+            this.labelNameMainForm.Font = new System.Drawing.Font("Georgia", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNameMainForm.ForeColor = System.Drawing.Color.YellowGreen;
+            this.labelNameMainForm.Location = new System.Drawing.Point(439, 110);
+            this.labelNameMainForm.Name = "labelNameMainForm";
+            this.labelNameMainForm.Size = new System.Drawing.Size(362, 38);
+            this.labelNameMainForm.TabIndex = 10;
+            this.labelNameMainForm.Text = "Главная страница";
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Georgia", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelName.ForeColor = System.Drawing.Color.Salmon;
+            this.labelName.Location = new System.Drawing.Point(257, 41);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(689, 69);
+            this.labelName.TabIndex = 8;
+            this.labelName.Text = "Магазин \"Gardenly\"";
+            // 
+            // labelProbel
+            // 
+            this.labelProbel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelProbel.AutoSize = true;
+            this.labelProbel.Font = new System.Drawing.Font("Georgia", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelProbel.ForeColor = System.Drawing.Color.Salmon;
+            this.labelProbel.Location = new System.Drawing.Point(1253, 46);
+            this.labelProbel.Name = "labelProbel";
+            this.labelProbel.Size = new System.Drawing.Size(579, 27);
+            this.labelProbel.TabIndex = 13;
+            this.labelProbel.Text = "---------------------------------------------------------------";
+            // 
+            // pictureBoxLogotip
+            // 
+            this.pictureBoxLogotip.Image = global::Gardenly.Properties.Resources.logotip1;
+            this.pictureBoxLogotip.Location = new System.Drawing.Point(-29, -18);
+            this.pictureBoxLogotip.Name = "pictureBoxLogotip";
+            this.pictureBoxLogotip.Size = new System.Drawing.Size(265, 227);
+            this.pictureBoxLogotip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogotip.TabIndex = 0;
+            this.pictureBoxLogotip.TabStop = false;
+            // 
+            // pictureBoxKartinka
+            // 
+            this.pictureBoxKartinka.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxKartinka.Image = global::Gardenly.Properties.Resources.lianaGreen;
+            this.pictureBoxKartinka.Location = new System.Drawing.Point(1051, -6);
+            this.pictureBoxKartinka.Name = "pictureBoxKartinka";
+            this.pictureBoxKartinka.Size = new System.Drawing.Size(222, 192);
+            this.pictureBoxKartinka.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxKartinka.TabIndex = 11;
+            this.pictureBoxKartinka.TabStop = false;
+            // 
+            // pictureBoxKartinkaLiana
+            // 
+            this.pictureBoxKartinkaLiana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxKartinkaLiana.Image = global::Gardenly.Properties.Resources.lianaGreen;
+            this.pictureBoxKartinkaLiana.Location = new System.Drawing.Point(931, -6);
+            this.pictureBoxKartinkaLiana.Name = "pictureBoxKartinkaLiana";
+            this.pictureBoxKartinkaLiana.Size = new System.Drawing.Size(214, 192);
+            this.pictureBoxKartinkaLiana.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxKartinkaLiana.TabIndex = 15;
+            this.pictureBoxKartinkaLiana.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1279,19 +1293,20 @@
             this.panelInfoOrder.ResumeLayout(false);
             this.panelInfoOrder.PerformLayout();
             this.tabPageRestockRequest.ResumeLayout(false);
-            this.panelRestockRequest.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRestockRequest)).EndInit();
-            this.panelRestockRequestViewAndAdd.ResumeLayout(false);
-            this.panelInfo.ResumeLayout(false);
-            this.panelInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogotip)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKartinka)).EndInit();
-            this.panelInfoRequest.ResumeLayout(false);
-            this.panelInfoRequest.PerformLayout();
             this.panelFilterRequest.ResumeLayout(false);
             this.panelFilterRequest.PerformLayout();
             this.panelInfoFilterRequest.ResumeLayout(false);
             this.panelInfoFilterRequest.PerformLayout();
+            this.panelRestockRequest.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRestockRequest)).EndInit();
+            this.panelRestockRequestViewAndAdd.ResumeLayout(false);
+            this.panelInfoRequest.ResumeLayout(false);
+            this.panelInfoRequest.PerformLayout();
+            this.panelInfo.ResumeLayout(false);
+            this.panelInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogotip)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKartinka)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKartinkaLiana)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1385,5 +1400,6 @@
         private System.Windows.Forms.Label labelDateRequest;
         private System.Windows.Forms.Panel panelInfoFilterRequest;
         private System.Windows.Forms.Label labelInfoFilterRequest;
+        private System.Windows.Forms.PictureBox pictureBoxKartinkaLiana;
     }
 }

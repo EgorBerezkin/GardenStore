@@ -33,7 +33,8 @@ namespace Gardenly
             user_ = user;
             ConfigureInterface();
             labelUser.Text = user_.FullName;
-            
+            labelRole.Text = user_.Role == "administrator" ? "Администратор" : "Сотрудник";
+
 
             productService_ = new ProductService();
             LoadProducts();
@@ -477,9 +478,9 @@ namespace Gardenly
             try
             {
                 UserService userService = new UserService();
-                var employees = userService.GetUsers()
-                    .Select(u => new { Id = u.Id, FullName = u.FullName })
-                    .ToList();
+                var employees = userService.GetUsers().Where(u => u.Role == "sotrudnik")
+                        .Select(u => new { Id = u.Id, FullName = u.FullName })
+                        .ToList();
 
                 comboBoxFIORequest.DataSource = null;
 
