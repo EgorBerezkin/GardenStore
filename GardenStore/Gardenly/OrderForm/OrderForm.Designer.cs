@@ -36,8 +36,8 @@
             this.labelTotal = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelProductName = new System.Windows.Forms.Label();
+            this.labelCountProduct = new System.Windows.Forms.Label();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.labelName = new System.Windows.Forms.Label();
             this.labelZagolovok = new System.Windows.Forms.Label();
@@ -97,7 +97,7 @@
             // 
             this.dataGridViewItems.AllowUserToAddRows = false;
             this.dataGridViewItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewItems.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewItems.BackgroundColor = System.Drawing.Color.SeaShell;
             this.dataGridViewItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewItems.Location = new System.Drawing.Point(12, 198);
             this.dataGridViewItems.MultiSelect = false;
@@ -144,27 +144,27 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // label1
+            // labelProductName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
-            this.label1.ForeColor = System.Drawing.Color.SeaShell;
-            this.label1.Location = new System.Drawing.Point(12, 107);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 27);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Выберите товар:";
+            this.labelProductName.AutoSize = true;
+            this.labelProductName.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.labelProductName.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelProductName.Location = new System.Drawing.Point(12, 107);
+            this.labelProductName.Name = "labelProductName";
+            this.labelProductName.Size = new System.Drawing.Size(209, 27);
+            this.labelProductName.TabIndex = 21;
+            this.labelProductName.Text = "Выберите товар:";
             // 
-            // label2
+            // labelCountProduct
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
-            this.label2.ForeColor = System.Drawing.Color.SeaShell;
-            this.label2.Location = new System.Drawing.Point(12, 149);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(242, 27);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Количество товара:";
+            this.labelCountProduct.AutoSize = true;
+            this.labelCountProduct.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic);
+            this.labelCountProduct.ForeColor = System.Drawing.Color.SeaShell;
+            this.labelCountProduct.Location = new System.Drawing.Point(12, 149);
+            this.labelCountProduct.Name = "labelCountProduct";
+            this.labelCountProduct.Size = new System.Drawing.Size(242, 27);
+            this.labelCountProduct.TabIndex = 22;
+            this.labelCountProduct.Text = "Количество товара:";
             // 
             // panelInfo
             // 
@@ -215,8 +215,8 @@
             this.ClientSize = new System.Drawing.Size(606, 546);
             this.Controls.Add(this.buttonDeleteItem);
             this.Controls.Add(this.panelInfo);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelCountProduct);
+            this.Controls.Add(this.labelProductName);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelTotal);
@@ -249,8 +249,8 @@
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelProductName;
+        private System.Windows.Forms.Label labelCountProduct;
         private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelZagolovok;

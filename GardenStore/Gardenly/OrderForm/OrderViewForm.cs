@@ -23,7 +23,7 @@ namespace Gardenly.OrderForm
 
             orderService_ = new OrderService();
 
-            labelOrderInfo.Text = "Продажа №" + orderId_;
+            labelName.Text = "Просмотр продажи №" + orderId_;
             labelDateOrder.Text = "Дата: " + orderDate_;
             labelSotrudnik.Text = "Сотрудник: " + userFullName_;
 
